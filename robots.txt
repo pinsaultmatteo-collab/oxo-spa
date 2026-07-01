@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oxo-spa.vercel.app/sitemap.xml
