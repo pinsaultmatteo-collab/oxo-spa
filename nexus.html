@@ -74,6 +74,7 @@
     <p class="pdp__sub">3 places · compact, idéal petits espaces</p>
     <div class="pdp__price"><span class="from">À partir de</span><span class="p">4 990 €</span><span class="tax">TTC</span></div>
     <p class="pdp__finance">Financement <b>jusqu'à 120 mois</b> avec Sofinco · sous réserve d'acceptation</p>
+    <div class="pdp__fin"><div class="fin-badge">≈ <b>106&nbsp;€</b>/mois <small>sur 60 mois · TAEG 9,9%</small></div><button type="button" class="sim-btn" data-sim="4990">Simuler mon financement</button></div>
     <div class="pdp__chips"><span>26 buses</span><span>210 × 165 × 80 cm</span><span>3 places</span><span>Cascade</span></div>
     <div class="pdp__cta"><a class="btn btn--ink" href="/contact.html">Être rappelé</a><a class="btn btn--ghost" href="tel:+33531605161">Appeler le showroom</a></div>
     <div class="pdp__facts">
@@ -96,6 +97,30 @@
   <p>Venez essayer le Nexus dans notre showroom de Toulouse, ou faites-vous rappeler par un conseiller OXO Spa.</p>
   <div class="pdp__cta" style="justify-content:center"><a class="btn btn--gold" href="/contact.html">Être rappelé</a><a class="btn btn--ghost" href="tel:+33531605161">05 31 60 51 61</a></div></section>
 </main>
+
+<div class="sim" id="simModal" aria-hidden="true">
+  <div class="sim__backdrop" data-sim-close></div>
+  <div class="sim__panel" role="dialog" aria-modal="true" aria-label="Simulateur de financement">
+    <button class="sim__x" data-sim-close aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <span class="eyebrow">— Financement Sofinco</span>
+    <h3 class="sim__title">Simuler mon financement</h3>
+    <label for="simAmount">Montant du spa</label>
+    <div class="sim__amount"><input type="number" id="simAmount" min="500" max="40000" step="10" value="6490"><span>€</span></div>
+    <label for="simDur">Durée&nbsp;: <b id="simDurLbl">60 mois</b></label>
+    <input type="range" id="simDur" min="12" max="120" step="6" value="60">
+    <div class="sim__scale"><span>12</span><span>120 mois</span></div>
+    <div class="sim__out">
+      <div class="sim__big"><span id="simMonthly">—</span><small>/mois*</small></div>
+      <div class="sim__rows">
+        <div><span>TAEG</span><b id="simRate">—</b></div>
+        <div><span>Coût du crédit</span><b id="simCost">—</b></div>
+        <div><span>Montant total dû</span><b id="simTotal">—</b></div>
+      </div>
+    </div>
+    <p class="sim__legal">*Estimation indicative, hors assurance facultative, sous réserve d'acceptation par Sofinco. Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</p>
+    <a class="btn btn--ink" href="/contact.html">Être accompagné</a>
+  </div>
+</div>
 <footer class="footer">
   <div class="footer__top">
     <div class="footer__mark">
@@ -149,6 +174,28 @@
       b.classList.add("active"); if(main) main.src=b.getAttribute("data-full");
     });
   });
+
+  // simulateur de financement
+  (function(){
+    var modal=$("#simModal"); if(!modal)return;
+    var amt=$("#simAmount"),dur=$("#simDur"),dl=$("#simDurLbl"),mo=$("#simMonthly"),rt=$("#simRate"),co=$("#simCost"),to=$("#simTotal");
+    function fmt(n){return Math.round(n).toLocaleString("fr-FR");}
+    function calc(){
+      var P=Math.max(0,parseFloat(amt.value)||0),n=parseInt(dur.value,10);
+      var taeg=P<6000?9.9:7.9,r=taeg/1200;
+      var m=r?P*r/(1-Math.pow(1+r,-n)):P/n;
+      dl.textContent=n+" mois"; mo.textContent=P?fmt(m)+" €":"—";
+      rt.textContent=taeg.toFixed(1).replace(".",",")+" %";
+      to.textContent=P?fmt(m*n)+" €":"—"; co.textContent=P?fmt(m*n-P)+" €":"—";
+    }
+    amt.addEventListener("input",calc); dur.addEventListener("input",calc);
+    function open(v){ if(v)amt.value=v; calc(); modal.classList.add("show"); document.body.classList.add("lock"); }
+    function close(){ modal.classList.remove("show"); document.body.classList.remove("lock"); }
+    $$("[data-sim]").forEach(function(b){ b.addEventListener("click",function(e){ e.preventDefault(); e.stopPropagation(); open(b.getAttribute("data-sim")); }); });
+    $$("[data-sim-close]",modal).forEach(function(x){ x.addEventListener("click",close); });
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
+    calc();
+  })();
   var top=$("#totop");
   if(top){ window.addEventListener("scroll",function(){ top.classList.toggle("show", window.scrollY>600); },{passive:true});
     top.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});}); }

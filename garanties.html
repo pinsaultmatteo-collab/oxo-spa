@@ -61,13 +61,37 @@
   <a href="/livraison.html"><span class="n">05</span>Livraison</a>
   <a href="/contact.html"><span class="n">06</span>Contact</a>
 </div>
-<main id="top">
+<main id="top" class="center">
 <section class="page-hero"><div class="crumb"><a href="/">Accueil</a> · <span>Garanties</span></div><h1>Garanties &amp; <em>SAV</em></h1><p class="intro">Un spa est un investissement : nous le protégeons. Coque garantie 5 ans, partie électrique 2 ans, pièces détachées disponibles et service après-vente réactif — le tout avec un financement possible jusqu'à 120 mois.</p></section><section class="block"><h2>Vos <em>garanties</em></h2><div class="feat-grid"><div class="feat reveal"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Coque 5 ans</h3><p>La structure et la coque acrylique sont garanties 5 ans contre les défauts.</p></div><div class="feat reveal"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M9 7h6M9 11h6M10 16h4"/></svg><h3>Électrique 2 ans</h3><p>Pompes, chauffage et électronique sont garantis 2 ans.</p></div><div class="feat reveal"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="18" cy="17" r="1.6"/></svg><h3>Livraison suivie</h3><p>Livraison partout en France, avec mise en service conseillée.</p></div><div class="feat reveal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9a4 4 0 1 0 0 6M7 11h6M7 13h5"/></svg><h3>Financement</h3><p>Étalez votre achat jusqu’à 120 mois avec notre partenaire Sofinco.</p></div></div></section><section class="block alt"><h2>Réassurance</h2><p class="lead">Ce sur quoi vous pouvez compter, à chaque étape.</p>
   <div class="reassure">
     <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9a4 4 0 1 0 0 6M7 11h6M7 13h5"/></svg> Paiement sécurisé</span><span><svg viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Norme CE</span><span><svg viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg> Garantie constructeur</span>
     <span><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="18" cy="17" r="1.6"/></svg> Livraison France entière</span><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9a4 4 0 1 0 0 6M7 11h6M7 13h5"/></svg> Financement Sofinco</span><span><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M9 7h6M9 11h6M10 16h4"/></svg> SAV &amp; pièces détachées</span>
   </div></section><section class="block"><h2>Questions <em>fréquentes</em></h2><div class="faq"><details><summary>Quelle est la durée de garantie d'un spa OXO ?</summary><p>La coque et la structure sont garanties 5 ans, et la partie électrique (pompes, chauffage, électronique) 2 ans. Les conditions détaillées vous sont remises à l'achat.</p></details><details><summary>Proposez-vous un financement ?</summary><p>Oui, vous pouvez étaler votre achat jusqu'à 120 mois avec notre partenaire Sofinco, sous réserve d'acceptation du dossier.</p></details><details><summary>Les pièces détachées sont-elles disponibles ?</summary><p>Oui, nous assurons le service après-vente et l'approvisionnement en pièces détachées pour les modèles que nous commercialisons.</p></details><details><summary>Assurez-vous l'installation ?</summary><p>Nous livrons partout en France et vous accompagnons pour la mise en service et les conseils d'entretien.</p></details></div></section><section class="cta-band"><h2>Une question sur la <em>garantie</em> ?</h2><p>Notre équipe vous répond et vous accompagne, avant comme après l'achat.</p><div class="row"><a class="btn btn--gold" href="/contact.html">Être rappelé</a><a class="btn btn--ghost" href="tel:+33531605161">05 31 60 51 61</a></div></section>
 </main>
+
+<div class="sim" id="simModal" aria-hidden="true">
+  <div class="sim__backdrop" data-sim-close></div>
+  <div class="sim__panel" role="dialog" aria-modal="true" aria-label="Simulateur de financement">
+    <button class="sim__x" data-sim-close aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <span class="eyebrow">— Financement Sofinco</span>
+    <h3 class="sim__title">Simuler mon financement</h3>
+    <label for="simAmount">Montant du spa</label>
+    <div class="sim__amount"><input type="number" id="simAmount" min="500" max="40000" step="10" value="6490"><span>€</span></div>
+    <label for="simDur">Durée&nbsp;: <b id="simDurLbl">60 mois</b></label>
+    <input type="range" id="simDur" min="12" max="120" step="6" value="60">
+    <div class="sim__scale"><span>12</span><span>120 mois</span></div>
+    <div class="sim__out">
+      <div class="sim__big"><span id="simMonthly">—</span><small>/mois*</small></div>
+      <div class="sim__rows">
+        <div><span>TAEG</span><b id="simRate">—</b></div>
+        <div><span>Coût du crédit</span><b id="simCost">—</b></div>
+        <div><span>Montant total dû</span><b id="simTotal">—</b></div>
+      </div>
+    </div>
+    <p class="sim__legal">*Estimation indicative, hors assurance facultative, sous réserve d'acceptation par Sofinco. Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</p>
+    <a class="btn btn--ink" href="/contact.html">Être accompagné</a>
+  </div>
+</div>
 <footer class="footer">
   <div class="footer__top">
     <div class="footer__mark">
@@ -121,6 +145,28 @@
       b.classList.add("active"); if(main) main.src=b.getAttribute("data-full");
     });
   });
+
+  // simulateur de financement
+  (function(){
+    var modal=$("#simModal"); if(!modal)return;
+    var amt=$("#simAmount"),dur=$("#simDur"),dl=$("#simDurLbl"),mo=$("#simMonthly"),rt=$("#simRate"),co=$("#simCost"),to=$("#simTotal");
+    function fmt(n){return Math.round(n).toLocaleString("fr-FR");}
+    function calc(){
+      var P=Math.max(0,parseFloat(amt.value)||0),n=parseInt(dur.value,10);
+      var taeg=P<6000?9.9:7.9,r=taeg/1200;
+      var m=r?P*r/(1-Math.pow(1+r,-n)):P/n;
+      dl.textContent=n+" mois"; mo.textContent=P?fmt(m)+" €":"—";
+      rt.textContent=taeg.toFixed(1).replace(".",",")+" %";
+      to.textContent=P?fmt(m*n)+" €":"—"; co.textContent=P?fmt(m*n-P)+" €":"—";
+    }
+    amt.addEventListener("input",calc); dur.addEventListener("input",calc);
+    function open(v){ if(v)amt.value=v; calc(); modal.classList.add("show"); document.body.classList.add("lock"); }
+    function close(){ modal.classList.remove("show"); document.body.classList.remove("lock"); }
+    $$("[data-sim]").forEach(function(b){ b.addEventListener("click",function(e){ e.preventDefault(); e.stopPropagation(); open(b.getAttribute("data-sim")); }); });
+    $$("[data-sim-close]",modal).forEach(function(x){ x.addEventListener("click",close); });
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
+    calc();
+  })();
   var top=$("#totop");
   if(top){ window.addEventListener("scroll",function(){ top.classList.toggle("show", window.scrollY>600); },{passive:true});
     top.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});}); }

@@ -62,7 +62,7 @@
   <a href="/contact.html"><span class="n">06</span>Contact</a>
 </div>
 <main id="top">
-<section class="page-hero"><div class="crumb"><a href="/">Accueil</a> · <span>Livraison</span></div><h1>Livraison &amp; <em>installation</em></h1><p class="intro">Nous livrons nos spas partout en France. Le tarif de livraison dépend de votre zone géographique ; comptez +180 €HT pour les zones de montagne. Livraison sous 10 jours pour les modèles en stock.</p></section><section class="livz"><div class="shell"><span class="eyebrow">— Tarifs par zone</span>
+<section class="page-hero"><div class="crumb"><a href="/">Accueil</a> · <span>Livraison</span></div><h1>Livraison &amp; <em>installation</em></h1><p class="intro">Nous livrons nos spas partout en France. Le tarif de livraison dépend de votre zone géographique ; comptez +180 €HT pour les zones de montagne. Livraison sous 10 jours pour les modèles en stock.</p></section><section class="livz livz--solo"><div class="shell"><span class="eyebrow">— Tarifs par zone</span>
   <h2 class="display" style="font-size:clamp(24px,3.4vw,44px);text-transform:uppercase;margin-top:10px">Tarifs par <em style="font-style:normal;color:var(--gold)">zone</em></h2>
   <p class="livz__sub">Tarifs de livraison hors taxes selon votre zone. <b>+180 €HT</b> pour les zones de montagne.</p>
   <div class="livz__grid">
@@ -70,6 +70,30 @@
     <div class="livz__rows reveal"><div class="zrow"><span class="zsw" style="--z:#2C9B9F"></span><span class="zname">Zone 1</span><span class="zprice">500 €<small>HT</small></span></div><div class="zrow"><span class="zsw" style="--z:#9FD0DD"></span><span class="zname">Zone 2</span><span class="zprice">700 €<small>HT</small></span></div><div class="zrow"><span class="zsw" style="--z:#0B1E33"></span><span class="zname">Zone 3</span><span class="zprice">900 €<small>HT</small></span></div><div class="zrow"><span class="zsw" style="--z:#CFE0EE"></span><span class="zname">Zone 4</span><span class="zprice">960 €<small>HT</small></span></div><div class="zrow"><span class="zsw" style="--z:#4F74A8"></span><span class="zname">Zone 5</span><span class="zprice">880 €<small>HT</small></span></div><div class="zrow"><span class="zsw" style="--z:#44597F"></span><span class="zname">Zone 6</span><span class="zprice">960 €<small>HT</small></span></div><div class="zrow zrow--alt"><span class="zname">Corse &amp; autres pays européens</span><span class="zprice">Nous consulter</span></div></div>
   </div></div></section><section class="block"><h2>Comment ça se <em>passe</em> ?</h2><div class="feat-grid"><div class="feat reveal"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M5 10v10h14V10"/></svg><h3>1 · Étude</h3><p>On valide ensemble l’accès, l’emplacement et l’alimentation électrique de votre spa.</p></div><div class="feat reveal"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="17" r="1.6"/><circle cx="18" cy="17" r="1.6"/></svg><h3>2 · Livraison</h3><p>Livraison à l’adresse indiquée, sous 10 jours pour les modèles en stock, ~3 mois pour les spas de nage.</p></div><div class="feat reveal"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><path d="M6 8V4M12 8V4M18 8V4"/></svg><h3>3 · Mise en service</h3><p>Remplissage, contrôle des jets et du chauffage, conseils d’entretien : vous n’avez plus qu’à en profiter.</p></div></div></section><section class="block"><h2>Questions <em>fréquentes</em></h2><div class="faq"><details><summary>Quel est le délai de livraison ?</summary><p>Les spas en stock (Breeze, Nexus, Ease) sont livrés sous environ 10 jours. Les spas de nage, fabriqués sur commande, sont livrés en environ 3 mois.</p></details><details><summary>Livrez-vous toute la France ?</summary><p>Oui, nous livrons dans toute la France métropolitaine. Le tarif dépend de la zone (voir la carte). Pour la Corse et l'étranger, contactez-nous.</p></details><details><summary>Y a-t-il un supplément pour la montagne ?</summary><p>Oui, un supplément de 180 €HT s'applique pour les zones de montagne, en raison des contraintes d'accès.</p></details><details><summary>Faut-il préparer quelque chose avant la livraison ?</summary><p>Un sol plat et stable, un accès suffisant et une alimentation électrique adaptée. Nous validons ces points avec vous en amont.</p></details></div></section><section class="cta-band"><h2>Une livraison à <em>estimer</em> ?</h2><p>Donnez-nous votre commune et le modèle visé : on vous confirme le tarif et le délai.</p><div class="row"><a class="btn btn--gold" href="/contact.html">Être rappelé</a><a class="btn btn--ghost" href="tel:+33531605161">05 31 60 51 61</a></div></section>
 </main>
+
+<div class="sim" id="simModal" aria-hidden="true">
+  <div class="sim__backdrop" data-sim-close></div>
+  <div class="sim__panel" role="dialog" aria-modal="true" aria-label="Simulateur de financement">
+    <button class="sim__x" data-sim-close aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <span class="eyebrow">— Financement Sofinco</span>
+    <h3 class="sim__title">Simuler mon financement</h3>
+    <label for="simAmount">Montant du spa</label>
+    <div class="sim__amount"><input type="number" id="simAmount" min="500" max="40000" step="10" value="6490"><span>€</span></div>
+    <label for="simDur">Durée&nbsp;: <b id="simDurLbl">60 mois</b></label>
+    <input type="range" id="simDur" min="12" max="120" step="6" value="60">
+    <div class="sim__scale"><span>12</span><span>120 mois</span></div>
+    <div class="sim__out">
+      <div class="sim__big"><span id="simMonthly">—</span><small>/mois*</small></div>
+      <div class="sim__rows">
+        <div><span>TAEG</span><b id="simRate">—</b></div>
+        <div><span>Coût du crédit</span><b id="simCost">—</b></div>
+        <div><span>Montant total dû</span><b id="simTotal">—</b></div>
+      </div>
+    </div>
+    <p class="sim__legal">*Estimation indicative, hors assurance facultative, sous réserve d'acceptation par Sofinco. Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</p>
+    <a class="btn btn--ink" href="/contact.html">Être accompagné</a>
+  </div>
+</div>
 <footer class="footer">
   <div class="footer__top">
     <div class="footer__mark">
@@ -123,6 +147,28 @@
       b.classList.add("active"); if(main) main.src=b.getAttribute("data-full");
     });
   });
+
+  // simulateur de financement
+  (function(){
+    var modal=$("#simModal"); if(!modal)return;
+    var amt=$("#simAmount"),dur=$("#simDur"),dl=$("#simDurLbl"),mo=$("#simMonthly"),rt=$("#simRate"),co=$("#simCost"),to=$("#simTotal");
+    function fmt(n){return Math.round(n).toLocaleString("fr-FR");}
+    function calc(){
+      var P=Math.max(0,parseFloat(amt.value)||0),n=parseInt(dur.value,10);
+      var taeg=P<6000?9.9:7.9,r=taeg/1200;
+      var m=r?P*r/(1-Math.pow(1+r,-n)):P/n;
+      dl.textContent=n+" mois"; mo.textContent=P?fmt(m)+" €":"—";
+      rt.textContent=taeg.toFixed(1).replace(".",",")+" %";
+      to.textContent=P?fmt(m*n)+" €":"—"; co.textContent=P?fmt(m*n-P)+" €":"—";
+    }
+    amt.addEventListener("input",calc); dur.addEventListener("input",calc);
+    function open(v){ if(v)amt.value=v; calc(); modal.classList.add("show"); document.body.classList.add("lock"); }
+    function close(){ modal.classList.remove("show"); document.body.classList.remove("lock"); }
+    $$("[data-sim]").forEach(function(b){ b.addEventListener("click",function(e){ e.preventDefault(); e.stopPropagation(); open(b.getAttribute("data-sim")); }); });
+    $$("[data-sim-close]",modal).forEach(function(x){ x.addEventListener("click",close); });
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
+    calc();
+  })();
   var top=$("#totop");
   if(top){ window.addEventListener("scroll",function(){ top.classList.toggle("show", window.scrollY>600); },{passive:true});
     top.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});}); }

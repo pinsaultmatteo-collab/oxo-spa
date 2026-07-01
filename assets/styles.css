@@ -764,3 +764,83 @@ a.card{text-decoration:none;color:inherit;cursor:pointer}
 .cta-band h2 em{font-style:normal;color:var(--gold-hi)}
 .cta-band p{color:var(--bone-dim);max-width:56ch;margin:0 auto 28px}
 .cta-band .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ============================================================
+   AJOUTS : simulateur financement, cartes-liens, centrage, etc.
+   ============================================================ */
+/* mensualité + bouton simuler */
+.fin-badge{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-2);letter-spacing:.02em;line-height:1.4}
+.fin-badge b{color:var(--ink);font-size:14px}
+.fin-badge small{display:block;color:var(--smoke);font-size:10.5px;margin-top:2px}
+.sim-btn{display:inline-flex;align-items:center;gap:7px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--gold);background:none;border:1px solid rgba(176,136,58,.42);border-radius:40px;padding:9px 15px;cursor:pointer;transition:background .3s,border-color .3s,color .3s}
+.sim-btn::before{content:"";width:14px;height:14px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='5' y='2' width='14' height='20' rx='2' fill='none' stroke='black' stroke-width='2'/><path d='M8 6h8M8 10h2M12 10h2M16 10h.01M8 14h2M12 14h2M16 14h.01M8 18h6' stroke='black' stroke-width='2' fill='none'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='5' y='2' width='14' height='20' rx='2' fill='none' stroke='black' stroke-width='2'/><path d='M8 6h8M8 10h2M12 10h2M16 10h.01M8 14h2M12 14h2M16 14h.01M8 18h6' stroke='black' stroke-width='2' fill='none'/></svg>") center/contain no-repeat}
+.sim-btn:hover{background:rgba(176,136,58,.1);border-color:var(--gold);color:var(--gold-deep)}
+.sim-btn--sm{position:relative;z-index:2;width:100%;justify-content:center;font-size:11px;padding:8px 12px;margin-top:12px}
+.pdp__fin{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+
+/* modale simulateur */
+.sim{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.sim.show{display:flex}
+.sim__backdrop{position:absolute;inset:0;background:rgba(8,18,30,.62);backdrop-filter:blur(3px)}
+.sim__panel{position:relative;z-index:1;width:min(460px,100%);max-height:92vh;overflow:auto;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:clamp(26px,4vw,38px);box-shadow:0 50px 100px -30px rgba(8,18,30,.55)}
+.sim__x{position:absolute;top:15px;right:15px;width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);background:none;border-radius:50%;cursor:pointer;color:var(--ink);transition:border-color .3s}
+.sim__x:hover{border-color:var(--gold)}.sim__x svg{width:16px;height:16px}
+.sim__title{font-family:"Archivo";font-weight:900;font-size:clamp(22px,3vw,30px);text-transform:uppercase;letter-spacing:-.02em;margin:8px 0 22px}
+.sim label{display:block;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin:16px 0 8px}
+.sim label b{color:var(--gold);font-family:inherit}
+.sim__amount{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:2px 14px;background:var(--paper)}
+.sim__amount input{flex:1;border:none;background:none;font:900 22px/1 "Archivo";color:var(--ink);padding:12px 0}
+.sim__amount input:focus{outline:none}
+.sim__amount span{font-family:"Space Mono",monospace;color:var(--smoke);font-size:16px}
+.sim input[type=range]{width:100%;accent-color:var(--gold);margin-top:4px}
+.sim__scale{display:flex;justify-content:space-between;font-family:"Space Mono",monospace;font-size:10px;color:var(--smoke);margin-top:2px}
+.sim__out{margin-top:22px;border-top:1px solid var(--line);padding-top:20px}
+.sim__big{display:flex;align-items:baseline;gap:6px}
+.sim__big #simMonthly{font-family:"Archivo";font-weight:900;font-size:clamp(38px,7vw,52px);color:var(--gold);letter-spacing:-.02em}
+.sim__big small{font-family:"Space Mono",monospace;font-size:14px;color:var(--smoke)}
+.sim__rows{margin-top:14px}
+.sim__rows div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.sim__rows span{color:var(--ink-2)}.sim__rows b{font-family:"Space Mono",monospace;color:var(--ink)}
+.sim__legal{font-size:11px;color:var(--smoke);line-height:1.55;margin:18px 0}
+.sim__panel .btn{width:100%}
+
+/* cartes à lien étiré (home + catalogue) */
+.card{position:relative}
+.card__link,.cat-card__link{position:absolute;inset:0;z-index:1}
+.card .card__badge,.cat-card__badge{z-index:3}
+.card__fin{margin:10px 0 2px}
+
+/* centrage de page */
+main.center .page-hero{text-align:center}
+main.center .page-hero .intro{margin-left:auto;margin-right:auto}
+main.center .cat h2,main.center .cat .sub,main.center .block>h2,main.center .block .lead{text-align:center}
+main.center .block .lead{margin-left:auto;margin-right:auto}
+main.center .cat-grid{justify-content:center}
+main.center .feat{text-align:center}
+main.center .feat svg{margin-left:auto;margin-right:auto}
+main.center .reassure{justify-content:center}
+main.center .faq{margin-left:auto;margin-right:auto}
+main.center .faq summary{text-align:left}
+
+/* grille 6 points sur une ligne */
+.feat-grid.six{grid-template-columns:repeat(6,1fr);gap:14px}
+.feat-grid.six .feat{padding:20px 16px}
+.feat-grid.six .feat svg{width:24px;height:24px;margin-bottom:10px}
+.feat-grid.six .feat h3{font-size:15px}
+.feat-grid.six .feat p{font-size:12.5px;line-height:1.5}
+@media(max-width:1180px){.feat-grid.six{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.feat-grid.six{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.feat-grid.six{grid-template-columns:1fr}}
+
+/* air autour du bloc tarifs (page livraison) */
+.livz--solo{padding:clamp(40px,7vh,80px) 0}
+.livz--solo .shell{padding-left:var(--pad);padding-right:var(--pad)}
+
+/* thermomètre : glow animé pour combler le vide */
+.thermo{position:relative}
+.thermo::before{content:"";position:absolute;left:2%;top:50%;width:clamp(150px,20vw,220px);height:clamp(150px,20vw,220px);transform:translateY(-50%);
+  background:radial-gradient(circle,rgba(176,136,58,.20),rgba(176,136,58,.06) 45%,transparent 72%);filter:blur(6px);z-index:0;animation:thermoGlow 4.5s ease-in-out infinite}
+@keyframes thermoGlow{0%,100%{opacity:.5;transform:translateY(-50%) scale(1)}50%{opacity:.95;transform:translateY(-50%) scale(1.12)}}
+.thermo__art,.thermo__read{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.thermo::before{animation:none}}
