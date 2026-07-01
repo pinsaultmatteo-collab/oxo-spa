@@ -160,44 +160,7 @@
       <div class="sig">— OXO Spa · 11 impasse Pierre Camo, Toulouse</div>
     </div>
     <div class="manifesto__gauge reveal">
-      <div class="thermo" id="thermo">
-        <svg class="thermo__art" viewBox="0 0 170 400" aria-hidden="true">
-          <defs><clipPath id="tubeClip">
-            <rect x="62" y="34" width="34" height="274" rx="17"/>
-            <circle cx="79" cy="334" r="32"/>
-          </clipPath></defs>
-          <rect x="62" y="34" width="34" height="274" rx="17" class="t-tube"/>
-          <circle cx="79" cy="334" r="34" class="t-tube"/>
-          <g clip-path="url(#tubeClip)">
-            <circle cx="79" cy="334" r="32" class="t-merc"/>
-            <rect x="62" y="34" width="34" height="278" class="t-merc" id="merc"/>
-          </g>
-          <rect x="62" y="34" width="34" height="274" rx="17" class="t-outline"/>
-          <circle cx="79" cy="334" r="34" class="t-outline"/>
-          <g class="t-scale" id="tscale"></g>
-          <path class="t-steam" d="M72 30 q-9 -16 3 -30 q9 -11 -3 -26"/>
-          <path class="t-steam" d="M86 26 q11 -15 -2 -30 q-8 -10 3 -24"/>
-          <path class="t-steam" d="M99 30 q-8 -14 5 -28"/>
-          <circle class="t-bub" cx="150" cy="86" r="3" style="animation-delay:.2s"/>
-          <circle class="t-bub" cx="132" cy="140" r="4.5" style="animation-delay:1s"/>
-          <circle class="t-bub" cx="40" cy="180" r="4" style="animation-delay:.6s"/>
-          <circle class="t-bub" cx="143" cy="232" r="3.5" style="animation-delay:1.6s"/>
-          <circle class="t-bub" cx="34" cy="270" r="3" style="animation-delay:2.1s"/>
-          <circle class="t-bub" cx="-4" cy="120" r="4.5" style="animation-delay:.9s"/>
-          <circle class="t-bub" cx="168" cy="170" r="4" style="animation-delay:1.3s"/>
-          <circle class="t-bub" cx="20" cy="60" r="2.6" style="animation-delay:2.6s"/>
-          <circle class="t-bub" cx="160" cy="300" r="5" style="animation-delay:.4s"/>
-          <circle class="t-bub" cx="8" cy="330" r="3.2" style="animation-delay:1.8s"/>
-          <circle class="t-bub" cx="120" cy="66" r="2.4" style="animation-delay:3.1s"/>
-          <path class="t-steam" d="M60 34 q-7 -13 4 -24"/>
-        </svg>
-        <div class="thermo__read">
-          <span class="lbl-top">Température de confort</span>
-          <span class="big" id="gTemp">0<small>°C</small></span>
-          <span class="lbl-bot">Maintenue 24 h / 24</span>
-          <span class="sub">± 0,5°C · chauffage 2 kW + ozone</span>
-        </div>
-      </div>
+      <img class="manifesto__photo" src="/assets/images/apropos-terrasse.webp" alt="Spa OXO installé sur une terrasse avec vue sur les montagnes et le lac">
     </div>
   </div>
 </section>
@@ -226,7 +189,7 @@
 
         <article class="card">
           <a class="card__link" href="/breeze.html" aria-label="Découvrir Breeze"></a>
-          <div class="card__media"><img src="/assets/images/produit-breeze.webp" alt="Spa Breeze"></div>
+          <div class="card__media"><img id="cimg-breeze" src="/assets/images/breeze-blanc.webp" alt="Spa Breeze — coloris blanc"><div class="color-dots color-dots--media" data-target="#cimg-breeze"><button class="cdot active" data-img="/assets/images/breeze-blanc.webp" style="--c:#e9e9ec" aria-label="Coloris blanc" title="Blanc"></button><button class="cdot" data-img="/assets/images/breeze-noir.webp" style="--c:#2a2b2e" aria-label="Coloris noir" title="Noir"></button></div></div>
           <span class="card__badge stock"><span class="d"></span>En stock</span>
           <span class="card__num">01 / 05</span>
           <div class="card__body">
@@ -245,7 +208,7 @@
 
         <article class="card">
           <a class="card__link" href="/nexus.html" aria-label="Découvrir Nexus"></a>
-          <div class="card__media"><img src="/assets/images/produit-nexus.webp" alt="Spa Nexus"></div>
+          <div class="card__media"><img id="cimg-nexus" src="/assets/images/nexus-blanc.webp" alt="Spa Nexus — coloris blanc"><div class="color-dots color-dots--media" data-target="#cimg-nexus"><button class="cdot active" data-img="/assets/images/nexus-blanc.webp" style="--c:#e9e9ec" aria-label="Coloris blanc" title="Blanc"></button><button class="cdot" data-img="/assets/images/nexus-noir.webp" style="--c:#2a2b2e" aria-label="Coloris noir" title="Noir"></button></div></div>
           <span class="card__badge stock"><span class="d"></span>En stock</span>
           <span class="card__num">02 / 05</span>
           <div class="card__body">
@@ -379,7 +342,7 @@
 <!-- ============ GARANTIES ============ -->
 <section class="garanties" id="garanties" aria-label="Garanties & confiance">
   <div class="garanties__photo">
-    <img src="/assets/images/detail-place.webp" alt="Détail des assises et jets d'un spa OXO">
+    <img src="/assets/images/confiance-buses.webp" alt="Gros plan sur les buses d'hydromassage d'un spa OXO">
     <span class="garanties__seam"></span>
     <span class="garanties__plate">Assises sculptées · hydromassage ciblé</span>
   </div>
@@ -408,7 +371,7 @@
 <!-- ============ LIVRAISON & PAIEMENT ============ -->
 <section class="section parcours" id="parcours" aria-label="Livraison & paiement">
   <div class="parcours__banner reveal">
-    <img src="/assets/images/detail-tablier.webp" alt="Spa OXO vu de l'extérieur, tablier gris">
+    <img src="/assets/images/parcours-terrasse.webp" alt="Spa OXO sur une terrasse avec vue sur la mer">
     <span class="parcours__eyebrow eyebrow">06 — Le parcours</span>
     <h2 class="parcours__title display">De la commande<br>à la première baignade.</h2>
   </div>
@@ -466,9 +429,9 @@
     <p>Chaque buse est positionnée pour cibler un groupe musculaire précis — nuque, lombaires, jambes. Le confort n'est pas un hasard : il est dessiné.</p>
   </div>
   <div class="craft__grid">
-    <div class="cframe tall reveal"><img src="/assets/images/detail-buses.webp" alt="Gros plan sur les buses d'hydromassage"><span class="cframe__cap">Buses chromées · hydromassage de précision</span></div>
-    <div class="cframe reveal"><img src="/assets/images/detail-place.webp" alt="Place principale et appuie-tête"><span class="cframe__cap">Assise principale · appuie-tête</span></div>
-    <div class="cframe reveal"><img src="/assets/images/detail-tablier.webp" alt="Tablier extérieur isolé"><span class="cframe__cap">Tablier isolé · finition bois</span></div>
+    <div class="cframe tall reveal"><img src="/assets/images/detail-buses-blanc.webp" alt="Gros plan sur les buses d'hydromassage"><span class="cframe__cap">Buses · hydromassage de précision</span></div>
+    <div class="cframe reveal"><img src="/assets/images/detail-skimmer.webp" alt="Skimmer et filtration du spa"><span class="cframe__cap">Skimmer · filtration intégrée</span></div>
+    <div class="cframe reveal"><img src="/assets/images/detail-ecran.webp" alt="Écran tactile de commande du spa"><span class="cframe__cap">Écran tactile · pilotage simple</span></div>
   </div>
 </section>
 
@@ -822,6 +785,15 @@
   $$("[data-sim-close]",modal).forEach(function(x){ x.addEventListener("click",close); });
   document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
   calc();
+  // pastilles de couleur
+  $$(".color-dots").forEach(function(g){
+    var target=$(g.getAttribute("data-target"));
+    $$(".cdot",g).forEach(function(d){
+      d.addEventListener("click",function(e){ e.preventDefault(); e.stopPropagation();
+        if(target) target.src=d.getAttribute("data-img");
+        $$(".cdot",g).forEach(function(x){x.classList.remove("active");}); d.classList.add("active"); });
+    });
+  });
 })();
 </script>
 </body>

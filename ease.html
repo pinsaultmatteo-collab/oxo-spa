@@ -72,6 +72,7 @@
     <span class="eyebrow">En stock · Livraison 10 jours</span>
     <h1>Spa Ease</h1>
     <p class="pdp__sub">5 places · l’équilibre parfait</p>
+    
     <div class="pdp__price"><span class="from">À partir de</span><span class="p">6 990 €</span><span class="tax">TTC</span><span class="price__mo">ou ≈ <b>141&nbsp;€</b>/mois</span></div>
     <p class="pdp__finance">Financement <b>jusqu'à 120 mois</b> avec Sofinco · sous réserve d'acceptation</p>
     <div class="pdp__fin"><button type="button" class="sim-btn" data-sim="6990">Simuler mon financement</button></div>
@@ -92,7 +93,7 @@
 <section class="pdp__block alt"><h2>Inclus &amp; <em>options</em></h2>
   <p class="lead">Ce qui est compris de série, et les accessoires pour aller plus loin.</p>
   <div class="pdp__incl"><div><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>Couverture isotherme de série</div><div><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>Filtre cartouche installé</div><div><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>Kit de démarrage (traitement de l’eau)</div><div><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>Mise en service conseillée par notre équipe</div><div><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Couverture hydraulique — 1 290 €</div><div><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Marches assorties — 290 €</div><div><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Lève-couverture — 490 €</div></div></section>
-<section class="pdp__block"><h2>Autres <em>modèles</em></h2><div class="pdp__cross"><a class="xcard" href="/breeze.html"><img src="/assets/images/produit-breeze.webp" alt="Spa Breeze"><div class="xb"><div class="xm">Breeze</div><div class="xp">À partir de 6 490 €</div></div></a><a class="xcard" href="/nexus.html"><img src="/assets/images/produit-nexus.webp" alt="Spa Nexus"><div class="xb"><div class="xm">Nexus</div><div class="xp">À partir de 4 990 €</div></div></a><a class="xcard" href="/spa-de-nage-40.html"><img src="/assets/images/produit-spa-nage-40.webp" alt="Spa Spa de nage 40"><div class="xb"><div class="xm">Spa de nage 40</div><div class="xp">À partir de 16 990 €</div></div></a></div></section>
+<section class="pdp__block"><h2>Autres <em>modèles</em></h2><div class="pdp__cross"><a class="xcard" href="/breeze.html"><img src="/assets/images/breeze-blanc.webp" alt="Spa Breeze"><div class="xb"><div class="xm">Breeze</div><div class="xp">À partir de 6 490 €</div></div></a><a class="xcard" href="/nexus.html"><img src="/assets/images/nexus-blanc.webp" alt="Spa Nexus"><div class="xb"><div class="xm">Nexus</div><div class="xp">À partir de 4 990 €</div></div></a><a class="xcard" href="/spa-de-nage-40.html"><img src="/assets/images/produit-spa-nage-40.webp" alt="Spa Spa de nage 40"><div class="xb"><div class="xm">Spa de nage 40</div><div class="xp">À partir de 16 990 €</div></div></a></div></section>
 <section class="pdp__band"><h2>Envie de le <em>voir en vrai</em> ?</h2>
   <p>Venez essayer le Ease dans notre showroom de Toulouse, ou faites-vous rappeler par un conseiller OXO Spa.</p>
   <div class="pdp__cta" style="justify-content:center"><a class="btn btn--gold" href="/contact.html">Être rappelé</a><a class="btn btn--ghost" href="tel:+33531605161">05 31 60 51 61</a></div></section>
@@ -172,6 +173,14 @@
     b.addEventListener("click",function(){
       $$(".pdp__thumbs button").forEach(function(x){x.classList.remove("active");});
       b.classList.add("active"); if(main) main.src=b.getAttribute("data-full");
+    });
+  });
+  $$(".color-dots").forEach(function(g){
+    var ct=$(g.getAttribute("data-target"));
+    $$(".cdot",g).forEach(function(d){
+      d.addEventListener("click",function(e){ e.preventDefault(); e.stopPropagation();
+        if(ct) ct.src=d.getAttribute("data-img");
+        $$(".cdot",g).forEach(function(x){x.classList.remove("active");}); d.classList.add("active"); });
     });
   });
 

@@ -860,3 +860,15 @@ main.center .faq summary{text-align:left}
 .pdp__price .price__mo{font-size:17px}
 /* cartes du catalogue centrées */
 main.center .cat-grid{grid-template-columns:repeat(auto-fit,minmax(250px,330px));justify-content:center}
+
+/* ---- photo bloc "Qui sommes-nous" + pastilles de couleur ---- */
+.manifesto__photo{width:100%;display:block;border-radius:12px;aspect-ratio:1/1;object-fit:cover;box-shadow:0 44px 84px -44px rgba(14,26,43,.5)}
+.card__media{position:relative}
+.color-dots{display:flex;gap:8px;align-items:center}
+.color-dots--media{position:absolute;left:12px;bottom:12px;z-index:4;padding:5px 7px;background:rgba(11,30,51,.34);backdrop-filter:blur(4px);border-radius:40px}
+.cdot{width:22px;height:22px;border-radius:50%;border:2px solid #fff;background:var(--c,#ccc);cursor:pointer;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.28);transition:transform .2s;position:relative;z-index:2}
+.cdot:hover{transform:scale(1.12)}
+.cdot.active{outline:2px solid var(--gold-hi);outline-offset:2px}
+.pdp__colors{display:flex;align-items:center;gap:14px;margin:2px 0 22px}
+.pdp__colors .clabel{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+.pdp__colors .cdot{width:26px;height:26px}
