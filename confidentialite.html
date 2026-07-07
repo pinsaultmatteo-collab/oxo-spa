@@ -49,7 +49,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
     </a>
     <a class="nav__cta" href="/contact.html?sujet=devis">Demander un devis</a>
-    <a class="nav__icon nav__cart" href="/panier.html" aria-label="Voir le panier">
+    <a class="nav__icon nav__cart" href="/panier.html" data-cart-open aria-label="Voir le panier">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
       <span class="nav__badge" data-cart-count>0</span>
     </a>
@@ -97,6 +97,20 @@
     <a class="btn btn--ink" href="/contact.html">Être accompagné</a>
   </div>
 </div>
+
+<div class="cart" id="cartDrawer" aria-hidden="true">
+  <div class="cart__backdrop" data-cart-close></div>
+  <aside class="cart__panel" role="dialog" aria-modal="true" aria-label="Panier">
+    <div class="cart__top"><h3>Mon panier</h3><button class="cart__x" data-cart-close aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="cart__items" id="cartDrawerItems"></div>
+    <div class="cart__foot" id="cartDrawerFoot">
+      <div class="cart__total"><span>Total</span><b id="cartDrawerTotal">0 €</b></div>
+      <p class="cart__note">Estimation hors livraison. Un conseiller confirme le prix final et les options.</p>
+      <a class="btn btn--gold" id="cartDrawerRecall" href="/contact.html?sujet=devis">Être rappelé pour finaliser</a>
+      <a class="btn btn--ghost btn--dark" href="/spas.html" data-cart-close>Continuer mes achats</a>
+    </div>
+  </aside>
+</div>
 <footer class="footer">
   <div class="footer__top">
     <div class="footer__mark">
@@ -117,7 +131,7 @@
   <div class="footer__sign">
     <span class="lbl">Conçu &amp; développé par</span>
     <a href="https://www.agence-pmc-marketing.com/" target="_blank" rel="noopener" aria-label="PMC Marketing — agence digitale &amp; IA, Toulouse">
-      <img src="/assets/images/logo-pmc.png" alt="PMC Marketing — Agence digitale &amp; IA · Toulouse">
+      <img src="/assets/images/logo-pmc.png" alt="PMC Marketing — Agence digitale &amp; IA · Toulouse" width="1138" height="462" loading="lazy" decoding="async">
     </a>
   </div>
 </footer>
@@ -201,12 +215,35 @@
     document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
     calc();
   })();
-  // panier (localStorage) + tracking appels
+  // panier (localStorage) + tiroir latéral + tracking appels
   function cartGet(){ try{return JSON.parse(localStorage.getItem("oxo_cart")||"[]");}catch(e){return [];} }
-  function cartCount(){ return cartGet().reduce(function(n,i){return n+(i.qty||1);},0); }
-  function cartBadges(){ var c=cartCount(); $$("[data-cart-count]").forEach(function(b){ b.textContent=c; b.style.display=c>0?"grid":"none"; }); }
-  window.oxoAddToCart=function(item){ var c=cartGet(); c.push(item); localStorage.setItem("oxo_cart",JSON.stringify(c)); cartBadges(); };
-  window.oxoCartGet=cartGet; window.oxoCartSet=function(c){localStorage.setItem("oxo_cart",JSON.stringify(c));cartBadges();};
+  function cartBadges(){ var c=cartGet().reduce(function(n,i){return n+(i.qty||1);},0); $$("[data-cart-count]").forEach(function(b){ b.textContent=c; b.style.display=c>0?"grid":"none"; }); }
+  function cartSet(c){ localStorage.setItem("oxo_cart",JSON.stringify(c)); cartBadges(); }
+  var _cf=function(n){return Math.round(n).toLocaleString("fr-FR");};
+  var drawer=$("#cartDrawer");
+  function bindClose(){ if(!drawer)return; $$("[data-cart-close]",drawer).forEach(function(x){ if(!x._b){x._b=1; x.addEventListener("click",function(e){e.preventDefault();cartClose();});} }); }
+  function cartRender(){
+    if(!drawer)return;
+    var items=$("#cartDrawerItems"), foot=$("#cartDrawerFoot"), c=cartGet();
+    if(!c.length){ items.innerHTML='<p class="cart-empty">Votre panier est vide.<br><a href="/spas.html" data-cart-close>Découvrir nos spas &rarr;</a></p>'; if(foot)foot.style.display="none"; bindClose(); return; }
+    var total=0, html="";
+    c.forEach(function(it,i){ total+=it.total;
+      var opts=(it.options&&it.options.length)?('<div class="ci__opts">'+it.options.map(function(o){return "+ "+o.name+" ("+_cf(o.price)+" €)";}).join("<br>")+'</div>'):'';
+      html+='<div class="ci"><div class="ci__name"><b>'+it.name+'</b>'+opts+'</div><div class="ci__price">'+_cf(it.total)+' €</div><button class="ci__rm" data-i="'+i+'" aria-label="Retirer">&times;</button></div>';
+    });
+    items.innerHTML=html; $("#cartDrawerTotal").textContent=_cf(total)+" €";
+    var recap=c.map(function(it){return it.name+" ("+_cf(it.total)+" €)";}).join(", ")+". Total panier : "+_cf(total)+" €. Merci de me recontacter pour finaliser.";
+    $("#cartDrawerRecall").href="/contact.html?sujet=devis&message="+encodeURIComponent(recap);
+    if(foot)foot.style.display="block";
+    $$(".ci__rm",items).forEach(function(b){ b.addEventListener("click",function(){ var c=cartGet(); c.splice(parseInt(b.getAttribute("data-i"),10),1); cartSet(c); cartRender(); }); });
+    bindClose();
+  }
+  function cartOpen(){ if(!drawer)return; cartRender(); drawer.classList.add("show"); drawer.setAttribute("aria-hidden","false"); document.body.classList.add("lock"); }
+  function cartClose(){ if(!drawer)return; drawer.classList.remove("show"); drawer.setAttribute("aria-hidden","true"); document.body.classList.remove("lock"); }
+  window.oxoOpenCart=cartOpen; window.oxoCartGet=cartGet; window.oxoCartSet=cartSet;
+  window.oxoAddToCart=function(item){ var c=cartGet(); c.push(item); cartSet(c); cartOpen(); };
+  $$("[data-cart-open]").forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); cartOpen(); }); });
+  if(drawer){ var bd=drawer.querySelector(".cart__backdrop"); if(bd)bd.addEventListener("click",cartClose); document.addEventListener("keydown",function(e){ if(e.key==="Escape") cartClose(); }); }
   cartBadges();
   $$("[data-call]").forEach(function(a){ a.addEventListener("click",function(){ (window.dataLayer=window.dataLayer||[]).push({event:"click_appeler"}); }); });
   var top=$("#totop");
