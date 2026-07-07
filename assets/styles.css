@@ -1050,3 +1050,10 @@ body.photo-hero .nav:not(.scrolled) .nav__burger span{background:var(--bone)}
 .cart__note{font-size:11.5px;color:var(--smoke);margin-bottom:16px;line-height:1.5}
 .cart__foot .btn{width:100%;margin-bottom:10px}
 .cart__foot .btn:last-child{margin-bottom:0}
+
+/* indicateur de page active dans le header */
+.nav__links a[aria-current="page"]{color:var(--gold)}
+.nav__links a[aria-current="page"]::after{width:100%;height:2px;background:var(--gold)}
+.nav__links a.nav__sell[aria-current="page"]::after{background:var(--gold)}
+body.photo-hero .nav:not(.scrolled) .nav__links a[aria-current="page"]{color:var(--gold-hi)}
+body.photo-hero .nav:not(.scrolled) .nav__links a[aria-current="page"]::after{background:var(--gold-hi)}
