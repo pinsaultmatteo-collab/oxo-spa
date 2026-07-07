@@ -210,6 +210,7 @@
               <div class="card__price"><span class="from">À partir de</span><span class="p">6 490 €</span><span class="price__mo">ou ≈ <b>131&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
+            <button type="button" class="card__add" data-add data-name="Breeze" data-price="6490">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="6490">Simuler mon financement</button>
           </div>
         </article>
@@ -229,6 +230,7 @@
               <div class="card__price"><span class="from">À partir de</span><span class="p">4 990 €</span><span class="price__mo">ou ≈ <b>106&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
+            <button type="button" class="card__add" data-add data-name="Nexus" data-price="4990">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="4990">Simuler mon financement</button>
           </div>
         </article>
@@ -248,6 +250,7 @@
               <div class="card__price"><span class="from">À partir de</span><span class="p">6 990 €</span><span class="price__mo">ou ≈ <b>141&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
+            <button type="button" class="card__add" data-add data-name="Ease" data-price="6990">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="6990">Simuler mon financement</button>
           </div>
         </article>
@@ -267,6 +270,7 @@
               <div class="card__price"><span class="from">Dès · acompte 50%</span><span class="p">16 990 €</span><span class="price__mo">ou ≈ <b>344&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
+            <button type="button" class="card__add" data-add data-name="Spa de nage 40" data-price="16990">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="16990">Simuler mon financement</button>
           </div>
         </article>
@@ -286,6 +290,7 @@
               <div class="card__price"><span class="from">Dès · acompte 50%</span><span class="p">22 990 €</span><span class="price__mo">ou ≈ <b>465&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
+            <button type="button" class="card__add" data-add data-name="Spa de nage 56" data-price="22990">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="22990">Simuler mon financement</button>
           </div>
         </article>
@@ -836,6 +841,7 @@
   window.oxoOpenCart=cartOpen;
   window.oxoAddToCart=function(item){ var c=cartGet(); c.push(item); cartSet(c); cartOpen(); };
   $$("[data-cart-open]").forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); cartOpen(); }); });
+  $$("[data-add]").forEach(function(b){ b.addEventListener("click",function(e){ e.preventDefault(); e.stopPropagation(); var pr=parseFloat(b.getAttribute("data-price")); window.oxoAddToCart({name:b.getAttribute("data-name"),base:pr,options:[],total:pr,qty:1}); var t=b.textContent; b.classList.add("added"); b.textContent="\u2713 Ajouté"; setTimeout(function(){b.classList.remove("added");b.textContent=t;},1500); }); });
   if(drawer){ var bd=drawer.querySelector(".cart__backdrop"); if(bd)bd.addEventListener("click",cartClose); document.addEventListener("keydown",function(e){ if(e.key==="Escape") cartClose(); }); }
   cartBadges();
   $$("[data-call]").forEach(function(a){a.addEventListener("click",function(){(window.dataLayer=window.dataLayer||[]).push({event:"click_appeler"});});});

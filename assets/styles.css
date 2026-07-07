@@ -1057,3 +1057,26 @@ body.photo-hero .nav:not(.scrolled) .nav__burger span{background:var(--bone)}
 .nav__links a.nav__sell[aria-current="page"]::after{background:var(--gold)}
 body.photo-hero .nav:not(.scrolled) .nav__links a[aria-current="page"]{color:var(--gold-hi)}
 body.photo-hero .nav:not(.scrolled) .nav__links a[aria-current="page"]::after{background:var(--gold-hi)}
+
+/* ============================================================
+   FIX Z-INDEX PANIER · IMAGE COLLECTION · BTN PANIER CARTE · PDP STICKY
+   ============================================================ */
+/* le tiroir panier et la modale passent AU-DESSUS du header */
+.cart{z-index:9000}
+.sim{z-index:9000}
+
+/* cartes collection (home) : image complète et plus grande */
+.card__media img{width:auto;height:auto;max-width:94%;max-height:90%;object-fit:contain}
+
+/* bouton "Ajouter au panier" sur les cartes collection */
+.card__add{position:relative;z-index:2;width:100%;margin-top:16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:"Space Mono",monospace;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:13px 16px;border:1px solid var(--gold);border-radius:2px;background:var(--gold);color:#fff;cursor:pointer;
+  transition:background .3s,box-shadow .3s}
+.card__add:hover{background:var(--gold-deep);box-shadow:0 0 30px -8px var(--gold)}
+.card__add.added{background:#16A34A;border-color:#16A34A}
+.card__add+.sim-btn--sm{margin-top:10px}
+
+/* fiche produit : galerie sticky, le texte scrolle à côté */
+.pdp__gallery{position:sticky;top:96px;align-self:start}
+@media(max-width:920px){.pdp__gallery{position:static}}
