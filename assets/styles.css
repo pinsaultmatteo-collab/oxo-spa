@@ -1085,3 +1085,67 @@ body.photo-hero .nav:not(.scrolled) .nav__links a[aria-current="page"]::after{ba
 .card{height:min(84svh,840px)}
 .card__media{padding:clamp(14px,2vw,28px)}
 .card__media img{width:auto;height:auto;max-width:88%;max-height:82%;object-fit:contain}
+
+/* ============================================================
+   RETOUCHES MOBILE
+   ============================================================ */
+/* menu burger AU-DESSUS du header -> la croix de fermeture est visible */
+.mnav{z-index:7500}
+
+/* burger sur le hero : juste 3 traits blancs, sans cadre blanc */
+body.photo-hero .nav:not(.scrolled) .nav__burger{border-color:transparent;background:transparent}
+
+/* équilibrage des titres (évite un "?" seul sur une ligne) */
+h1,h2,h3{text-wrap:balance}
+
+/* pas d'animation d'apparition au scroll sur mobile (évite le saccadement) */
+@media(max-width:820px){
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
+
+/* bloc confiance : 2 colonnes de 3 stats + pastilles centrées */
+@media(max-width:640px){
+  .garanties__grid{grid-template-columns:1fr 1fr}
+  .reassure{justify-content:center}
+}
+
+/* avis clients : contenu centré */
+@media(max-width:820px){
+  .avis__head{justify-content:center;text-align:center}
+  .avis__score{text-align:center;width:100%}
+  .avis__card{text-align:center;align-items:center}
+}
+
+/* showroom (bloc contact home) : texte centré */
+@media(max-width:820px){
+  .contact__copy{text-align:center}
+  .contact__copy p{margin-left:auto;margin-right:auto}
+  .contact__rows{max-width:420px;margin-left:auto;margin-right:auto}
+  .crow{justify-content:center}
+}
+
+/* catalogue Nos Spas : 2 produits par ligne */
+@media(max-width:640px){
+  main.center .cat-grid,.cat-grid{grid-template-columns:1fr 1fr!important;gap:12px}
+  .cat-card__name{font-size:18px}
+  .cat-card__body{padding:14px 14px 16px;gap:7px}
+  .cat-card__price,.cat-card__price .amt{font-size:18px}
+  .cat-card__spec{font-size:11px}
+  .sim-btn--sm{font-size:10px;padding:7px 8px}
+  .fin-badge small,.price__mo{font-size:12px}
+}
+
+/* collection (home) : carrousel horizontal sur mobile (swipe sans ouvrir la fiche) */
+@media(max-width:820px){
+  .pin.no-pin .pin__track{flex-direction:row;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;gap:14px;padding-bottom:16px;scroll-padding-left:var(--pad)}
+  .pin.no-pin .card{width:min(84vw,340px);min-height:0;height:auto;flex:none;scroll-snap-align:center}
+  .pin.no-pin .card__media{min-height:230px;padding:14px}
+}
+
+/* logo : "Toulouse" sous "OXO Spa" */
+.nav__brand-t{display:flex;flex-direction:column;line-height:1.02;gap:1px}
+.nav__brand-t .tag{margin-top:1px}
+
+/* page contact : formulaire en premier, infos ensuite */
+.contactp .form{order:-1}
