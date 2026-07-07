@@ -1080,3 +1080,8 @@ body.photo-hero .nav:not(.scrolled) .nav__links a[aria-current="page"]::after{ba
 /* fiche produit : galerie sticky, le texte scrolle à côté */
 .pdp__gallery{position:sticky;top:96px;align-self:start}
 @media(max-width:920px){.pdp__gallery{position:static}}
+
+/* collection (home) : cartes plus hautes + marge autour des photos -> spas jamais coupés */
+.card{height:min(84svh,840px)}
+.card__media{padding:clamp(14px,2vw,28px)}
+.card__media img{width:auto;height:auto;max-width:88%;max-height:82%;object-fit:contain}
