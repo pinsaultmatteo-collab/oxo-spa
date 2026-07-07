@@ -1149,3 +1149,24 @@ h1,h2,h3{text-wrap:balance}
 
 /* page contact : formulaire en premier, infos ensuite */
 .contactp .form{order:-1}
+
+/* ---- retouches mobile (suite) ---- */
+/* bloc showroom : boutons centrés sur mobile */
+@media(max-width:820px){
+  .contact__ctas{justify-content:center}
+}
+/* menu burger : liens plus petits pour tenir sur une ligne */
+@media(max-width:560px){
+  .mnav a{font-size:clamp(18px,5.2vw,32px)}
+  .mnav a .n{margin-right:12px;font-size:11px}
+}
+/* catalogue Nos Spas : 1 produit par ligne (annule le 2 colonnes) */
+@media(max-width:640px){
+  main.center .cat-grid,.cat-grid{grid-template-columns:1fr!important;gap:20px}
+  .cat-card__name{font-size:22px}
+  .cat-card__body{padding:20px 20px 22px;gap:9px}
+  .cat-card__price,.cat-card__price .amt{font-size:22px}
+  .cat-card__spec{font-size:12px}
+  .sim-btn--sm{font-size:11px;padding:8px 12px}
+  .price__mo{font-size:14px}
+}
