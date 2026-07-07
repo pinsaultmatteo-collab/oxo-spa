@@ -872,3 +872,80 @@ main.center .cat-grid{grid-template-columns:repeat(auto-fit,minmax(250px,330px))
 .pdp__colors{display:flex;align-items:center;gap:14px;margin:2px 0 22px}
 .pdp__colors .clabel{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
 .pdp__colors .cdot{width:26px;height:26px}
+
+/* ============================================================
+   HEADER ACTIONS · BOUTONS · OPTIONS · AVIS · FORMULAIRE · PANIER
+   ============================================================ */
+/* header : devis + icône tel + panier */
+.nav__actions{display:flex;align-items:center;gap:10px}
+.nav__icon{position:relative;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--ink);transition:border-color .3s,color .3s,background .3s}
+.nav__icon svg{width:18px;height:18px}
+.nav__icon:hover{border-color:var(--gold);color:var(--gold)}
+.nav.scrolled .nav__icon{border-color:rgba(245,246,248,.28);color:var(--bone)}
+.nav.scrolled .nav__icon:hover{border-color:var(--gold-hi);color:var(--gold-hi)}
+.nav__badge{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 4px;display:none;place-items:center;background:var(--gold);color:#fff;font-family:"Archivo";font-weight:800;font-size:10.5px;border-radius:40px;line-height:1}
+.tel-link{color:inherit;border-bottom:1px solid var(--gold);transition:color .3s}
+.tel-link:hover{color:var(--gold-hi)}
+@media(max-width:900px){.nav__actions .nav__cta{display:none}}
+
+/* boutons ghost visibles sur fond sombre */
+.cta-band .btn--ghost,.pdp__band .btn--ghost,.block.dark .btn--ghost{color:var(--bone);border-color:rgba(245,246,248,.5)}
+.cta-band .btn--ghost:hover,.pdp__band .btn--ghost:hover,.block.dark .btn--ghost:hover{color:var(--dark);background:var(--gold-hi);border-color:var(--gold-hi)}
+.btn--dark{border-color:var(--ink);color:var(--ink)}
+.btn--dark:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+
+/* titre livraison (home + blocs réutilisés) */
+.livz .shell>h2,.livz__h{font-family:"Archivo";font-weight:900;font-stretch:116%;font-size:clamp(28px,4vw,54px);text-transform:uppercase;letter-spacing:-.02em;line-height:1.02;margin-top:12px}
+.livz .shell>h2 em,.livz__h em{font-style:normal;color:var(--gold)}
+
+/* catalogue : photos non coupées */
+.cat-card__media{aspect-ratio:1/1;background:var(--paper-2)}
+.cat-card__media img{object-fit:contain;padding:16px}
+
+/* fiche produit : options sélectionnables */
+.pdp__options{margin:6px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0}
+.pdp__options .opt-label{display:block;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke);margin-bottom:12px}
+.opt{display:flex;align-items:center;gap:12px;padding:9px 0;cursor:pointer;font-size:15px}
+.opt input{width:18px;height:18px;accent-color:var(--gold);flex:none;cursor:pointer}
+.opt__n{flex:1;color:var(--ink)}
+.opt__p{font-family:"Archivo";font-weight:800;color:var(--gold-deep);white-space:nowrap}
+
+/* avis clients (blocs produit/catalogue) */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.review{border:1px solid var(--line);border-radius:10px;background:var(--paper-2);padding:22px 22px 20px}
+.review__stars{color:var(--gold);letter-spacing:2px;font-size:15px;margin-bottom:10px}
+.review p{color:var(--ink-2);line-height:1.6;font-size:14.5px;margin-bottom:14px}
+.review__who{display:flex;flex-direction:column;gap:1px}
+.review__who b{font-family:"Archivo";font-weight:800;color:var(--ink)}
+.review__who span{font-family:"Space Mono",monospace;font-size:11px;color:var(--smoke)}
+
+/* portrait (Laurent) */
+.split__media.portrait img{aspect-ratio:4/5;object-fit:cover;object-position:center 12%}
+
+/* formulaire enrichi */
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form__row>div{min-width:0}
+.form select{width:100%;border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:13px 14px;font:inherit;color:var(--ink);cursor:pointer;transition:border-color .3s}
+.form select:focus{outline:none;border-color:var(--gold)}
+.form__check{display:flex;align-items:flex-start;gap:10px;margin-top:16px;cursor:pointer;font-family:inherit!important;font-size:13.5px!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink-2)!important}
+.form__check input{width:18px;height:18px;accent-color:var(--gold);flex:none;margin-top:1px}
+@media(max-width:560px){.form__row{grid-template-columns:1fr}}
+
+/* page panier */
+.cartwrap{max-width:760px;margin:0 auto}
+.cart-items{display:flex;flex-direction:column}
+.ci{display:flex;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ci__name{flex:1}
+.ci__name b{font-family:"Archivo";font-weight:800;font-size:18px;color:var(--ink)}
+.ci__opts{font-family:"Space Mono",monospace;font-size:12px;color:var(--smoke);margin-top:6px;line-height:1.6}
+.ci__price{font-family:"Archivo";font-weight:900;font-size:20px;color:var(--ink)}
+.ci__rm{width:34px;height:34px;border:1px solid var(--line);background:none;border-radius:50%;cursor:pointer;font-size:20px;color:var(--smoke);line-height:1;transition:border-color .3s,color .3s}
+.ci__rm:hover{border-color:#c0392b;color:#c0392b}
+.cart-empty{text-align:center;color:var(--ink-2);padding:40px 0;line-height:1.8}
+.cart-empty a{color:var(--gold);font-weight:600}
+.cart-foot{margin-top:26px}
+.cart-total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-top:2px solid var(--ink)}
+.cart-total span{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke)}
+.cart-total b{font-family:"Archivo";font-weight:900;font-size:30px;color:var(--ink)}
+.cart-note{font-size:12px;color:var(--smoke);margin:6px 0 20px}
+.cart-cta{display:flex;gap:12px;flex-wrap:wrap}
