@@ -726,6 +726,8 @@ a.card{text-decoration:none;color:inherit;cursor:pointer}
 .cinfo .row .k{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:4px}
 .cinfo .row .v{color:var(--ink);font-weight:600;line-height:1.5}
 .cinfo .row .v a{color:var(--ink);border-bottom:1px solid var(--gold)}
+.cinfo .row .v a.btn--call{color:#0B1E33;border-bottom:0;padding:9px 18px;font-size:12.5px;margin-top:6px;gap:8px}
+.cinfo .row .v a.btn--call svg{width:15px;height:15px;stroke:#0B1E33;margin-top:0}
 .form{border:1px solid var(--line);border-radius:10px;background:var(--paper-2);padding:clamp(24px,3vw,34px)}
 .form h2{font-family:"Archivo";font-weight:900;font-size:clamp(20px,2.4vw,28px);text-transform:uppercase;margin-bottom:8px}
 .form p.sub{color:var(--ink-2);font-size:14px;margin-bottom:22px}
@@ -970,6 +972,7 @@ body.photo-hero .nav:not(.scrolled) .nav__burger span{background:var(--bone)}
 /* story sticky (page Qui sommes-nous) */
 .story{max-width:1500px;margin:0 auto;padding:clamp(36px,5vh,64px) var(--pad)}
 .story__inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,70px);align-items:start}
+.story__inner--solo{grid-template-columns:1fr;max-width:820px;margin:0 auto}
 .story__media{position:sticky;top:100px}
 .story__media img{width:100%;display:block;border-radius:12px;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;box-shadow:0 44px 84px -44px rgba(14,26,43,.5)}
 .story__text{padding-top:6px}
@@ -1020,11 +1023,11 @@ body.photo-hero .nav:not(.scrolled) .nav__burger span{background:var(--bone)}
 
 /* blog : titres réduits + 3 par ligne, 4e en pleine largeur */
 .blog-grid{grid-template-columns:repeat(3,1fr)}
-.post-card__title{font-size:clamp(16px,1.5vw,19px);line-height:1.2}
+.blog-grid .post-card__title{font-size:clamp(14px,1.2vw,16.5px);line-height:1.22}
 .post-card--wide{grid-column:1/-1;flex-direction:row}
 .post-card--wide .post-card__media{aspect-ratio:auto;width:42%;min-height:250px}
 .post-card--wide .post-card__body{justify-content:center;padding:clamp(24px,3vw,40px)}
-.post-card--wide .post-card__title{font-size:clamp(20px,2.2vw,28px)}
+.post-card--wide .post-card__title{font-size:clamp(17px,1.8vw,22px)}
 .post-card--wide .post-card__ex{max-width:62ch}
 @media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.post-card--wide{flex-direction:column}.post-card--wide .post-card__media{width:100%;min-height:0;aspect-ratio:16/10}}
