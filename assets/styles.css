@@ -972,7 +972,15 @@ body.photo-hero .nav:not(.scrolled) .nav__burger span{background:var(--bone)}
 /* story sticky (page Qui sommes-nous) */
 .story{max-width:1500px;margin:0 auto;padding:clamp(36px,5vh,64px) var(--pad)}
 .story__inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,70px);align-items:start}
-.story__inner--solo{grid-template-columns:1fr;max-width:820px;margin:0 auto}
+.story__inner--solo{grid-template-columns:.72fr 1.28fr;max-width:1200px;margin:0 auto;gap:clamp(30px,5vw,80px)}
+.story__head{position:sticky;top:104px}
+.story__head .eyebrow{color:var(--gold)}
+.story__head h2{font-family:"Archivo";font-weight:900;font-stretch:114%;font-size:clamp(28px,3.6vw,50px);text-transform:uppercase;letter-spacing:-.02em;margin:12px 0 0;line-height:1.02}
+.story__head h2 em{font-style:normal;color:var(--gold)}
+.story__body{padding-top:6px}
+.story__body p{margin-bottom:22px}
+.story__lead{font-size:clamp(18px,1.9vw,22px)!important;line-height:1.65!important;color:var(--ink)!important;font-weight:500;max-width:none!important;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px!important}
+@media(max-width:860px){.story__inner--solo{grid-template-columns:1fr;gap:22px}.story__head{position:static}}
 .story__media{position:sticky;top:100px}
 .story__media img{width:100%;display:block;border-radius:12px;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;box-shadow:0 44px 84px -44px rgba(14,26,43,.5)}
 .story__text{padding-top:6px}
