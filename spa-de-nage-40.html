@@ -77,7 +77,7 @@
     <div class="pdp__main"><span class="pdp__pic-badge order"><span class="d"></span>Sur commande</span><img id="pdpMain" src="/assets/images/produit-spa-nage.webp" alt="Spa de nage"></div>
     <div class="pdp__thumbs"><button class="active" data-full="/assets/images/produit-spa-nage.webp" aria-label="Vue 1"><img src="/assets/images/produit-spa-nage.webp" alt="Spa de nage — vue 1" loading="lazy" decoding="async"></button><button class="" data-full="/assets/images/spa-exterieur.webp" aria-label="Vue 2"><img src="/assets/images/spa-exterieur.webp" alt="Spa de nage — vue 2" loading="lazy" decoding="async"></button><button class="" data-full="/assets/images/detail-buses.webp" aria-label="Vue 3"><img src="/assets/images/detail-buses.webp" alt="Spa de nage — vue 3" loading="lazy" decoding="async"></button><button class="" data-full="/assets/images/spa-led-nuit.webp" aria-label="Vue 4"><img src="/assets/images/spa-led-nuit.webp" alt="Spa de nage — vue 4" loading="lazy" decoding="async"></button></div>
   </div>
-  <div class="pdp__info reveal" data-pdp-base="7500" data-pdp-name="Spa de nage">
+  <div class="pdp__info reveal" data-pdp-id="spa-de-nage" data-pdp-base="7500" data-pdp-name="Spa de nage">
     <span class="eyebrow">Sur commande · ~3 mois</span>
     <h1>Spa de nage</h1>
     <p class="pdp__sub">Nage à contre-courant · 5,80 m</p><div class="pdp__colors"><span class="clabel">Coloris</span><div class="color-dots" data-target="#pdpMain"><button class="cdot active" data-img="/assets/images/produit-spa-nage.webp" style="--c:#e9e9ec" aria-label="Blanc" title="Blanc"></button><button class="cdot" data-img="/assets/images/produit-spa-nage.webp" style="--c:#2a2b2e" aria-label="Noir" title="Noir"></button></div></div>
@@ -85,7 +85,7 @@
     <div class="pdp__price"><span class="from">Prix</span><span class="p" id="pdpPrice">7 500 €</span><span class="tax">TTC</span><span class="price__mo" id="pdpMonthly">ou ≈ <b>152&nbsp;€</b>/mois</span></div>
     <p class="pdp__finance">Financement <b>jusqu'à 120 mois</b> avec Sofinco · sous réserve d'acceptation</p>
     <div class="pdp__fin"><button type="button" class="sim-btn" data-sim="7500">Simuler mon financement</button></div>
-    <div class="pdp__options"><span class="opt-label">Options &amp; accessoires</span><label class="opt"><input type="checkbox" data-opt data-price="1290" data-name="Couverture hydraulique"><span class="opt__n">Couverture hydraulique</span><b class="opt__p">+1 290&nbsp;€</b></label><label class="opt"><input type="checkbox" data-opt data-price="290" data-name="Marches assorties"><span class="opt__n">Marches assorties</span><b class="opt__p">+290&nbsp;€</b></label><label class="opt"><input type="checkbox" data-opt data-price="490" data-name="Lève-couverture"><span class="opt__n">Lève-couverture</span><b class="opt__p">+490&nbsp;€</b></label></div>
+    <div class="pdp__options"><span class="opt-label">Options &amp; accessoires</span><label class="opt"><input type="checkbox" data-opt data-opt-id="couverture-hydraulique" data-price="1290" data-name="Couverture hydraulique"><span class="opt__n">Couverture hydraulique</span><b class="opt__p">+1 290&nbsp;€</b></label><label class="opt"><input type="checkbox" data-opt data-opt-id="marches-assorties" data-price="290" data-name="Marches assorties"><span class="opt__n">Marches assorties</span><b class="opt__p">+290&nbsp;€</b></label><label class="opt"><input type="checkbox" data-opt data-opt-id="leve-couverture" data-price="490" data-name="Lève-couverture"><span class="opt__n">Lève-couverture</span><b class="opt__p">+490&nbsp;€</b></label></div>
     <div class="pdp__chips"><span>37 buses</span><span>580 × 220 × 140 cm</span><span>Contre-courant</span></div>
     <div class="pdp__cta"><button type="button" class="btn btn--gold" id="pdpAddCart">Ajouter au panier</button><a class="btn btn--ghost btn--dark" id="pdpRecall" href="/contact.html?sujet=produit">Être rappelé</a></div>
     <div class="pdp__facts">
@@ -227,7 +227,7 @@
       if(recall) recall.href="/contact.html?sujet=produit&message="+encodeURIComponent(recap);
     }
     opts.forEach(function(o){o.addEventListener("change",refresh);});
-    if(addBtn) addBtn.addEventListener("click",function(){ window.oxoAddToCart({name:pname,base:base,options:chosen(),total:total(),qty:1}); var old=addBtn.textContent; addBtn.textContent="✓ Ajouté au panier"; setTimeout(function(){addBtn.textContent=old;},1600); });
+    if(addBtn) addBtn.addEventListener("click",function(){ window.oxoAddToCart({id:pdp.getAttribute("data-pdp-id"),qty:1,options:opts.filter(function(o){return o.checked;}).map(function(o){return o.getAttribute("data-opt-id");})}); var old=addBtn.textContent; addBtn.textContent="✓ Ajouté au panier"; setTimeout(function(){addBtn.textContent=old;},1600); });
     refresh();
   }
 
@@ -252,36 +252,7 @@
     document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
     calc();
   })();
-  // panier (localStorage) + tiroir latéral + tracking appels
-  function cartGet(){ try{return JSON.parse(localStorage.getItem("oxo_cart")||"[]");}catch(e){return [];} }
-  function cartBadges(){ var c=cartGet().reduce(function(n,i){return n+(i.qty||1);},0); $$("[data-cart-count]").forEach(function(b){ b.textContent=c; b.style.display=c>0?"grid":"none"; }); }
-  function cartSet(c){ localStorage.setItem("oxo_cart",JSON.stringify(c)); cartBadges(); }
-  var _cf=function(n){return Math.round(n).toLocaleString("fr-FR");};
-  var drawer=$("#cartDrawer");
-  function bindClose(){ if(!drawer)return; $$("[data-cart-close]",drawer).forEach(function(x){ if(!x._b){x._b=1; x.addEventListener("click",function(e){e.preventDefault();cartClose();});} }); }
-  function cartRender(){
-    if(!drawer)return;
-    var items=$("#cartDrawerItems"), foot=$("#cartDrawerFoot"), c=cartGet();
-    if(!c.length){ items.innerHTML='<p class="cart-empty">Votre panier est vide.<br><a href="/spas.html" data-cart-close>Découvrir nos spas &rarr;</a></p>'; if(foot)foot.style.display="none"; bindClose(); return; }
-    var total=0, html="";
-    c.forEach(function(it,i){ total+=it.total;
-      var opts=(it.options&&it.options.length)?('<div class="ci__opts">'+it.options.map(function(o){return "+ "+o.name+" ("+_cf(o.price)+" €)";}).join("<br>")+'</div>'):'';
-      html+='<div class="ci"><div class="ci__name"><b>'+it.name+'</b>'+opts+'</div><div class="ci__price">'+_cf(it.total)+' €</div><button class="ci__rm" data-i="'+i+'" aria-label="Retirer">&times;</button></div>';
-    });
-    items.innerHTML=html; $("#cartDrawerTotal").textContent=_cf(total)+" €";
-    var recap=c.map(function(it){return it.name+" ("+_cf(it.total)+" €)";}).join(", ")+". Total panier : "+_cf(total)+" €. Merci de me recontacter pour finaliser.";
-    $("#cartDrawerRecall").href="/contact.html?sujet=devis&message="+encodeURIComponent(recap);
-    if(foot)foot.style.display="block";
-    $$(".ci__rm",items).forEach(function(b){ b.addEventListener("click",function(){ var c=cartGet(); c.splice(parseInt(b.getAttribute("data-i"),10),1); cartSet(c); cartRender(); }); });
-    bindClose();
-  }
-  function cartOpen(){ if(!drawer)return; cartRender(); drawer.classList.add("show"); drawer.setAttribute("aria-hidden","false"); document.body.classList.add("lock"); }
-  function cartClose(){ if(!drawer)return; drawer.classList.remove("show"); drawer.setAttribute("aria-hidden","true"); document.body.classList.remove("lock"); }
-  window.oxoOpenCart=cartOpen; window.oxoCartGet=cartGet; window.oxoCartSet=cartSet;
-  window.oxoAddToCart=function(item){ var c=cartGet(); c.push(item); cartSet(c); cartOpen(); };
-  $$("[data-cart-open]").forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); cartOpen(); }); });
-  if(drawer){ var bd=drawer.querySelector(".cart__backdrop"); if(bd)bd.addEventListener("click",cartClose); document.addEventListener("keydown",function(e){ if(e.key==="Escape") cartClose(); }); }
-  cartBadges();
+
   $$("[data-call]").forEach(function(a){ a.addEventListener("click",function(){ (window.dataLayer=window.dataLayer||[]).push({event:"click_appeler"}); }); });
   var top=$("#totop");
   if(top){ window.addEventListener("scroll",function(){ top.classList.toggle("show", window.scrollY>600); },{passive:true});
@@ -303,5 +274,6 @@
   }
 })();
 </script>
+<script src="/assets/cart.js" defer></script>
 </body>
 </html>

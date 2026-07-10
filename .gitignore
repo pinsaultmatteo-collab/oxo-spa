@@ -1,1 +1,10 @@
 .DS_Store
+
+# Secrets — ne jamais committer (Stripe, Axonaut, emails)
+.env
+.env.*
+!.env.example
+
+# Dependances / build Vercel (phase 2)
+node_modules/
+.vercel/

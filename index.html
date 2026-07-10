@@ -213,7 +213,7 @@
               <div class="card__price"><span class="from">À partir de</span><span class="p">4 695 €</span><span class="price__mo">ou ≈ <b>100&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
-            <button type="button" class="card__add" data-add data-name="Nexus" data-price="4695">Ajouter au panier</button>
+            <button type="button" class="card__add" data-add data-id="nexus">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="4695">Simuler mon financement</button>
           </div>
         </article>
@@ -233,7 +233,7 @@
               <div class="card__price"><span class="from">À partir de</span><span class="p">5 743 €</span><span class="price__mo">ou ≈ <b>122&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
-            <button type="button" class="card__add" data-add data-name="Breeze" data-price="5743">Ajouter au panier</button>
+            <button type="button" class="card__add" data-add data-id="breeze">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="5743">Simuler mon financement</button>
           </div>
         </article>
@@ -253,7 +253,7 @@
               <div class="card__price"><span class="from">À partir de</span><span class="p">5 753 €</span><span class="price__mo">ou ≈ <b>122&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
-            <button type="button" class="card__add" data-add data-name="Ease" data-price="5753">Ajouter au panier</button>
+            <button type="button" class="card__add" data-add data-id="ease">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="5753">Simuler mon financement</button>
           </div>
         </article>
@@ -273,7 +273,7 @@
               <div class="card__price"><span class="from">Dès · acompte 50%</span><span class="p">7 500 €</span><span class="price__mo">ou ≈ <b>152&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
-            <button type="button" class="card__add" data-add data-name="Spa de nage" data-price="7500">Ajouter au panier</button>
+            <button type="button" class="card__add" data-add data-id="spa-de-nage">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="7500">Simuler mon financement</button>
           </div>
         </article>
@@ -293,7 +293,7 @@
               <div class="card__price"><span class="from">Dès · acompte 50%</span><span class="p">9 500 €</span><span class="price__mo">ou ≈ <b>192&nbsp;€</b>/mois</span></div>
               <span class="card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
             </div>
-            <button type="button" class="card__add" data-add data-name="Spa convivial" data-price="9500">Ajouter au panier</button>
+            <button type="button" class="card__add" data-add data-id="spa-convivial">Ajouter au panier</button>
             <button type="button" class="sim-btn sim-btn--sm" data-sim="9500">Simuler mon financement</button>
           </div>
         </article>
@@ -816,37 +816,7 @@
   $$("[data-sim-close]",modal).forEach(function(x){ x.addEventListener("click",close); });
   document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
   calc();
-  // panier tiroir + tracking appels
-  function cartGet(){ try{return JSON.parse(localStorage.getItem("oxo_cart")||"[]");}catch(e){return [];} }
-  function cartBadges(){ var c=cartGet().reduce(function(n,i){return n+(i.qty||1);},0); $$("[data-cart-count]").forEach(function(b){ b.textContent=c; b.style.display=c>0?"grid":"none"; }); }
-  function cartSet(c){ localStorage.setItem("oxo_cart",JSON.stringify(c)); cartBadges(); }
-  var _cf=function(n){return Math.round(n).toLocaleString("fr-FR");};
-  var drawer=$("#cartDrawer");
-  function bindClose(){ if(!drawer)return; $$("[data-cart-close]",drawer).forEach(function(x){ if(!x._b){x._b=1; x.addEventListener("click",function(e){e.preventDefault();cartClose();});} }); }
-  function cartRender(){
-    if(!drawer)return;
-    var items=$("#cartDrawerItems"), foot=$("#cartDrawerFoot"), c=cartGet();
-    if(!c.length){ items.innerHTML='<p class="cart-empty">Votre panier est vide.<br><a href="/spas.html" data-cart-close>Découvrir nos spas &rarr;</a></p>'; if(foot)foot.style.display="none"; bindClose(); return; }
-    var total=0, html="";
-    c.forEach(function(it,i){ total+=it.total;
-      var opts=(it.options&&it.options.length)?('<div class="ci__opts">'+it.options.map(function(o){return "+ "+o.name+" ("+_cf(o.price)+" €)";}).join("<br>")+'</div>'):'';
-      html+='<div class="ci"><div class="ci__name"><b>'+it.name+'</b>'+opts+'</div><div class="ci__price">'+_cf(it.total)+' €</div><button class="ci__rm" data-i="'+i+'" aria-label="Retirer">&times;</button></div>';
-    });
-    items.innerHTML=html; $("#cartDrawerTotal").textContent=_cf(total)+" €";
-    var recap=c.map(function(it){return it.name+" ("+_cf(it.total)+" €)";}).join(", ")+". Total panier : "+_cf(total)+" €. Merci de me recontacter pour finaliser.";
-    $("#cartDrawerRecall").href="/contact.html?sujet=devis&message="+encodeURIComponent(recap);
-    if(foot)foot.style.display="block";
-    $$(".ci__rm",items).forEach(function(b){ b.addEventListener("click",function(){ var c=cartGet(); c.splice(parseInt(b.getAttribute("data-i"),10),1); cartSet(c); cartRender(); }); });
-    bindClose();
-  }
-  function cartOpen(){ if(!drawer)return; cartRender(); drawer.classList.add("show"); drawer.setAttribute("aria-hidden","false"); document.body.classList.add("lock"); }
-  function cartClose(){ if(!drawer)return; drawer.classList.remove("show"); drawer.setAttribute("aria-hidden","true"); document.body.classList.remove("lock"); }
-  window.oxoOpenCart=cartOpen;
-  window.oxoAddToCart=function(item){ var c=cartGet(); c.push(item); cartSet(c); cartOpen(); };
-  $$("[data-cart-open]").forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); cartOpen(); }); });
-  $$("[data-add]").forEach(function(b){ b.addEventListener("click",function(e){ e.preventDefault(); e.stopPropagation(); var pr=parseFloat(b.getAttribute("data-price")); window.oxoAddToCart({name:b.getAttribute("data-name"),base:pr,options:[],total:pr,qty:1}); var t=b.textContent; b.classList.add("added"); b.textContent="\u2713 Ajouté"; setTimeout(function(){b.classList.remove("added");b.textContent=t;},1500); }); });
-  if(drawer){ var bd=drawer.querySelector(".cart__backdrop"); if(bd)bd.addEventListener("click",cartClose); document.addEventListener("keydown",function(e){ if(e.key==="Escape") cartClose(); }); }
-  cartBadges();
+
   $$("[data-call]").forEach(function(a){a.addEventListener("click",function(){(window.dataLayer=window.dataLayer||[]).push({event:"click_appeler"});});});
   // pastilles de couleur
   $$(".color-dots").forEach(function(g){
@@ -859,5 +829,6 @@
   });
 })();
 </script>
+<script src="/assets/cart.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+{
+  "_comment": "Source unique de verite des prix. Le serveur de paiement recalculera TOUJOURS les montants a partir de ce fichier. Ne jamais faire confiance a un prix envoye par le navigateur.",
+  "currency": "EUR",
+  "vatRate": 0.2,
+  "financing": {
+    "months": 60,
+    "threshold": 6000,
+    "taegBelowThreshold": 9.9,
+    "taegFromThreshold": 7.9
+  },
+  "products": [
+    {
+      "id": "nexus",
+      "name": "Nexus",
+      "price": 4695,
+      "availability": "stock",
+      "depositRate": 1,
+      "url": "/nexus.html",
+      "image": "/assets/images/nexus-blanc.webp"
+    },
+    {
+      "id": "breeze",
+      "name": "Breeze",
+      "price": 5743,
+      "availability": "stock",
+      "depositRate": 1,
+      "url": "/breeze.html",
+      "image": "/assets/images/breeze-blanc.webp"
+    },
+    {
+      "id": "ease",
+      "name": "Ease",
+      "price": 5753,
+      "availability": "stock",
+      "depositRate": 1,
+      "url": "/ease.html",
+      "image": "/assets/images/produit-ease.webp"
+    },
+    {
+      "id": "spa-de-nage",
+      "name": "Spa de nage",
+      "price": 7500,
+      "availability": "order",
+      "depositRate": 0.5,
+      "url": "/spa-de-nage-40.html",
+      "image": "/assets/images/produit-spa-nage.webp"
+    },
+    {
+      "id": "spa-convivial",
+      "name": "Spa convivial",
+      "price": 9500,
+      "availability": "order",
+      "depositRate": 0.5,
+      "url": "/spa-de-nage-56.html",
+      "image": "/assets/images/produit-spa-convivial.webp"
+    }
+  ],
+  "options": [
+    { "id": "couverture-hydraulique", "name": "Couverture hydraulique", "price": 1290 },
+    { "id": "marches-assorties", "name": "Marches assorties", "price": 290 },
+    { "id": "leve-couverture", "name": "Lève-couverture", "price": 490 }
+  ]
+}
