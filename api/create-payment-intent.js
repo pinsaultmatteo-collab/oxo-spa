@@ -7,6 +7,7 @@
 import Stripe from "stripe";
 import { computeOrder, describeOrder, OrderError } from "./_lib/pricing.js";
 import { validateCustomer } from "./_lib/customer.js";
+import { buildMetadata } from "./_lib/metadata.js";
 
 let _stripe = null;
 function getStripe() {
@@ -56,18 +57,7 @@ export async function handle(req, res, { stripe, publishableKey }) {
       automatic_payment_methods: { enabled: true },
       receipt_email: customer.email,
       description: `OXO Spa — ${describeOrder(order)}`,
-      metadata: {
-        // le webhook rejouera la commande a partir de ces identifiants
-        cart: JSON.stringify(body.items.map((i) => ({ id: i.id, qty: i.qty, options: i.options ?? [] }))).slice(0, 500),
-        customer_name: `${customer.firstName} ${customer.lastName}`,
-        customer_email: customer.email,
-        customer_phone: customer.phone,
-        customer_address: `${customer.address}, ${customer.postalCode} ${customer.city}`,
-        subtotal_eur: String(order.subtotal),
-        due_now_eur: String(order.dueNow),
-        balance_eur: String(order.balance),
-        has_deposit: String(order.hasDeposit),
-      },
+      metadata: buildMetadata(order, customer),
     });
   } catch (err) {
     console.error("[stripe] echec creation PaymentIntent:", err?.message);
