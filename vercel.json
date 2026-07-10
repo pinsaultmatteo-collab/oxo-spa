@@ -2,6 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "buildCommand": null,
+  "//": "cleanUrls explicitement desactive : Stripe revient sur /confirmation.html?payment_intent_client_secret=... et une redirection perdrait la query string.",
+  "cleanUrls": false,
+  "trailingSlash": false,
   "functions": {
     "api/*.js": {
       "includeFiles": "assets/products.json"
