@@ -1,0 +1,13 @@
+{
+  "name": "oxo-spa",
+  "private": true,
+  "type": "module",
+  "description": "Site OXO Spa — site statique + fonctions serverless Vercel (tunnel de paiement).",
+  "scripts": {
+    "test": "node --test api/_lib/*.test.js",
+    "check:prices": "python3 tools/check-prices.py"
+  },
+  "dependencies": {
+    "stripe": "^18.5.0"
+  }
+}
