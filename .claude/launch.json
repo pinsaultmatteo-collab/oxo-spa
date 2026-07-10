@@ -6,6 +6,16 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["-y", "serve", "-l", "4321", "."],
       "port": 4321
+    },
+    {
+      "name": "oxo-spa-proxy",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["tools/dev-proxy.mjs"],
+      "port": 4321,
+      "env": {
+        "PORT": "4321",
+        "UPSTREAM": "https://oxo-spa-git-feature-tunn-464584-pinsaultmatteo-collabs-projects.vercel.app"
+      }
     }
   ]
 }
