@@ -1,6 +1,8 @@
 /* Page de confirmation.
  *
  * Stripe redirige ici avec ?payment_intent_client_secret=...
+ * D'ou cleanUrls:false dans vercel.json : une redirection /confirmation.html -> /confirmation
+ * ferait perdre cette query string, et la page ne saurait plus quel paiement verifier.
  * On interroge Stripe pour connaitre l'etat reel du paiement plutot que de croire
  * le parametre redirect_status, qui est modifiable dans la barre d'adresse.
  *
