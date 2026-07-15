@@ -14,6 +14,7 @@ import Stripe from "stripe";
 import { computeOrder } from "./_lib/pricing.js";
 import { parseCart, parseCustomer } from "./_lib/metadata.js";
 import { recordOrder, isEnabled } from "./_lib/axonaut.js";
+import { sendOrderEmails, isEmailEnabled } from "./_lib/email.js";
 
 // Vercel parse le corps par defaut ; la signature Stripe exige les octets bruts.
 export const config = { api: { bodyParser: false } };
@@ -31,7 +32,7 @@ export async function readRawBody(req) {
 }
 
 /** Extrait testable : toutes les dependances sont injectees. */
-export async function handle(req, res, { stripe, webhookSecret, rawBody, recordOrderFn = recordOrder }) {
+export async function handle(req, res, { stripe, webhookSecret, rawBody, recordOrderFn = recordOrder, sendEmailsFn = sendOrderEmails }) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Méthode non autorisée." });
@@ -77,32 +78,51 @@ export async function handle(req, res, { stripe, webhookSecret, rawBody, recordO
     return res.status(200).json({ received: true, error: "amount_mismatch" });
   }
 
+  const emailParams = {
+    order,
+    customer,
+    reference: pi.id,
+    amountPaid: pi.amount_received / 100,
+    date: new Date(pi.created * 1000).toISOString(),
+  };
+
+  let result;
   try {
-    const result = await recordOrderFn({
-      order,
-      customer,
-      reference: pi.id,
-      amountPaid: pi.amount_received / 100,
-      date: new Date(pi.created * 1000).toISOString(),
-    });
-
-    if (result.dryRun) {
-      console.log(`[webhook] ${pi.id} : Axonaut desactive, rien n'a ete ecrit.`);
-      return res.status(200).json({ received: true, dryRun: true });
-    }
-
-    // Marque le paiement comme traite : la prochaine relecture sera ignoree.
-    await stripe.paymentIntents.update(pi.id, {
-      metadata: { ...pi.metadata, order_recorded: "true", axonaut_invoice_id: String(result.invoiceId) },
-    });
-
-    console.log(`[webhook] ${pi.id} -> facture Axonaut ${result.invoiceId}`);
-    return res.status(200).json({ received: true, invoiceId: result.invoiceId });
+    result = await recordOrderFn(emailParams);
   } catch (err) {
-    // 500 => Stripe reessaiera. L'idempotence protege contre le doublon.
+    // 500 => Stripe reessaiera. L'idempotence protege contre le doublon Axonaut.
     console.error(`[webhook] ${pi.id} echec d'enregistrement :`, err.message);
     return res.status(500).json({ error: "recording_failed" });
   }
+
+  // Marquage AVANT les emails : un rejeu ne doit jamais recreer la facture Axonaut.
+  // En mode journal (dryRun), rien n'est marque, mais les emails restent testables.
+  if (!result.dryRun) {
+    try {
+      await stripe.paymentIntents.update(pi.id, {
+        metadata: { ...pi.metadata, order_recorded: "true", axonaut_invoice_id: String(result.invoiceId) },
+      });
+      console.log(`[webhook] ${pi.id} -> facture Axonaut ${result.invoiceId}`);
+    } catch (err) {
+      // Le marquage a echoue : Stripe rejouera. recordOrder est deja passe, donc on
+      // NE renvoie PAS 500 (sinon double facture au rejeu, l'idempotence n'ayant pas
+      // ete posee). On alerte et on continue : la facture existe, c'est l'essentiel.
+      console.error(`[webhook] ${pi.id} facture ${result.invoiceId} creee mais marquage impossible :`, err.message);
+    }
+  } else {
+    console.log(`[webhook] ${pi.id} : Axonaut desactive (mode journal).`);
+  }
+
+  // Emails : best-effort. Un echec n'invalide pas la commande (deja enregistree,
+  // et Stripe envoie son propre recu). sendEmailsFn ne leve jamais.
+  const emails = await sendEmailsFn(emailParams);
+
+  return res.status(200).json({
+    received: true,
+    dryRun: result.dryRun || false,
+    invoiceId: result.invoiceId,
+    emails,
+  });
 }
 
 export default async function handler(req, res) {
@@ -112,6 +132,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Webhook mal configuré." });
   }
   if (!isEnabled()) console.warn("[webhook] AXONAUT_ENABLED != true : aucune facture ne sera creee.");
+  if (!isEmailEnabled()) console.warn("[webhook] RESEND_API_KEY absente : aucun email ne sera envoye.");
 
   try {
     const rawBody = await readRawBody(req);

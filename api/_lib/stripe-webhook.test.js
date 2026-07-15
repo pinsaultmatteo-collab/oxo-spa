@@ -53,10 +53,12 @@ const run = (pi, opts = {}) => {
   const { rawBody, req } = signedEvent(pi, opts);
   const res = fakeRes();
   const calls = [];
+  const emailCalls = [];
   const recordOrderFn = opts.recordOrderFn || (async (a) => (calls.push(a), { dryRun: false, invoiceId: 42 }));
+  const sendEmailsFn = opts.sendEmailsFn || (async (a) => (emailCalls.push(a), { customer: { sent: true }, oxo: { sent: true } }));
   const s = opts.stripe || stripeStub();
-  return handle(req, res, { stripe: s, webhookSecret: opts.secret || SECRET, rawBody, recordOrderFn })
-    .then(() => ({ res, calls, stripe: s }));
+  return handle(req, res, { stripe: s, webhookSecret: opts.secret || SECRET, rawBody, recordOrderFn, sendEmailsFn })
+    .then(() => ({ res, calls, emailCalls, stripe: s }));
 };
 
 /* ---------- signature ---------- */
@@ -112,6 +114,34 @@ test("paiement reussi : commande enregistree, PI marque comme traite", async () 
   assert.equal(s.updates.length, 1);
   assert.equal(s.updates[0].params.metadata.order_recorded, "true");
   assert.equal(s.updates[0].params.metadata.axonaut_invoice_id, "42");
+});
+
+test("paiement reussi : emails envoyes apres enregistrement", async () => {
+  const pi = paymentIntent([{ id: "nexus", qty: 1 }]);
+  const { res, emailCalls } = await run(pi);
+  assert.equal(res.statusCode, 200);
+  assert.equal(emailCalls.length, 1);
+  assert.equal(emailCalls[0].reference, "pi_test_123");
+  assert.equal(emailCalls[0].amountPaid, 4695);
+});
+
+test("email en echec : la commande reste enregistree, webhook a 200", async () => {
+  const pi = paymentIntent([{ id: "nexus", qty: 1 }]);
+  const s = stripeStub();
+  const { res } = await run(pi, {
+    stripe: s,
+    sendEmailsFn: async () => ({ customer: { sent: false, error: "resend down" }, oxo: { sent: false, error: "resend down" } }),
+  });
+  assert.equal(res.statusCode, 200, "un email rate ne doit pas faire echouer le webhook");
+  assert.equal(s.updates.length, 1, "la facture reste marquee comme enregistree");
+  assert.equal(res.body.emails.customer.sent, false);
+});
+
+test("mode journal : emails quand meme tentes (testable sans Axonaut)", async () => {
+  const pi = paymentIntent([{ id: "nexus", qty: 1 }]);
+  const { res, emailCalls } = await run(pi, { recordOrderFn: async () => ({ dryRun: true }) });
+  assert.equal(res.body.dryRun, true);
+  assert.equal(emailCalls.length, 1, "les emails sont independants d'Axonaut");
 });
 
 test("autre type d'evenement : accuse reception sans rien faire", async () => {
