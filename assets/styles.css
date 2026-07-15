@@ -753,7 +753,9 @@ a.card{text-decoration:none;color:inherit;cursor:pointer}
 .legal h2{font-family:"Archivo";font-weight:800;font-size:clamp(18px,2vw,24px);text-transform:uppercase;margin:34px 0 12px}
 .legal p,.legal li{color:var(--ink-2);line-height:1.75;font-size:15px;margin-bottom:12px}
 .legal ul{padding-left:20px;margin-bottom:14px}
-.legal .note{background:var(--panel);border-left:3px solid var(--gold);padding:16px 18px;border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-2)}
+.legal .note{background:var(--panel);border-left:3px solid var(--gold);padding:16px 18px;border-radius:0 6px 6px 0;font-size:14px;color:var(--ink-2);margin:16px 0}
+.legal__date{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--smoke);margin-bottom:8px}
+.legal__date+h2{margin-top:8px}
 
 /* footer legal row */
 .footer__legal{max-width:1500px;margin:18px auto 0;display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
