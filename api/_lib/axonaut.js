@@ -13,9 +13,9 @@
  *    serait irresponsable. A la place, la facture d'acompte porte des lignes explicites
  *    dont le total est exactement le montant encaisse par Stripe.
  *
- * 2. products[].price est suppose HORS TAXES (il cotoie un tax_rate). Nos prix
- *    catalogue sont TTC, on convertit. Cette hypothese doit etre validee avec le
- *    comptable via une facture de recette avant activation en production.
+ * 2. products[].price est HORS TAXES. Non documente, mais VERIFIE en production le
+ *    2026-07-16 par une vraie facture a 1 € : Axonaut a affiche HT 0,83 + TVA 0,17
+ *    = 1,00 € TTC, soit exactement le montant encaisse.
  */
 
 const BASE = "https://axonaut.com/api/v2";
