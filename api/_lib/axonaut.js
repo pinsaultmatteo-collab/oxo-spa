@@ -116,9 +116,22 @@ export function buildCompanyPayload(customer) {
 
 /**
  * Cree (ou retrouve) le client, la facture, puis enregistre le paiement.
+ *
+ * Reprise sur incident : Axonaut ne permet pas de savoir si une facture existe deja
+ * pour une commande (`order_number` est settable mais n'est ni renvoye par l'API ni
+ * filtrable ; `internal_ref` n'est pas settable). On memorise donc l'avancement dans
+ * les metadonnees du PaymentIntent via `onProgress`, et on reprend la ou on s'est
+ * arrete via `existing`. Sans ca, un rejeu Stripe apres un echec partiel creerait une
+ * SECONDE facture dans la comptabilite reelle.
+ *
+ * En cas d'echec APRES creation de la facture, l'erreur porte `.invoiceId` : l'appelant
+ * doit alors surtout NE PAS rejouer (voir stripe-webhook.js).
+ *
+ * @param {object} existing   {companyId?, invoiceId?, paymentRecorded?} lus des metadonnees
+ * @param {Function} onProgress  appele apres chaque etape pour persister l'avancement
  * @returns {{dryRun:boolean, companyId?:number, invoiceId?:number, payload?:object}}
  */
-export async function recordOrder({ order, customer, reference, amountPaid, date, fetchImpl }) {
+export async function recordOrder({ order, customer, reference, amountPaid, date, existing = {}, onProgress, fetchImpl }) {
   const invoiceDate = date || new Date().toISOString();
   const lines = buildInvoiceLines(order);
 
@@ -149,23 +162,47 @@ export async function recordOrder({ order, customer, reference, amountPaid, date
   }
 
   const call = client(fetchImpl);
+  const progress = onProgress || (async () => {});
 
-  // 1. client : reutilise s'il existe deja (evite les doublons a chaque commande)
-  const found = await call("GET", `/companies?internal_id=${encodeURIComponent(customer.email.toLowerCase())}`);
-  const existing = Array.isArray(found) ? found[0] : found && found.id ? found : null;
-  const companyId = existing ? existing.id : (await call("POST", "/companies", buildCompanyPayload(customer))).id;
+  // 1. client — deja idempotent : on cherche par internal_id (l'email) avant de creer.
+  let companyId = existing.companyId;
+  if (!companyId) {
+    const found = await call("GET", `/companies?internal_id=${encodeURIComponent(customer.email.toLowerCase())}`);
+    const hit = Array.isArray(found) ? found[0] : found && found.id ? found : null;
+    companyId = hit ? hit.id : (await call("POST", "/companies", buildCompanyPayload(customer))).id;
+    await progress({ axonaut_company_id: String(companyId) });
+  }
 
-  // 2. facture
-  const invoice = await call("POST", "/invoices", { ...invoicePayload, company_id: companyId, employee_email: customer.email });
+  // A partir d'ici, toute erreur doit porter l'invoiceId si la facture a ete creee :
+  // c'est ce qui interdit a l'appelant de rejouer et de dupliquer la facture.
+  let invoiceId = existing.invoiceId;
+  try {
+    // 2. facture — l'id est persiste IMMEDIATEMENT apres creation, avant toute autre
+    //    operation faillible. C'est le point critique de l'idempotence.
+    if (!invoiceId) {
+      const invoice = await call("POST", "/invoices", {
+        ...invoicePayload,
+        company_id: companyId,
+        employee_email: customer.email,
+      });
+      invoiceId = invoice.id;
+      await progress({ axonaut_invoice_id: String(invoiceId) });
+    }
 
-  // 3. paiement encaisse -> la facture est soldee
-  await call("POST", "/payments", {
-    invoice_id: invoice.id,
-    nature: NATURE_CREDIT_CARD,
-    amount: amountPaid,
-    reference,
-    date: invoiceDate,
-  });
+    // 3. paiement encaisse -> la facture est soldee
+    if (!existing.paymentRecorded) {
+      await call("POST", "/payments", {
+        invoice_id: invoiceId,
+        nature: NATURE_CREDIT_CARD,
+        amount: amountPaid,
+        reference,
+        date: invoiceDate,
+      });
+    }
+  } catch (err) {
+    if (invoiceId) err.invoiceId = invoiceId; // facture existante : NE PAS rejouer
+    throw err;
+  }
 
-  return { dryRun: false, companyId, invoiceId: invoice.id };
+  return { dryRun: false, companyId, invoiceId };
 }

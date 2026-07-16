@@ -53,8 +53,12 @@ export async function handle(req, res, { stripe, webhookSecret, rawBody, recordO
 
   const pi = event.data.object;
 
-  // --- idempotence : Stripe rejoue les webhooks (retentatives, doublons) ---
-  if (pi.metadata?.axonaut_invoice_id || pi.metadata?.order_recorded === "true") {
+  /* --- idempotence : Stripe rejoue les webhooks (retentatives, doublons) ---
+     On ne saute QUE si la commande est integralement traitee. La seule presence d'un
+     axonaut_invoice_id signifie "facture creee, paiement peut-etre pas encore
+     enregistre" : il faut alors REPRENDRE (recordOrder saute les etapes deja faites),
+     sinon la facture resterait impayee indefiniment. */
+  if (pi.metadata?.order_recorded === "true") {
     console.log(`[webhook] ${pi.id} deja enregistre, on ignore`);
     return res.status(200).json({ received: true, duplicate: true });
   }
@@ -86,27 +90,51 @@ export async function handle(req, res, { stripe, webhookSecret, rawBody, recordO
     date: new Date(pi.created * 1000).toISOString(),
   };
 
+  /* Avancement persiste dans les metadonnees du PaymentIntent : c'est notre seule
+     memoire entre deux tentatives (Axonaut ne sait pas dire si une facture existe
+     deja pour une commande). On accumule dans `meta` pour ne pas perdre un patch
+     precedent en repartant d'un pi.metadata perime. */
+  const meta = { ...pi.metadata };
+  const onProgress = async (patch) => {
+    Object.assign(meta, patch);
+    await stripe.paymentIntents.update(pi.id, { metadata: meta });
+  };
+
   let result;
   try {
-    result = await recordOrderFn(emailParams);
+    result = await recordOrderFn({
+      ...emailParams,
+      existing: {
+        companyId: pi.metadata?.axonaut_company_id,
+        invoiceId: pi.metadata?.axonaut_invoice_id,
+        paymentRecorded: pi.metadata?.axonaut_payment_recorded === "true",
+      },
+      onProgress,
+    });
   } catch (err) {
-    // 500 => Stripe reessaiera. L'idempotence protege contre le doublon Axonaut.
+    if (err.invoiceId) {
+      /* La facture EXISTE deja dans la compta du client. Un 500 ferait rejouer Stripe
+         et creerait un doublon — bien pire qu'une finalisation incomplete. On accuse
+         reception et on alerte : le paiement est peut-etre a pointer a la main. */
+      console.error(
+        `[webhook] ${pi.id} : facture Axonaut ${err.invoiceId} CREEE mais finalisation incomplete (${err.message}). ` +
+          `Aucun rejeu (risque de doublon). Verifier manuellement que la facture est bien soldee.`
+      );
+      return res.status(200).json({ received: true, invoiceId: err.invoiceId, incomplete: true });
+    }
+    // Rien n'a ete cree : on peut rejouer sans risque.
     console.error(`[webhook] ${pi.id} echec d'enregistrement :`, err.message);
     return res.status(500).json({ error: "recording_failed" });
   }
 
-  // Marquage AVANT les emails : un rejeu ne doit jamais recreer la facture Axonaut.
+  // Marquage final AVANT les emails : un rejeu ne doit jamais recreer la facture.
   // En mode journal (dryRun), rien n'est marque, mais les emails restent testables.
   if (!result.dryRun) {
     try {
-      await stripe.paymentIntents.update(pi.id, {
-        metadata: { ...pi.metadata, order_recorded: "true", axonaut_invoice_id: String(result.invoiceId) },
-      });
+      await onProgress({ order_recorded: "true", axonaut_payment_recorded: "true", axonaut_invoice_id: String(result.invoiceId) });
       console.log(`[webhook] ${pi.id} -> facture Axonaut ${result.invoiceId}`);
     } catch (err) {
-      // Le marquage a echoue : Stripe rejouera. recordOrder est deja passe, donc on
-      // NE renvoie PAS 500 (sinon double facture au rejeu, l'idempotence n'ayant pas
-      // ete posee). On alerte et on continue : la facture existe, c'est l'essentiel.
+      // La facture est creee et soldee : surtout pas de 500, qui la dupliquerait.
       console.error(`[webhook] ${pi.id} facture ${result.invoiceId} creee mais marquage impossible :`, err.message);
     }
   } else {
