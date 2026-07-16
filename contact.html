@@ -236,7 +236,6 @@
   var top=$("#totop");
   if(top){ window.addEventListener("scroll",function(){ top.classList.toggle("show", window.scrollY>600); },{passive:true});
     top.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});}); }
-  // formulaire contact -> ouverture client mail (pas de backend) + préremplissage via URL
   // formulaire de contact : gere par /assets/contact-form.js (source unique)
   
 })();
