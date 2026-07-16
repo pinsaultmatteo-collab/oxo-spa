@@ -10,6 +10,17 @@
   },
   "products": [
     {
+      "_comment": "TEMPORAIRE — valide l'envoi d'emails Resend depuis @oxo-spa.com vers un vrai destinataire. Liste sur aucune page. A SUPPRIMER apres validation.",
+      "id": "test-webhook",
+      "name": "Test technique — ne pas commander",
+      "price": 1,
+      "availability": "stock",
+      "depositRate": 1,
+      "test": true,
+      "url": "/",
+      "image": "/assets/images/og-image.jpg"
+    },
+    {
       "id": "nexus",
       "name": "Nexus",
       "price": 4695,
