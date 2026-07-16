@@ -16,7 +16,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CAT = json.loads((ROOT / "assets" / "products.json").read_text(encoding="utf-8"))
 
-PRODUCTS = {p["id"]: p for p in CAT["products"]}
+# Les produits marques "test": true sont des produits techniques temporaires
+# (validation du webhook en live). Ils ne figurent sur aucune page : on les ignore.
+PRODUCTS = {p["id"]: p for p in CAT["products"] if not p.get("test")}
 OPTIONS = {o["id"]: o for o in CAT["options"]}
 FIN = CAT["financing"]
 
