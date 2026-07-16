@@ -4,7 +4,7 @@ import Stripe from "stripe";
 import { handle } from "../stripe-webhook.js";
 import { buildMetadata, parseCart, parseCustomer } from "./metadata.js";
 import { computeOrder } from "./pricing.js";
-import { buildInvoiceLines, invoiceTotalTtc, recordOrder } from "./axonaut.js";
+import { buildInvoiceLines, invoiceTotalTtc, recordOrder, toAxonautDate } from "./axonaut.js";
 
 const SECRET = "whsec_test_secret";
 const stripe = new Stripe("sk_test_fake", { apiVersion: "2025-08-27.basil" });
@@ -291,13 +291,15 @@ test("facture : total exact sur des paniers mixtes", () => {
    (order_number ni renvoye ni filtrable). L'avancement vit donc dans les metadonnees
    du PaymentIntent. Ces tests verifient qu'un rejeu Stripe ne duplique jamais. */
 
-/** Faux Axonaut : compte les appels par endpoint et peut echouer sur commande. */
+/** Faux Axonaut : capture les appels ET leurs corps, et peut echouer sur commande. */
 function axonautStub({ failOn } = {}) {
   const calls = [];
+  const bodies = {};
   const fetchImpl = async (url, opts) => {
     const path = url.replace("https://axonaut.com/api/v2", "");
     const key = `${opts.method} ${path.split("?")[0]}`;
     calls.push(key);
+    if (opts.body) bodies[key] = JSON.parse(opts.body);
     if (failOn === key) return { ok: false, status: 502, text: async () => "boom" };
     const body =
       path.startsWith("/companies") && opts.method === "GET" ? "[]"
@@ -306,10 +308,51 @@ function axonautStub({ failOn } = {}) {
       : "{}";
     return { ok: true, status: 200, text: async () => body };
   };
-  return { calls, fetchImpl, count: (k) => calls.filter((c) => c === k).length };
+  return { calls, bodies, fetchImpl, count: (k) => calls.filter((c) => c === k).length };
 }
 
 const AX_ORDER = () => computeOrder([{ id: "nexus", qty: 1 }]);
+
+/* Axonaut a rejete la premiere vraie facture avec "Property date: Invalid RFC3339" :
+   son parseur refuse les millisecondes et le suffixe Z, pourtant valides en RFC3339.
+   Format attendu, tire de l'exemple de leur spec : "2022-05-28T18:05:35+02:00". */
+test("Axonaut : format de date — ni millisecondes, ni Z, offset numerique", () => {
+  const RFC = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/;
+  for (const input of [
+    "2026-07-16T19:51:15.000Z",           // ce que produisait toISOString()
+    "2026-07-16T19:51:15Z",
+    new Date(1_784_231_475_000).toISOString(),
+    "2022-05-28T18:05:35+02:00",          // l'exemple de leur doc
+  ]) {
+    const out = toAxonautDate(input);
+    assert.match(out, RFC, `format invalide pour ${input} -> ${out}`);
+    assert.ok(!out.includes("."), "les millisecondes doivent disparaitre");
+    assert.ok(!out.endsWith("Z"), "le suffixe Z doit disparaitre");
+    // la conversion ne doit pas decaler l'instant
+    assert.equal(new Date(out).getTime(), new Date(input).getTime());
+  }
+});
+
+test("Axonaut : une date invalide echoue avant tout appel", () => {
+  assert.throws(() => toAxonautDate("pas une date"), /Date invalide/);
+});
+
+test("Axonaut : la date envoyee a l'API respecte le format", async () => {
+  process.env.AXONAUT_ENABLED = "true";
+  process.env.AXONAUT_API_KEY = "k";
+  const ax = axonautStub();
+  const order = AX_ORDER();
+  await recordOrder({
+    order, customer: CUSTOMER, reference: "pi_1", amountPaid: order.dueNow,
+    date: "2026-07-16T19:51:15.000Z", fetchImpl: ax.fetchImpl, onProgress: async () => {},
+  });
+  const RFC = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/;
+  assert.match(ax.bodies["POST /invoices"].date, RFC);
+  assert.match(ax.bodies["POST /invoices"].due_date, RFC);
+  assert.match(ax.bodies["POST /payments"].date, RFC);
+  assert.equal(ax.bodies["POST /invoices"].date, "2026-07-16T19:51:15+00:00");
+  delete process.env.AXONAUT_ENABLED;
+});
 
 test("Axonaut : premiere execution cree client + facture + paiement, et jalonne", async () => {
   process.env.AXONAUT_ENABLED = "true";

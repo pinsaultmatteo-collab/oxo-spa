@@ -39,6 +39,16 @@ const pct = (rate) => Math.round(rate * 100);
 export const invoiceTotalTtc = (lines) =>
   round(lines.reduce((s, l) => s + l.price * l.quantity * (1 + VAT_RATE), 0), 2);
 
+/* Axonaut annonce "RFC3339" mais son parseur est plus strict que la norme : il refuse
+   les millisecondes et le suffixe Z, pourtant tous deux valides en RFC3339
+   ("Property date: Invalid RFC3339" en production le 2026-07-16). On emet donc
+   exactement la forme de leur exemple : "2022-05-28T18:05:35+02:00". */
+export function toAxonautDate(value) {
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) throw new AxonautError(`Date invalide : ${value}`, 500);
+  return d.toISOString().replace(/\.\d{3}Z$/, "+00:00");
+}
+
 export class AxonautError extends Error {
   constructor(message, status) {
     super(message);
@@ -132,7 +142,7 @@ export function buildCompanyPayload(customer) {
  * @returns {{dryRun:boolean, companyId?:number, invoiceId?:number, payload?:object}}
  */
 export async function recordOrder({ order, customer, reference, amountPaid, date, existing = {}, onProgress, fetchImpl }) {
-  const invoiceDate = date || new Date().toISOString();
+  const invoiceDate = toAxonautDate(date || new Date().toISOString());
   const lines = buildInvoiceLines(order);
 
   /* Une facture reglee dont le total differe du montant encaisse laisse un reliquat
