@@ -79,29 +79,7 @@
     <div class="row"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><div class="k">E-mail</div><div class="v"><a href="mailto:contact@oxospa.fr">contact@oxospa.fr</a></div></div></div>
     <div class="row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><div class="k">Horaires</div><div class="v">Du lundi au samedi<br>9h00 – 19h00</div></div></div>
   </div>
-  <form class="form reveal" id="contactForm">
-    <h2>Être rappelé</h2>
-    <p class="sub">Laissez-nous vos coordonnées, nous revenons vers vous rapidement.</p>
-    <div class="form__row">
-      <div><label for="prenom">Prénom</label><input id="prenom" name="prenom" type="text" autocomplete="given-name" required></div>
-      <div><label for="nom">Nom</label><input id="nom" name="nom" type="text" autocomplete="family-name" required></div>
-    </div>
-    <div class="form__row">
-      <div><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-      <div><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
-    </div>
-    <label for="sujet">Sujet de la demande</label>
-    <select id="sujet" name="sujet">
-      <option value="Renseignement">Renseignement général</option>
-      <option value="devis">Demande de devis</option>
-      <option value="produit">Question sur un produit</option>
-      <option value="livraison">Livraison &amp; installation</option>
-      <option value="sav">Service après-vente</option>
-    </select>
-    <label for="msg">Votre message</label><textarea id="msg" name="msg" placeholder="Le modèle qui vous intéresse, votre commune…"></textarea>
-    <label class="form__check"><input type="checkbox" id="consent" name="consent" required><span>J'accepte d'être recontacté(e) par OXO Spa au sujet de ma demande.</span></label>
-    <button class="btn btn--ink" type="submit">Envoyer ma demande</button>
-  </form>
+  <div class="form reveal" style="padding:clamp(24px,3vw,34px)"><h2>Être rappelé</h2><p class="sub">Laissez-nous vos coordonnées, nous revenons vers vous rapidement.</p><div data-contact-form="page"></div></div>
 </section>
 <section class="block" style="padding-top:0">
   <div class="map-embed">
@@ -259,22 +237,11 @@
   if(top){ window.addEventListener("scroll",function(){ top.classList.toggle("show", window.scrollY>600); },{passive:true});
     top.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});}); }
   // formulaire contact -> ouverture client mail (pas de backend) + préremplissage via URL
-  var cf=$("#contactForm");
-  if(cf){
-    var qp=new URLSearchParams(location.search);
-    if(qp.get("sujet")){ var sel=cf.querySelector("#sujet"); if(sel){ for(var i=0;i<sel.options.length;i++){ if(sel.options[i].value===qp.get("sujet")) sel.selectedIndex=i; } } }
-    if(qp.get("message")){ var ta=cf.querySelector("#msg"); if(ta) ta.value=qp.get("message"); }
-    cf.addEventListener("submit",function(e){
-      e.preventDefault();
-      if(cf.consent && !cf.consent.checked){ alert("Merci d'accepter d'être recontacté(e)."); return; }
-      var val=function(k){return cf[k]?encodeURIComponent(cf[k].value||""):"";};
-      var su=cf.sujet?cf.sujet.value:"Contact";
-      var body="Prénom: "+val("prenom")+"%0D%0ANom: "+val("nom")+"%0D%0AEmail: "+val("email")+"%0D%0ATéléphone: "+val("tel")+"%0D%0ASujet: "+encodeURIComponent(su)+"%0D%0A%0D%0A"+val("msg");
-      window.location.href="mailto:contact@oxospa.fr?subject="+encodeURIComponent("["+su+"] Demande site — "+(cf.nom?cf.nom.value:""))+"&body="+body;
-    });
-  }
+  // formulaire de contact : gere par /assets/contact-form.js (source unique)
+  
 })();
 </script>
+<script src="/assets/contact-form.js" defer></script>
 <script src="/assets/cart.js" defer></script>
 </body>
 </html>

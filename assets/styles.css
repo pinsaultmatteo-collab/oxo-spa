@@ -1236,3 +1236,12 @@ h1,h2,h3{text-wrap:balance}
 .cf__ref b{font-family:"Space Mono",monospace;font-size:13px;color:var(--ink);word-break:break-all}
 .cf__next{color:var(--smoke);font-size:13px;line-height:1.65;margin-bottom:26px}
 .cf .cart-cta{justify-content:center}
+
+/* ---------- formulaire de contact unique (page + popup) ---------- */
+.form--bare{border:0;background:transparent;padding:0}
+.form--bare label:first-of-type{margin-top:0}
+.cf-ok{text-align:center;padding:26px 10px}
+.cf-ok__ico{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;background:linear-gradient(135deg,#16A34A,#2BD46B 60%,#138A41);color:#fff}
+.cf-ok__ico svg{width:26px;height:26px}
+.cf-ok h3{font-family:"Archivo";font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:8px}
+.cf-ok p{color:var(--ink-2);font-size:14.5px;line-height:1.65}

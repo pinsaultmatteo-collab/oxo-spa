@@ -596,19 +596,8 @@
       <button class="modal__close" id="modalClose" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
     <div class="modal__body">
-      <div id="cbForm">
-        <p class="sub">Laissez vos coordonnées : un conseiller OXO vous rappelle sous 24 h ouvrées.</p>
-        <div class="field-row">
-          <div class="field"><label>Prénom</label><input type="text" id="cbName" placeholder="Camille"></div>
-          <div class="field"><label>Téléphone</label><input type="tel" id="cbPhone" placeholder="06 00 00 00 00"></div>
-        </div>
-        <div class="field"><label>Modèle qui vous intéresse</label>
-          <select id="cbModel"><option>Je ne sais pas encore</option><option>Breeze</option><option>Nexus</option><option>Ease</option><option>Spa de nage</option><option>Spa convivial</option></select></div>
-        <div class="field"><label>Créneau souhaité</label>
-          <select id="cbSlot"><option>Dès que possible</option><option>Matin (9 h – 12 h)</option><option>Après-midi (14 h – 18 h)</option><option>Fin de journée (18 h – 20 h)</option></select></div>
-        <button class="btn btn--ink" id="cbSubmit" style="width:100%;justify-content:center">Demander à être rappelé</button>
-      </div>
-      <div class="modal__success" id="cbSuccess">
+      <div data-contact-form="popup"></div>
+        <div class="modal__success" id="cbSuccess">
         <div class="ok"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
         <h3 class="display">C'est noté</h3>
         <p>Un conseiller OXO vous rappelle très vite au numéro indiqué.</p>
@@ -764,11 +753,7 @@
   $$("[data-callback]").forEach(function(b){b.addEventListener("click",openCb);});
   document.getElementById("modalClose").addEventListener("click",closeCb);
   overlay.addEventListener("click",closeCb);
-  document.getElementById("cbSubmit").addEventListener("click",function(){
-    var ph=document.getElementById("cbPhone"); if(!ph.value.trim()){ph.focus();return;}
-    document.getElementById("cbForm").style.display="none";
-    document.getElementById("cbSuccess").classList.add("show");
-  });
+  
   document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeCb();mnav.classList.remove("show");document.body.classList.remove("lock");}});
 
   /* ---------- chromothérapie : couleur LED interactive ---------- */
@@ -830,6 +815,7 @@
   });
 })();
 </script>
+<script src="/assets/contact-form.js" defer></script>
 <script src="/assets/cart.js" defer></script>
 </body>
 </html>
