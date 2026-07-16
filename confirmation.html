@@ -235,20 +235,7 @@
   var top=$("#totop");
   if(top){ window.addEventListener("scroll",function(){ top.classList.toggle("show", window.scrollY>600); },{passive:true});
     top.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});}); }
-  // formulaire contact -> ouverture client mail (pas de backend) + préremplissage via URL
-  var cf=$("#contactForm");
-  if(cf){
-    var qp=new URLSearchParams(location.search);
-    if(qp.get("sujet")){ var sel=cf.querySelector("#sujet"); if(sel){ for(var i=0;i<sel.options.length;i++){ if(sel.options[i].value===qp.get("sujet")) sel.selectedIndex=i; } } }
-    if(qp.get("message")){ var ta=cf.querySelector("#msg"); if(ta) ta.value=qp.get("message"); }
-    cf.addEventListener("submit",function(e){
-      e.preventDefault();
-      if(cf.consent && !cf.consent.checked){ alert("Merci d'accepter d'être recontacté(e)."); return; }
-      var val=function(k){return cf[k]?encodeURIComponent(cf[k].value||""):"";};
-      var su=cf.sujet?cf.sujet.value:"Contact";
-      var body="Prénom: "+val("prenom")+"%0D%0ANom: "+val("nom")+"%0D%0AEmail: "+val("email")+"%0D%0ATéléphone: "+val("tel")+"%0D%0ASujet: "+encodeURIComponent(su)+"%0D%0A%0D%0A"+val("msg");
-      window.location.href="mailto:contact@oxospa.fr?subject="+encodeURIComponent("["+su+"] Demande site — "+(cf.nom?cf.nom.value:""))+"&body="+body;
-    });
+  );
   }
 })();
 </script>
