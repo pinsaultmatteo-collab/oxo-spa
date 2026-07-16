@@ -391,7 +391,7 @@ test("webhook : echec APRES creation de facture -> 200, jamais de rejeu", async 
   assert.equal(res.statusCode, 200, "un 500 ferait rejouer Stripe et dupliquerait la facture");
   assert.equal(res.body.invoiceId, 42);
   assert.equal(res.body.incomplete, true);
-  assert.equal(emailCalls.length, 0);
+  assert.equal(emailCalls.length, 1, "les emails partent malgre l'echec Axonaut");
 });
 
 test("webhook : echec AVANT creation de facture -> 500, rejeu sans risque", async () => {
@@ -400,6 +400,20 @@ test("webhook : echec AVANT creation de facture -> 500, rejeu sans risque", asyn
     recordOrderFn: async () => { throw new Error("axonaut down"); }, // pas d'invoiceId
   });
   assert.equal(res.statusCode, 500);
+});
+
+/* Une panne Axonaut rendait la vente TOTALEMENT invisible : client sans confirmation,
+   vendeur sans notification. Constate en production le 2026-07-16. Les emails ne
+   doivent jamais dependre de la comptabilite. */
+test("webhook : Axonaut en panne -> les emails partent QUAND MEME", async () => {
+  const pi = paymentIntent([{ id: "nexus", qty: 1 }]);
+  const { res, emailCalls } = await run(pi, {
+    recordOrderFn: async () => { throw new Error("POST /invoices -> 400"); },
+  });
+  assert.equal(res.statusCode, 500, "rejeu attendu : rien n'a ete cree cote Axonaut");
+  assert.equal(emailCalls.length, 1, "la notification de vente ne doit pas dependre d'Axonaut");
+  assert.equal(emailCalls[0].reference, "pi_test_123");
+  assert.equal(res.body.emails.customer.sent, true);
 });
 
 test("webhook : les jalons deja poses sont transmis a recordOrder", async () => {

@@ -100,7 +100,8 @@ export async function handle(req, res, { stripe, webhookSecret, rawBody, recordO
     await stripe.paymentIntents.update(pi.id, { metadata: meta });
   };
 
-  let result;
+  let result = null;
+  let recordError = null;
   try {
     result = await recordOrderFn({
       ...emailParams,
@@ -112,24 +113,12 @@ export async function handle(req, res, { stripe, webhookSecret, rawBody, recordO
       onProgress,
     });
   } catch (err) {
-    if (err.invoiceId) {
-      /* La facture EXISTE deja dans la compta du client. Un 500 ferait rejouer Stripe
-         et creerait un doublon — bien pire qu'une finalisation incomplete. On accuse
-         reception et on alerte : le paiement est peut-etre a pointer a la main. */
-      console.error(
-        `[webhook] ${pi.id} : facture Axonaut ${err.invoiceId} CREEE mais finalisation incomplete (${err.message}). ` +
-          `Aucun rejeu (risque de doublon). Verifier manuellement que la facture est bien soldee.`
-      );
-      return res.status(200).json({ received: true, invoiceId: err.invoiceId, incomplete: true });
-    }
-    // Rien n'a ete cree : on peut rejouer sans risque.
-    console.error(`[webhook] ${pi.id} echec d'enregistrement :`, err.message);
-    return res.status(500).json({ error: "recording_failed" });
+    recordError = err;
   }
 
-  // Marquage final AVANT les emails : un rejeu ne doit jamais recreer la facture.
+  // Marquage AVANT les emails : un rejeu ne doit jamais recreer la facture.
   // En mode journal (dryRun), rien n'est marque, mais les emails restent testables.
-  if (!result.dryRun) {
+  if (result && !result.dryRun) {
     try {
       await onProgress({ order_recorded: "true", axonaut_payment_recorded: "true", axonaut_invoice_id: String(result.invoiceId) });
       console.log(`[webhook] ${pi.id} -> facture Axonaut ${result.invoiceId}`);
@@ -137,13 +126,31 @@ export async function handle(req, res, { stripe, webhookSecret, rawBody, recordO
       // La facture est creee et soldee : surtout pas de 500, qui la dupliquerait.
       console.error(`[webhook] ${pi.id} facture ${result.invoiceId} creee mais marquage impossible :`, err.message);
     }
-  } else {
+  } else if (result) {
     console.log(`[webhook] ${pi.id} : Axonaut desactive (mode journal).`);
   }
 
-  // Emails : best-effort. Un echec n'invalide pas la commande (deja enregistree,
-  // et Stripe envoie son propre recu). sendEmailsFn ne leve jamais.
+  /* Emails : envoyes MEME si Axonaut a echoue.
+     La notification de commande est le signal qui previent OXO qu'une vente a eu lieu :
+     la faire dependre de la comptabilite signifiait qu'une panne Axonaut rendait la
+     vente totalement invisible (client sans confirmation, vendeur sans notification).
+     Les envois sont idempotents (cle Resend par reference) : un rejeu ne double pas. */
   const emails = await sendEmailsFn(emailParams);
+
+  if (recordError) {
+    if (recordError.invoiceId) {
+      /* La facture EXISTE deja dans la compta du client. Un 500 ferait rejouer Stripe
+         et creerait un doublon — bien pire qu'une finalisation incomplete. */
+      console.error(
+        `[webhook] ${pi.id} : facture Axonaut ${recordError.invoiceId} CREEE mais finalisation incomplete (${recordError.message}). ` +
+          `Aucun rejeu (risque de doublon). Verifier manuellement que la facture est bien soldee.`
+      );
+      return res.status(200).json({ received: true, invoiceId: recordError.invoiceId, incomplete: true, emails });
+    }
+    // Rien n'a ete cree cote Axonaut : on peut rejouer sans risque de doublon.
+    console.error(`[webhook] ${pi.id} echec d'enregistrement :`, recordError.message);
+    return res.status(500).json({ error: "recording_failed", emails });
+  }
 
   return res.status(200).json({
     received: true,
