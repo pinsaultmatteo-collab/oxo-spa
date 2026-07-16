@@ -10,17 +10,6 @@
   },
   "products": [
     {
-      "_comment": "TEMPORAIRE — valide le webhook Stripe en live pour 1 €. N'est liste sur aucune page (aucun bouton ne l'ajoute). A SUPPRIMER apres validation.",
-      "id": "test-webhook",
-      "name": "Test technique — ne pas commander",
-      "price": 1,
-      "availability": "stock",
-      "depositRate": 1,
-      "test": true,
-      "url": "/",
-      "image": "/assets/images/og-image.jpg"
-    },
-    {
       "id": "nexus",
       "name": "Nexus",
       "price": 4695,
