@@ -21,7 +21,7 @@ export const CUSTOMER_KEYS = {
   city: "c_city",
 };
 
-export function buildMetadata(order, customer) {
+export function buildMetadata(order, customer, marketing = {}) {
   const meta = {
     cart_lines: String(order.lines.length),
     subtotal_eur: String(order.subtotal),
@@ -34,6 +34,13 @@ export function buildMetadata(order, customer) {
 
   for (const [field, key] of Object.entries(CUSTOMER_KEYS)) {
     meta[key] = customer[field];
+  }
+
+  /* Identifiants Meta (fbp/fbc) capures au navigateur : le webhook les transmet
+     a la Conversions API pour ameliorer la correspondance. Purement optionnels. */
+  for (const key of ["fbp", "fbc"]) {
+    const v = marketing && marketing[key];
+    if (typeof v === "string" && v && v.length <= MAX_VALUE) meta["fb_" + key] = v;
   }
 
   order.lines.forEach((l, i) => {

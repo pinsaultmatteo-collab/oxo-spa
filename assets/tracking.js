@@ -68,6 +68,9 @@
     return { fbp: cookie("_fbp"), fbc: fbc };
   }
 
+  // fbp/fbc pour la Conversions API serveur (transmis au checkout Stripe).
+  window.oxoMarketing = function () { return metaIds(); };
+
   // Objet plat injecte dans le formulaire Formspree (champs non vides seulement).
   window.oxoAttribution = function () {
     var a = loadAttr(), m = metaIds(), out = {};
@@ -131,8 +134,27 @@
     },
     lead: function (info) {
       info = info || {};
+      // event_id partage Pixel <-> Conversions API serveur, pour dedupliquer
+      var eventId = "lead." + Date.now() + "." + Math.random().toString(36).slice(2, 10);
       ga("generate_lead", { form_page: info.page || "", sujet: info.sujet || "", modele: info.modele || "" });
-      fbTrack("Lead", { content_name: info.sujet || "contact" });
+      fbTrack("Lead", { content_name: info.sujet || "contact" }, eventId);
+      // envoi serveur (CAPI) en parallele — best-effort, n'affecte jamais le formulaire
+      if (info.email || info.phone) {
+        var m = metaIds();
+        try {
+          fetch("/api/meta-lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            keepalive: true,
+            body: JSON.stringify({
+              eventId: eventId, sourceUrl: location.href, sujet: info.sujet || "",
+              email: info.email || "", phone: info.phone || "",
+              firstName: info.firstName || "", lastName: info.lastName || "",
+              fbp: m.fbp || "", fbc: m.fbc || ""
+            })
+          }).catch(function () {});
+        } catch (e) {}
+      }
     },
     addToCart: function (it) {
       it = it || {};

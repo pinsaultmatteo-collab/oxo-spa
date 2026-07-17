@@ -57,7 +57,7 @@ export async function handle(req, res, { stripe, publishableKey }) {
       automatic_payment_methods: { enabled: true },
       receipt_email: customer.email,
       description: `OXO Spa — ${describeOrder(order)}`,
-      metadata: buildMetadata(order, customer),
+      metadata: buildMetadata(order, customer, body.marketing),
     });
   } catch (err) {
     console.error("[stripe] echec creation PaymentIntent:", err?.message);

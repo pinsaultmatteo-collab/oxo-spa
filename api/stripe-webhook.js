@@ -15,6 +15,7 @@ import { computeOrder } from "./_lib/pricing.js";
 import { parseCart, parseCustomer } from "./_lib/metadata.js";
 import { recordOrder, isEnabled } from "./_lib/axonaut.js";
 import { sendOrderEmails, isEmailEnabled } from "./_lib/email.js";
+import { sendMetaEvent } from "./_lib/meta-capi.js";
 
 // Vercel parse le corps par defaut ; la signature Stripe exige les octets bruts.
 export const config = { api: { bodyParser: false } };
@@ -136,6 +137,31 @@ export async function handle(req, res, { stripe, webhookSecret, rawBody, recordO
      vente totalement invisible (client sans confirmation, vendeur sans notification).
      Les envois sont idempotents (cle Resend par reference) : un rejeu ne double pas. */
   const emails = await sendEmailsFn(emailParams);
+
+  /* Conversions API Meta — event Purchase cote serveur (best-effort).
+     Deduplique avec le Pixel navigateur par event_id = pi.id. UNIQUEMENT en
+     mode live : un paiement de test ne doit jamais polluer les donnees pub.
+     Ne bloque jamais la reponse : toute erreur est avalee par sendMetaEvent. */
+  if (pi.livemode) {
+    await sendMetaEvent({
+      eventName: "Purchase",
+      eventId: pi.id,
+      eventTime: pi.created,
+      eventSourceUrl: (process.env.SITE_URL || "https://oxo-spa.com") + "/confirmation",
+      userData: {
+        email: customer.email,
+        phone: customer.phone,
+        firstName: customer.firstName,
+        lastName: customer.lastName,
+        city: customer.city,
+        zip: customer.postalCode,
+        country: "fr",
+        fbp: pi.metadata?.fb_fbp,
+        fbc: pi.metadata?.fb_fbc,
+      },
+      customData: { currency: (order.currency || "eur").toUpperCase(), value: pi.amount_received / 100 },
+    }).catch(() => {});
+  }
 
   if (recordError) {
     if (recordError.invoiceId) {

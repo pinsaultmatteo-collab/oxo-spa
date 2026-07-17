@@ -194,8 +194,11 @@
           form.hidden = true;
           okEl.hidden = false;
           okEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          // conversion principale : lead (GA4 generate_lead + Meta Lead)
-          if (window.oxoTrack) window.oxoTrack.lead({ sujet: data.sujet, modele: data.modele, page: data.page });
+          // conversion principale : lead (GA4 generate_lead + Meta Lead pixel + CAPI serveur)
+          if (window.oxoTrack) window.oxoTrack.lead({
+            sujet: data.sujet, modele: data.modele, page: data.page,
+            email: data.email, phone: data.tel, firstName: data.prenom, lastName: data.nom
+          });
         })
         .catch(function (err) {
           console.error("[contact]", err);

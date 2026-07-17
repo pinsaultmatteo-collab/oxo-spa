@@ -100,10 +100,13 @@
     submitBtn.disabled = true;
     submitBtn.textContent = "Préparation du paiement…";
 
+    // fbp/fbc transmis pour le Purchase serveur (Conversions API) via le webhook
+    var marketing = window.oxoMarketing ? window.oxoMarketing() : {};
+
     fetch("/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: items, customer: customer }),
+      body: JSON.stringify({ items: items, customer: customer, marketing: marketing }),
     })
       // Une erreur serveur peut renvoyer du HTML (404, page d'erreur de l'hebergeur).
       // On ne laisse jamais une exception de parsing remonter jusqu'au client.
