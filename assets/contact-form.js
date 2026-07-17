@@ -165,6 +165,13 @@
       data._subject = "[OXO Spa] " + (data.sujet || "Demande") + " — " + data.prenom + " " + data.nom;
       data.page = context === "popup" ? "Popup « Être rappelé » (accueil)" : window.location.pathname;
 
+      // Attribution publicitaire (gclid/gbraid/fbclid/utm…) : Formspree recoit
+      // ces champs pour rapprocher un lead d'une campagne et calculer le ROI.
+      if (window.oxoAttribution) {
+        var att = window.oxoAttribution();
+        for (var ak in att) if (att[ak] && !data[ak]) data[ak] = att[ak];
+      }
+
       sending = true;
       btn.disabled = true;
       btn.textContent = "Envoi en cours…";
@@ -187,6 +194,8 @@
           form.hidden = true;
           okEl.hidden = false;
           okEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          // conversion principale : lead (GA4 generate_lead + Meta Lead)
+          if (window.oxoTrack) window.oxoTrack.lead({ sujet: data.sujet, modele: data.modele, page: data.page });
         })
         .catch(function (err) {
           console.error("[contact]", err);

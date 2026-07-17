@@ -63,6 +63,13 @@
         show("ok", "Merci pour votre <em>commande</em>", "Votre paiement a bien été reçu.",
           "Vous allez recevoir un e-mail de confirmation. Conservez la référence ci-dessous pour tout échange avec nos conseillers.",
           pi.id);
+        // conversion achat : purchase avec le montant reellement encaisse
+        // (acompte pour les spas de nage, total pour les modeles en stock).
+        if (window.oxoTrack) window.oxoTrack.purchase({
+          id: pi.id,
+          value: (pi.amount || 0) / 100,
+          currency: (pi.currency || "eur").toUpperCase()
+        });
       } else if (pi.status === "processing") {
         show("pending", "Paiement en <em>cours</em>", "Votre banque traite le paiement.",
           "Cela peut prendre quelques instants. Vous recevrez un e-mail dès que le paiement sera confirmé. Inutile de payer une seconde fois.",
