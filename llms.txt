@@ -1,0 +1,45 @@
+# OXO Spa
+
+> OXO Spa, spécialiste du spa et du spa de nage à Toulouse. Trois spas en stock, deux spas de nage sur commande, hydromassage de précision, garantie coque 5 ans, financement Sofinco. Livraison France entière.
+
+OXO Spa est un vendeur de spas et de spas de nage basé à Toulouse (Occitanie, France),
+avec un showroom où les modèles sont visibles et essayables, et une livraison partout en France.
+Trois modèles sont en stock (Breeze, Nexus, Ease) et livrables sous 10 jours ; le spa de nage
+et le spa convivial sont fabriqués sur commande. Les prix affichés sont TTC.
+
+Chaque page ci-dessous existe en markdown (.md) et en HTML (même URL sans l'extension).
+Contact : 11 impasse Pierre Camo, 31200 Toulouse — 05 31 60 51 61.
+
+## Nos spas
+
+- [Nos spas — spas et spas de nage à Toulouse](https://oxo-spa.com/spas.md): Catalogue OXO Spa à Toulouse : spas Breeze, Nexus, Ease en stock et spa de nage et spa convivial sur commande. Prix, caractéristiques, livraison France entière.
+- [Spa Nexus 3 places compact avec cascade](https://oxo-spa.com/nexus.md): Spa Nexus 3 places : format compact, cascade décorative, 26 buses d'hydromassage. En stock, livraison 10 jours. Showroom OXO Spa à Toulouse.
+- [Spa Breeze 6 places — en stock à Toulouse](https://oxo-spa.com/breeze.md): Spa Breeze 6 places : hydromassage 28 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 10 jours en France. Showroom OXO Spa à Toulouse.
+- [Spa Ease 5 places — en stock à Toulouse](https://oxo-spa.com/ease.md): Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. En stock, livraison 10 jours. Showroom OXO Spa à Toulouse.
+- [Spa de nage (5,80 m) à contre-courant](https://oxo-spa.com/spa-de-nage-40.md): Spa de nage : couloir de nage de 5,80 m à contre-courant, double zone nage et détente, 37 buses. Sur commande (~3 mois). OXO Spa, Toulouse.
+- [Spa convivial (4,00 m) à contre-courant](https://oxo-spa.com/spa-de-nage-56.md): Spa convivial : couloir de nage de 4,00 m, 37 buses, double zone nage et balnéo. Sur commande (~3 mois). OXO Spa, showroom à Toulouse.
+
+## Guides et conseils
+
+- [Blog OXO Spa — conseils, guides d'achat & bien-être spa](https://oxo-spa.com/blog.md): Le blog OXO Spa : guides d'achat, bienfaits de l'hydromassage, spa ou spa de nage, entretien... Tous nos conseils d'expert spa à Toulouse.
+- [Comment bien choisir son spa ? Le guide complet](https://oxo-spa.com/blog-choisir-son-spa.md): Nombre de places, emplacement, isolation, budget, financement : le guide complet OXO Spa pour bien choisir son spa à Toulouse, avec les bons critères et nos conseils d'expert.
+- [Spa ou spa de nage : lequel choisir ?](https://oxo-spa.com/blog-spa-ou-spa-de-nage.md): Détente ou sport ? On compare le spa classique et le spa de nage (usage, place, budget, entretien) pour vous aider à choisir le bon équipement. Conseils OXO Spa, Toulouse.
+- [Les bienfaits de l'hydromassage et de la chromothérapie](https://oxo-spa.com/blog-bienfaits-hydromassage-chromotherapie.md): Détente musculaire, meilleure circulation, sommeil, gestion du stress, effet des couleurs : découvrez les bienfaits de l'hydromassage et de la chromothérapie d'un spa. OXO Spa, Toulouse.
+- [Entretenir son spa : le guide d'entretien facile](https://oxo-spa.com/blog-entretenir-son-spa.md): Équilibre de l'eau, pH, filtration, couverture, vidange, hivernage : nos conseils simples pour entretenir son spa, garder une eau saine toute l'année et prolonger sa durée de vie. OXO Spa.
+
+## Informations pratiques
+
+- [Technologie des spas OXO — hydromassage, chromothérapie, ozone](https://oxo-spa.com/technologie.md): Découvrez la technologie des spas OXO : hydromassage à buses orientables, chromothérapie LED, filtration par ozone, isolation pleine mousse et pilotage tactile.
+- [Garanties & SAV des spas OXO — coque 5 ans, électrique 2 ans](https://oxo-spa.com/garanties.md): Garanties des spas OXO : coque et structure 5 ans, partie électrique 2 ans, pièces détachées, SAV réactif et financement jusqu'à 120 mois avec Sofinco.
+- [Livraison & installation de spas en France — tarifs par zone](https://oxo-spa.com/livraison.md): Livraison de spas OXO partout en France : tarifs par zone (500 à 960 €HT), +180 €HT en montagne, livraison sous 10 jours pour les modèles en stock. Mise en service incluse.
+- [Contact — showroom OXO Spa à Toulouse](https://oxo-spa.com/contact.md): Contactez OXO Spa à Toulouse : showroom 11 impasse Pierre Camo, 31200 Toulouse. Téléphone 05 31 60 51 61. Demande de rappel, horaires et plan d'accès.
+
+## L'entreprise
+
+- [Qui sommes-nous — OXO Spa, spécialiste spa à Toulouse](https://oxo-spa.com/qui-sommes-nous.md): OXO Spa, spécialiste du spa et du spa de nage à Toulouse : showroom, sélection de modèles fiables, livraison France entière et service après-vente.
+
+## Optional
+
+- [Conditions générales de vente](https://oxo-spa.com/cgv.md): Conditions générales de vente d'OXO Spa : commande, prix, paiement, livraison, garanties et rétractation.
+- [Mentions légales](https://oxo-spa.com/mentions-legales.md): Mentions légales du site OXO Spa : éditeur, hébergeur, propriété intellectuelle et coordonnées.
+- [Politique de confidentialité](https://oxo-spa.com/confidentialite.md): Politique de confidentialité d'OXO Spa : données collectées, finalités et droits des utilisateurs (RGPD).
