@@ -34,9 +34,9 @@ Essai · Showroom Toulouse
 
 ## Caractéristiques techniques
 
-Fiche technique du modèle Spa convivial. Prix et certaines spécifications indicatifs, à confirmer en showroom.
+Fiche technique du modèle Spa convivial. Le prix affiché est ferme et garanti pour toute commande en ligne. Certaines spécifications techniques sont indicatives et confirmées en showroom.
 
-Longueur · 560 cm
+Longueur · 400 cm
 
 Dimensions · 400 × 220 × 126 cm
 
@@ -153,6 +153,8 @@ Note moyenne 4,9/5 · avis clients OXO Spa (exemples).
 [Nexus — À partir de 4 695 €](https://oxo-spa.com/nexus)
 
 [Ease — À partir de 5 753 €](https://oxo-spa.com/ease)
+
+[Spa de nage — À partir de 7 500 €](https://oxo-spa.com/spa-de-nage-40)
 
 ## Envie de le voir en vrai ?
 

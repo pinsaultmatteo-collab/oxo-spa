@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="OXO Spa">
+  <title>OXO Spa</title>
+  <circle cx="60" cy="60" r="54" fill="none" stroke="#B0883A" stroke-width="4"/>
+  <circle cx="60" cy="60" r="40" fill="none" stroke="#244B6E" stroke-width="3"/>
+  <text x="60" y="72" text-anchor="middle" font-family="Archivo, Arial, Helvetica, sans-serif"
+        font-weight="900" font-size="38" fill="#0E1A2B">O</text>
+</svg>

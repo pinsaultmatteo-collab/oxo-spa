@@ -14,7 +14,7 @@ Le site oxo-spa.com et la marque « OXO Spa » sont édités par **CZE FRANCE** 
 Siège social : Villa C, 23 chemin de la Nasque, 31770 Colomiers.
 SIREN : 824 356 513 — SIRET (siège) : 824 356 513 00021 — RCS Toulouse 824 356 513 — Code APE : 46.69B.
 N° de TVA intracommunautaire : FR 37 824 356 513.
-Showroom : 11 impasse Pierre Camo, 31200 Toulouse. Téléphone : 05 31 60 51 61 — E-mail : contact@oxospa.fr.
+Showroom : 11 impasse Pierre Camo, 31200 Toulouse. Téléphone : 05 31 60 51 61 — E-mail : contact@oxo-spa.com.
 Directeur de la publication : Mickaël Legrand.
 
 ## Hébergement

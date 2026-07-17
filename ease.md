@@ -1,14 +1,14 @@
 # Spa Ease
 
-> Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. En stock, livraison 10 jours. Showroom OXO Spa à Toulouse.
+> Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/ease*
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Ease
 
-En stock
+Arrivage en cours
 
-En stock · Livraison 10 jours
+Arrivage en cours · Livraison 7 jours
 
 5 places · l’équilibre parfait
 
@@ -22,7 +22,7 @@ Options & accessoires
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
-Livraison · 10 jours · France entière
+Livraison · 7 jours · France entière
 
 Garantie · Coque 5 ans · élec. 2 ans
 
@@ -32,7 +32,7 @@ Essai · Showroom Toulouse
 
 ## Caractéristiques techniques
 
-Fiche technique du modèle Ease. Prix et certaines spécifications indicatifs, à confirmer en showroom.
+Fiche technique du modèle Ease. Le prix affiché est ferme et garanti pour toute commande en ligne. Certaines spécifications techniques sont indicatives et confirmées en showroom.
 
 Places · 5
 
@@ -151,6 +151,8 @@ Note moyenne 4,9/5 · avis clients OXO Spa (exemples).
 [Nexus — À partir de 4 695 €](https://oxo-spa.com/nexus)
 
 [Spa de nage — À partir de 7 500 €](https://oxo-spa.com/spa-de-nage-40)
+
+[Spa convivial — À partir de 9 500 €](https://oxo-spa.com/spa-de-nage-56)
 
 ## Envie de le voir en vrai ?
 

@@ -34,7 +34,7 @@ Directeur de la publication : Mickaël Legrand
 
 Showroom : 11 impasse Pierre Camo, 31200 Toulouse
 
-Téléphone : 05 31 60 51 61 — E-mail : contact@oxospa.fr
+Téléphone : 05 31 60 51 61 — E-mail : contact@oxo-spa.com
 
 Hébergeur du Site : Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.
 
@@ -62,7 +62,7 @@ Une confirmation de commande est adressée au Client par courrier électronique,
 
 ## 6. Disponibilité
 
-Les offres sont valables dans la limite des stocks disponibles. En cas d'indisponibilité d'un produit après commande, le Vendeur en informe le Client dans les meilleurs délais et procède au remboursement des sommes versées, sans autre indemnité. Délais indicatifs : environ 10 jours pour les modèles en stock, environ 3 mois pour les modèles sur commande.
+Les offres sont valables dans la limite des stocks disponibles. En cas d'indisponibilité d'un produit après commande, le Vendeur en informe le Client dans les meilleurs délais et procède au remboursement des sommes versées, sans autre indemnité. Délais indicatifs : environ 7 jours pour les modèles en stock, environ 3 mois pour les modèles sur commande.
 
 ## 7. Livraison et mise en service
 
@@ -72,7 +72,7 @@ Le prix payé en ligne **ne comprend pas** la livraison ni la mise en service. A
 
 Conformément aux articles L221-18 et suivants du Code de la consommation, le Client dispose d'un délai de **quatorze (14) jours** à compter de la réception du produit pour exercer son droit de rétractation, sans avoir à motiver sa décision. Ce droit s'applique à l'ensemble des produits, y compris les modèles « sur commande », qui sont des modèles standard du catalogue et non des biens confectionnés selon les spécifications propres du Client au sens de l'article L221-28.
 
-Pour l'exercer, le Client notifie sa décision par une déclaration dénuée d'ambiguïté (courrier postal ou e-mail à contact@oxospa.fr), en pouvant utiliser le formulaire type de rétractation. Le Vendeur rembourse l'ensemble des sommes versées, y compris les frais de livraison standard, au plus tard 14 jours après avoir été informé de la décision, par le même moyen de paiement — le Vendeur pouvant différer le remboursement jusqu'à la récupération du bien. Le Client renvoie ou restitue le bien sans retard excessif et au plus tard 14 jours après sa décision ; s'agissant de biens volumineux ne pouvant être renvoyés par voie postale, les frais de retour restent à sa charge, pour un coût estimé à **[À COMPLÉTER : estimation du coût de retour]**.
+Pour l'exercer, le Client notifie sa décision par une déclaration dénuée d'ambiguïté (courrier postal ou e-mail à contact@oxo-spa.com), en pouvant utiliser le formulaire type de rétractation. Le Vendeur rembourse l'ensemble des sommes versées, y compris les frais de livraison standard, au plus tard 14 jours après avoir été informé de la décision, par le même moyen de paiement — le Vendeur pouvant différer le remboursement jusqu'à la récupération du bien. Le Client renvoie ou restitue le bien sans retard excessif et au plus tard 14 jours après sa décision ; s'agissant de biens volumineux ne pouvant être renvoyés par voie postale, les frais de retour restent à sa charge, pour un coût estimé à **[À COMPLÉTER : estimation du coût de retour]**.
 
 ## 9. Garanties
 
@@ -88,7 +88,7 @@ La responsabilité du Vendeur ne saurait être engagée en cas d'inexécution ou
 
 ## 12. Données personnelles
 
-Les données collectées lors de la commande sont nécessaires à son traitement et sont destinées au Vendeur ainsi qu'à ses prestataires (paiement, facturation). Conformément au RGPD et à la loi Informatique et Libertés, le Client dispose d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition sur ses données, exerçable à contact@oxospa.fr. Les modalités détaillées figurent dans la · [politique de confidentialité](https://oxo-spa.com/confidentialite).
+Les données collectées lors de la commande sont nécessaires à son traitement et sont destinées au Vendeur ainsi qu'à ses prestataires (paiement, facturation). Conformément au RGPD et à la loi Informatique et Libertés, le Client dispose d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition sur ses données, exerçable à contact@oxo-spa.com. Les modalités détaillées figurent dans la · [politique de confidentialité](https://oxo-spa.com/confidentialite).
 
 ## 13. Propriété intellectuelle
 

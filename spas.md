@@ -6,11 +6,11 @@
 
 [Accueil](https://oxo-spa.com/) · Nos spas
 
-Découvrez la gamme OXO Spa : trois spas en stock livrables sous 10 jours, un spa de nage et un spa convivial sur commande. Tous nos modèles sont visibles et essayables dans notre showroom de Toulouse, et livrés partout en France.
+Découvrez la gamme OXO Spa : trois spas en arrivage, livrables sous 7 jours, un spa de nage et un spa convivial sur commande. Tous nos modèles sont visibles et essayables dans notre showroom de Toulouse, et livrés partout en France.
 
-## En stock
+## Arrivage en cours
 
-Livraison sous 10 jours · paiement à la commande
+Livraison sous 7 jours · paiement à la commande
 
 Arrivage en cours
 
@@ -71,6 +71,32 @@ Nage à contre-courant · 4,00 m
 
 Découvrir
 
+## Comparer la gamme
+
+Cinq modèles, deux usages. Les trois spas de détente se choisissent surtout au nombre de places et à l'encombrement ; les deux spas de nage, à la longueur du couloir. Tous les prix sont TTC, hors livraison.
+
+Caractéristiques comparées des 5 modèles OXO Spa. Prix TTC hors livraison (tarifs par zone plus bas).
+
+| Modèle | Places | Dimensions | Buses | Prix TTC | Disponibilité |
+| --- | --- | --- | --- | --- | --- |
+| [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | Arrivage en cours |
+| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 28 | 5 743 € | Arrivage en cours |
+| [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | Arrivage en cours |
+| [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | 37 | 7 500 € | Sur commande · ~3 mois |
+| [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 42 | 9 500 € | Sur commande · ~3 mois |
+
+### Pour 2 à 3 personnes
+
+Le · [Nexus](https://oxo-spa.com/nexus) (3 places, 210 × 165 cm) est le seul modèle pensé pour les petits espaces : il se glisse sur une terrasse étroite.
+
+### Pour 4 personnes
+
+Il n'existe pas de modèle strictement 4 places dans la gamme. L' · [Ease](https://oxo-spa.com/ease) (5 places) est le choix naturel : une assise de marge, sans passer au gabarit du Breeze.
+
+### Pour 5 à 6 personnes
+
+Le · [Breeze](https://oxo-spa.com/breeze) offre 6 places dont une allongée balnéo, pour le même encombrement au sol que l'Ease (200 × 200 cm).
+
 ## Pourquoi OXO Spa ?
 
 ### Garanties solides
@@ -83,7 +109,7 @@ Payez en plusieurs fois avec Sofinco, sous réserve d'acceptation.
 
 ### Livraison France
 
-Partout en France, sous 10 jours pour les modèles en stock.
+Partout en France, sous 7 jours pour les modèles en stock.
 
 ### Essai en showroom
 

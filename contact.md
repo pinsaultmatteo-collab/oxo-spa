@@ -19,12 +19,12 @@ Téléphone
 
 E-mail
 
-[contact@oxospa.fr](mailto:contact@oxospa.fr)
+[contact@oxo-spa.com](mailto:contact@oxo-spa.com)
 
 Horaires
 
-Du lundi au samedi
-9h00 – 19h00
+Du lundi au vendredi
+9h – 18h
 
 ## Être rappelé
 

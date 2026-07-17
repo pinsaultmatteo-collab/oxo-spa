@@ -29,6 +29,7 @@ const TYPES = {
   ".xml": "application/xml",
   ".txt": "text/plain; charset=utf-8",
   ".md": "text/markdown; charset=utf-8",
+  ".ico": "image/x-icon",
 };
 
 async function proxy(req, res, url) {

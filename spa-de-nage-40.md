@@ -34,9 +34,9 @@ Essai · Showroom Toulouse
 
 ## Caractéristiques techniques
 
-Fiche technique du modèle Spa de nage. Prix et certaines spécifications indicatifs, à confirmer en showroom.
+Fiche technique du modèle Spa de nage. Le prix affiché est ferme et garanti pour toute commande en ligne. Certaines spécifications techniques sont indicatives et confirmées en showroom.
 
-Longueur · 400 cm
+Longueur · 580 cm
 
 Dimensions · 580 × 220 × 140 cm
 
@@ -153,6 +153,8 @@ Note moyenne 4,9/5 · avis clients OXO Spa (exemples).
 [Nexus — À partir de 4 695 €](https://oxo-spa.com/nexus)
 
 [Ease — À partir de 5 753 €](https://oxo-spa.com/ease)
+
+[Spa convivial — À partir de 9 500 €](https://oxo-spa.com/spa-de-nage-56)
 
 ## Envie de le voir en vrai ?
 

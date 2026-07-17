@@ -4,8 +4,9 @@
 
 OXO Spa est un vendeur de spas et de spas de nage basé à Toulouse (Occitanie, France),
 avec un showroom où les modèles sont visibles et essayables, et une livraison partout en France.
-Trois modèles sont en stock (Breeze, Nexus, Ease) et livrables sous 10 jours ; le spa de nage
-et le spa convivial sont fabriqués sur commande. Les prix affichés sont TTC.
+Trois modèles (Breeze, Nexus, Ease) sont en arrivage et livrables sous 7 jours ; le spa de nage
+et le spa convivial sont fabriqués sur commande (~3 mois). Les prix affichés sont TTC et fermes
+pour toute commande en ligne.
 
 Chaque page ci-dessous existe en markdown (.md) et en HTML (même URL sans l'extension).
 Contact : 11 impasse Pierre Camo, 31200 Toulouse — 05 31 60 51 61.
@@ -13,9 +14,9 @@ Contact : 11 impasse Pierre Camo, 31200 Toulouse — 05 31 60 51 61.
 ## Nos spas
 
 - [Nos spas — spas et spas de nage à Toulouse](https://oxo-spa.com/spas.md): Catalogue OXO Spa à Toulouse : spas Breeze, Nexus, Ease en stock et spa de nage et spa convivial sur commande. Prix, caractéristiques, livraison France entière.
-- [Spa Nexus 3 places compact avec cascade](https://oxo-spa.com/nexus.md): Spa Nexus 3 places : format compact, cascade décorative, 26 buses d'hydromassage. En stock, livraison 10 jours. Showroom OXO Spa à Toulouse.
-- [Spa Breeze 6 places — en stock à Toulouse](https://oxo-spa.com/breeze.md): Spa Breeze 6 places : hydromassage 28 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 10 jours en France. Showroom OXO Spa à Toulouse.
-- [Spa Ease 5 places — en stock à Toulouse](https://oxo-spa.com/ease.md): Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. En stock, livraison 10 jours. Showroom OXO Spa à Toulouse.
+- [Spa Nexus 3 places compact avec cascade](https://oxo-spa.com/nexus.md): Spa Nexus 3 places : format compact, cascade décorative, 26 buses d'hydromassage. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
+- [Spa Breeze 6 places — en stock à Toulouse](https://oxo-spa.com/breeze.md): Spa Breeze 6 places : hydromassage 28 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
+- [Spa Ease 5 places — en stock à Toulouse](https://oxo-spa.com/ease.md): Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
 - [Spa de nage (5,80 m) à contre-courant](https://oxo-spa.com/spa-de-nage-40.md): Spa de nage : couloir de nage de 5,80 m à contre-courant, double zone nage et détente, 37 buses. Sur commande (~3 mois). OXO Spa, Toulouse.
 - [Spa convivial (4,00 m) à contre-courant](https://oxo-spa.com/spa-de-nage-56.md): Spa convivial : couloir de nage de 4,00 m, 37 buses, double zone nage et balnéo. Sur commande (~3 mois). OXO Spa, showroom à Toulouse.
 
@@ -31,7 +32,7 @@ Contact : 11 impasse Pierre Camo, 31200 Toulouse — 05 31 60 51 61.
 
 - [Technologie des spas OXO — hydromassage, chromothérapie, ozone](https://oxo-spa.com/technologie.md): Découvrez la technologie des spas OXO : hydromassage à buses orientables, chromothérapie LED, filtration par ozone, isolation pleine mousse et pilotage tactile.
 - [Garanties & SAV des spas OXO — coque 5 ans, électrique 2 ans](https://oxo-spa.com/garanties.md): Garanties des spas OXO : coque et structure 5 ans, partie électrique 2 ans, pièces détachées, SAV réactif et financement jusqu'à 120 mois avec Sofinco.
-- [Livraison & installation de spas en France — tarifs par zone](https://oxo-spa.com/livraison.md): Livraison de spas OXO partout en France : tarifs par zone (500 à 960 €HT), +180 €HT en montagne, livraison sous 10 jours pour les modèles en stock. Mise en service incluse.
+- [Livraison & installation de spas en France — tarifs par zone](https://oxo-spa.com/livraison.md): Livraison de spas OXO partout en France : tarifs par zone (500 à 960 €HT), +180 €HT en montagne, livraison sous 7 jours pour les modèles en stock. Mise en service incluse.
 - [Contact — showroom OXO Spa à Toulouse](https://oxo-spa.com/contact.md): Contactez OXO Spa à Toulouse : showroom 11 impasse Pierre Camo, 31200 Toulouse. Téléphone 05 31 60 51 61. Demande de rappel, horaires et plan d'accès.
 
 ## L'entreprise

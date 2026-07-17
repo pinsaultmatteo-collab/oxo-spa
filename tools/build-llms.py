@@ -73,6 +73,10 @@ class ToMarkdown(HTMLParser):
         self.prefix = ""
         # Pile des <a> ouverts : [buffer_exterieur, href, contient_un_bloc]
         self.a_stack = []
+        # Tableau en cours : liste de lignes, chaque ligne = liste de cellules.
+        # None hors <table>.
+        self.table = None
+        self.row = None
 
     @property
     def in_a(self):
@@ -116,6 +120,24 @@ class ToMarkdown(HTMLParser):
             self.buf.append(" " if self.in_a else "\n")
             return
 
+        # -- tableaux : un vrai tableau markdown, pas des cellules collees ----
+        if tag == "table":
+            self.flush()
+            self.table = []
+            return
+        if self.table is not None:
+            if tag == "tr":
+                self.row = []
+                return
+            if tag in ("td", "th"):
+                self.buf = []
+                return
+            if tag in ("thead", "tbody", "tfoot"):
+                return
+        if tag == "caption":
+            self.flush()
+            return
+
         if tag in BLOCK:
             if self.in_a:
                 # Un lien-carte enveloppe des blocs : on note le fait et on
@@ -153,6 +175,35 @@ class ToMarkdown(HTMLParser):
         if self.skip:
             if tag in SKIP_TREE and tag not in VOID:
                 self.skip -= 1
+            return
+
+        if self.table is not None:
+            if tag in ("td", "th"):
+                cell = re.sub(r"\s+", " ", "".join(self.buf)).replace("|", "\\|").strip()
+                if self.row is not None:
+                    self.row.append(cell)
+                self.buf = []
+                return
+            if tag == "tr":
+                if self.row:
+                    self.table.append(self.row)
+                self.row = None
+                return
+            if tag == "table":
+                rows, self.table = self.table, None
+                if rows:
+                    head = rows[0]
+                    md = ["| " + " | ".join(head) + " |",
+                          "|" + "|".join([" --- "] * len(head)) + "|"]
+                    for r in rows[1:]:
+                        r = r + [""] * (len(head) - len(r))  # ligne courte
+                        md.append("| " + " | ".join(r[:len(head)]) + " |")
+                    self.blocks.append("\n".join(md))
+                return
+            if tag in ("thead", "tbody", "tfoot"):
+                return
+        if tag == "caption":
+            self.flush()
             return
 
         if tag == "a":
@@ -256,8 +307,9 @@ def main():
     out += [
         "OXO Spa est un vendeur de spas et de spas de nage basé à Toulouse (Occitanie, France),",
         "avec un showroom où les modèles sont visibles et essayables, et une livraison partout en France.",
-        "Trois modèles sont en stock (Breeze, Nexus, Ease) et livrables sous 10 jours ; le spa de nage",
-        "et le spa convivial sont fabriqués sur commande. Les prix affichés sont TTC.",
+        "Trois modèles (Breeze, Nexus, Ease) sont en arrivage et livrables sous 7 jours ; le spa de nage",
+        "et le spa convivial sont fabriqués sur commande (~3 mois). Les prix affichés sont TTC et fermes",
+        "pour toute commande en ligne.",
         "",
         "Chaque page ci-dessous existe en markdown (.md) et en HTML (même URL sans l'extension).",
         "Contact : 11 impasse Pierre Camo, 31200 Toulouse — 05 31 60 51 61.",
