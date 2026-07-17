@@ -160,6 +160,32 @@ Note moyenne 4,9/5 · avis clients OXO Spa (exemples).
 
 **Élodie & Marc**Colomiers
 
+## Coût d'usage
+
+Ce que le Breeze coûte une fois installé, en électricité. Une question qu'on nous pose souvent, et à laquelle peu de vendeurs répondent.
+
+Consommation estimée · 1 500 à 2 500 kWh/an
+
+Électricité estimée · ≈ 25 à 40 €/mois
+
+Soit sur l'année · ≈ 290 à 485 €/an
+
+**Ce sont des estimations, pas un engagement.** Base de calcul : maintien à 38 °C toute l'année, isolation pleine mousse et couverture isotherme (de série) remise après chaque bain, tarif de 0,1940 €/kWh (tarif réglementé EDF option base, 6 kVA, juillet 2026). Le coût réel dépend de votre climat, de la température choisie, de la fréquence d'utilisation, de l'exposition au vent et de votre contrat d'électricité. Le traitement de l'eau et le remplacement du filtre s'ajoutent à ce budget. Nous préférons vous donner un ordre de grandeur honnête plutôt qu'un chiffre flatteur : parlez-en à un conseiller pour affiner selon votre installation.
+
+## Questions fréquentes
+
+**Combien coûte le Breeze en électricité ?**
+
+Nous estimons la consommation entre 1 500 à 2 500 kWh par an, soit environ 25 à 40 € par mois au tarif réglementé de 0,1940 €/kWh. C'est une estimation, pas un engagement : le coût réel dépend de votre climat, de la température choisie et de votre usage. L'isolation pleine mousse et la couverture isotherme livrée de série pèsent beaucoup dans ce résultat.
+
+**Sous quel délai le Breeze est-il livré ?**
+
+Le Breeze est livré sous 7 jours partout en France. Les tarifs de livraison dépendent de votre zone et sont détaillés plus bas sur cette page.
+
+**Quelle est la garantie du Breeze ?**
+
+La coque et la structure sont garanties 5 ans, et la partie électrique (pompes, chauffage, électronique) 2 ans. Le service après-vente et les pièces détachées sont assurés par OXO Spa, à Toulouse.
+
 ## Autres modèles
 
 [Nexus — À partir de 4 695 €](https://oxo-spa.com/nexus)

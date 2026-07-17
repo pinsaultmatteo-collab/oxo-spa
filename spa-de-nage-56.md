@@ -148,6 +148,32 @@ Note moyenne 4,9/5 · avis clients OXO Spa (exemples).
 
 **Élodie & Marc**Colomiers
 
+## Coût d'usage
+
+Ce que le Spa convivial coûte une fois installé, en électricité. Une question qu'on nous pose souvent, et à laquelle peu de vendeurs répondent.
+
+Consommation estimée · 3 000 à 6 000 kWh/an
+
+Électricité estimée · ≈ 50 à 95 €/mois
+
+Soit sur l'année · ≈ 580 à 1 165 €/an
+
+**Ce sont des estimations, pas un engagement.** Base de calcul : maintien à 38 °C toute l'année, isolation pleine mousse et couverture isotherme (de série) remise après chaque bain, tarif de 0,1940 €/kWh (tarif réglementé EDF option base, 6 kVA, juillet 2026). Le coût réel dépend de votre climat, de la température choisie, de la fréquence d'utilisation, de l'exposition au vent et de votre contrat d'électricité. Le traitement de l'eau et le remplacement du filtre s'ajoutent à ce budget. Nous préférons vous donner un ordre de grandeur honnête plutôt qu'un chiffre flatteur : parlez-en à un conseiller pour affiner selon votre installation.
+
+## Questions fréquentes
+
+**Combien coûte le Spa convivial en électricité ?**
+
+Nous estimons la consommation entre 3 000 à 6 000 kWh par an, soit environ 50 à 95 € par mois au tarif réglementé de 0,1940 €/kWh. C'est une estimation, pas un engagement : le coût réel dépend de votre climat, de la température choisie et de votre usage. L'isolation pleine mousse et la couverture isotherme livrée de série pèsent beaucoup dans ce résultat.
+
+**Sous quel délai le Spa convivial est-il livré ?**
+
+Le Spa convivial est livré sous ~3 mois partout en France. Les tarifs de livraison dépendent de votre zone et sont détaillés plus bas sur cette page.
+
+**Quelle est la garantie du Spa convivial ?**
+
+La coque et la structure sont garanties 5 ans, et la partie électrique (pompes, chauffage, électronique) 2 ans. Le service après-vente et les pièces détachées sont assurés par OXO Spa, à Toulouse.
+
 ## Autres modèles
 
 [Breeze — À partir de 5 743 €](https://oxo-spa.com/breeze)

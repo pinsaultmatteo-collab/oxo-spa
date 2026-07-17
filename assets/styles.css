@@ -645,6 +645,11 @@ a.card{text-decoration:none;color:inherit;cursor:pointer}
 .pdp__incl div{display:flex;align-items:flex-start;gap:11px;font-size:14.5px;color:var(--ink-2);padding:7px 0}
 .pdp__incl svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:2;flex:none;margin-top:2px}
 
+/* Avertissement des estimations de cout d'usage : doit rester lisible et
+   visuellement rattache au tableau, jamais noye en petites mentions. */
+.pdp__note{margin-top:20px;background:var(--panel);border-left:3px solid var(--gold);
+  padding:16px 18px;border-radius:0 6px 6px 0;font-size:13.5px;line-height:1.65;color:var(--ink-2);max-width:80ch}
+
 /* ============================================================
    Comparatif de la gamme (/spas)
    ============================================================ */
