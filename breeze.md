@@ -1,6 +1,6 @@
 # Spa Breeze
 
-> Spa Breeze 6 places : hydromassage 28 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
+> Spa Breeze 6 places : hydromassage 27 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/breeze*
 
@@ -20,7 +20,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-28 buses · 200 × 200 × 80 cm · ~900 L · 6 places
+27 buses · 200 × 200 × 80 cm · ~900 L · 6 places
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -40,7 +40,7 @@ Places · 6
 
 Dimensions · 200 × 200 × 80 cm
 
-Buses d’hydromassage · 28
+Buses d’hydromassage · 27
 
 Volume d’eau · ~900 L
 
@@ -56,6 +56,20 @@ Filtration · Cartouche + ozone
 
 Tablier · Synthétique gris
 
+Pompe · 3 HP bi-vitesse
+
+Châssis · Acier inoxydable
+
+Commande · Panneau tactile
+
+Audio · Bluetooth
+
+Connectivité · Wi-Fi
+
+Éclairage · LED immergée · 16 points
+
+Appuie-têtes · 3
+
 Garantie coque · 5 ans
 
 Garantie électrique · 2 ans
@@ -64,7 +78,7 @@ Garantie électrique · 2 ans
 
 ### Hydromassage
 
-28 buses orientables ciblant nuque, dos et jambes pour un massage complet.
+27 buses orientables ciblant nuque, dos et jambes pour un massage complet.
 
 ### Chromothérapie
 

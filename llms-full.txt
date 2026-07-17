@@ -89,10 +89,10 @@ Caractéristiques comparées des 5 modèles OXO Spa. Prix TTC hors livraison (ta
 | Modèle | Places | Dimensions | Buses | Prix TTC | Disponibilité |
 | --- | --- | --- | --- | --- | --- |
 | [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | Arrivage en cours |
-| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 28 | 5 743 € | Arrivage en cours |
+| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 27 | 5 743 € | Arrivage en cours |
 | [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | Arrivage en cours |
-| [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | 37 | 7 500 € | Sur commande · ~3 mois |
-| [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 42 | 9 500 € | Sur commande · ~3 mois |
+| [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | — | 7 500 € | Sur commande · ~3 mois |
+| [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 37 + 2 jets de nage | 9 500 € | Sur commande · ~3 mois |
 
 ### Pour 2 à 3 personnes
 
@@ -162,7 +162,7 @@ Nos conseillers vous aident à trouver le spa adapté à votre espace, votre bud
 
 # Spa Nexus
 
-> Spa Nexus 3 places : format compact, cascade décorative, 26 buses d'hydromassage. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
+> Spa Nexus 3 places : format compact, 26 buses d'hydromassage, Bluetooth et Wi-Fi. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/nexus*
 
@@ -182,7 +182,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-26 buses · 210 × 165 × 80 cm · 3 places · Cascade
+26 buses · 210 × 165 × 80 cm · 3 places · Bluetooth
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -204,8 +204,6 @@ Dimensions · 210 × 165 × 80 cm
 
 Buses d’hydromassage · 26
 
-Cascade décorative · Oui
-
 Coque · Acrylique nacrée
 
 Isolation · Pleine mousse
@@ -218,6 +216,22 @@ Tablier · Synthétique gris
 
 Encombrement · Compact
 
+Pompe · 3 HP bi-vitesse
+
+Châssis · Acier inoxydable
+
+Commande · Panneau tactile
+
+Audio · Bluetooth
+
+Connectivité · Wi-Fi
+
+Éclairage · LED immergée · 12 points
+
+Appuie-têtes · 4
+
+Porte-gobelets · 2
+
 Garantie coque · 5 ans
 
 Garantie électrique · 2 ans
@@ -228,9 +242,9 @@ Garantie électrique · 2 ans
 
 26 buses pour un massage puissant malgré un format compact.
 
-### Cascade d’eau
+### Bluetooth & Wi-Fi
 
-Une cascade décorative qui apporte le son apaisant de l’eau.
+Musique en Bluetooth et pilotage connecté depuis votre téléphone.
 
 ### Chromothérapie
 
@@ -328,7 +342,7 @@ Venez essayer le Nexus dans notre showroom de Toulouse, ou faites-vous rappeler 
 
 # Spa Breeze
 
-> Spa Breeze 6 places : hydromassage 28 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
+> Spa Breeze 6 places : hydromassage 27 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/breeze*
 
@@ -348,7 +362,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-28 buses · 200 × 200 × 80 cm · ~900 L · 6 places
+27 buses · 200 × 200 × 80 cm · ~900 L · 6 places
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -368,7 +382,7 @@ Places · 6
 
 Dimensions · 200 × 200 × 80 cm
 
-Buses d’hydromassage · 28
+Buses d’hydromassage · 27
 
 Volume d’eau · ~900 L
 
@@ -384,6 +398,20 @@ Filtration · Cartouche + ozone
 
 Tablier · Synthétique gris
 
+Pompe · 3 HP bi-vitesse
+
+Châssis · Acier inoxydable
+
+Commande · Panneau tactile
+
+Audio · Bluetooth
+
+Connectivité · Wi-Fi
+
+Éclairage · LED immergée · 16 points
+
+Appuie-têtes · 3
+
 Garantie coque · 5 ans
 
 Garantie électrique · 2 ans
@@ -392,7 +420,7 @@ Garantie électrique · 2 ans
 
 ### Hydromassage
 
-28 buses orientables ciblant nuque, dos et jambes pour un massage complet.
+27 buses orientables ciblant nuque, dos et jambes pour un massage complet.
 
 ### Chromothérapie
 
@@ -512,7 +540,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-27 buses · 200 × 200 × 80 cm · 5 places
+27 buses · Cascade · 200 × 200 × 80 cm · 5 places
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -548,6 +576,24 @@ Assises · 5 places ergonomiques
 
 Encombrement · 200 × 200 cm
 
+Cascade décorative · Oui
+
+Pompe · 3 HP bi-vitesse
+
+Châssis · Acier inoxydable
+
+Commande · Panneau tactile
+
+Audio · Bluetooth
+
+Connectivité · Wi-Fi
+
+Éclairage · LED immergée
+
+Appuie-têtes · 3
+
+Filtres · 2
+
 Garantie coque · 5 ans
 
 Garantie électrique · 2 ans
@@ -558,9 +604,9 @@ Garantie électrique · 2 ans
 
 27 buses pour un massage enveloppant sur les 5 places.
 
-### 5 places
+### Cascade d’eau
 
-Le bon compromis : convivial sans être encombrant.
+Une cascade décorative qui apporte le son apaisant de l’eau.
 
 ### Chromothérapie
 
@@ -658,7 +704,7 @@ Venez essayer le Ease dans notre showroom de Toulouse, ou faites-vous rappeler p
 
 # Spa de nage
 
-> Spa de nage : couloir de nage de 5,80 m à contre-courant, double zone nage et détente, 37 buses. Sur commande (~3 mois). OXO Spa, Toulouse.
+> Spa de nage : couloir de nage de 5,80 m à contre-courant, double zone nage et détente, profondeur 140 cm. Sur commande (~3 mois). OXO Spa, Toulouse.
 
 *Source : https://oxo-spa.com/spa-de-nage-40*
 
@@ -678,7 +724,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-37 buses · 580 × 220 × 140 cm · Contre-courant
+Couloir 5,80 m · 580 × 220 × 140 cm · Contre-courant
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -698,7 +744,7 @@ Longueur · 580 cm
 
 Dimensions · 580 × 220 × 140 cm
 
-Buses d’hydromassage · 37
+Profondeur · 140 cm
 
 Nage à contre-courant · Oui
 
@@ -730,7 +776,7 @@ Pompe puissante générant un courant réglable pour l’entraînement.
 
 ### Zone détente
 
-37 buses dédiées à la récupération après l’effort.
+Une zone balnéo séparée du couloir, dédiée à la récupération après l’effort.
 
 ### Toute l’année
 
@@ -864,7 +910,9 @@ Longueur · 400 cm
 
 Dimensions · 400 × 220 × 126 cm
 
-Buses d’hydromassage · 42
+Buses d’hydromassage · 37
+
+Jets de nage · 2
 
 Nage à contre-courant · Oui
 

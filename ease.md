@@ -18,7 +18,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-27 buses · 200 × 200 × 80 cm · 5 places
+27 buses · Cascade · 200 × 200 × 80 cm · 5 places
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -54,6 +54,24 @@ Assises · 5 places ergonomiques
 
 Encombrement · 200 × 200 cm
 
+Cascade décorative · Oui
+
+Pompe · 3 HP bi-vitesse
+
+Châssis · Acier inoxydable
+
+Commande · Panneau tactile
+
+Audio · Bluetooth
+
+Connectivité · Wi-Fi
+
+Éclairage · LED immergée
+
+Appuie-têtes · 3
+
+Filtres · 2
+
 Garantie coque · 5 ans
 
 Garantie électrique · 2 ans
@@ -64,9 +82,9 @@ Garantie électrique · 2 ans
 
 27 buses pour un massage enveloppant sur les 5 places.
 
-### 5 places
+### Cascade d’eau
 
-Le bon compromis : convivial sans être encombrant.
+Une cascade décorative qui apporte le son apaisant de l’eau.
 
 ### Chromothérapie
 

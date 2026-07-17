@@ -1,6 +1,6 @@
 # Spa Nexus
 
-> Spa Nexus 3 places : format compact, cascade décorative, 26 buses d'hydromassage. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
+> Spa Nexus 3 places : format compact, 26 buses d'hydromassage, Bluetooth et Wi-Fi. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/nexus*
 
@@ -20,7 +20,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-26 buses · 210 × 165 × 80 cm · 3 places · Cascade
+26 buses · 210 × 165 × 80 cm · 3 places · Bluetooth
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -42,8 +42,6 @@ Dimensions · 210 × 165 × 80 cm
 
 Buses d’hydromassage · 26
 
-Cascade décorative · Oui
-
 Coque · Acrylique nacrée
 
 Isolation · Pleine mousse
@@ -56,6 +54,22 @@ Tablier · Synthétique gris
 
 Encombrement · Compact
 
+Pompe · 3 HP bi-vitesse
+
+Châssis · Acier inoxydable
+
+Commande · Panneau tactile
+
+Audio · Bluetooth
+
+Connectivité · Wi-Fi
+
+Éclairage · LED immergée · 12 points
+
+Appuie-têtes · 4
+
+Porte-gobelets · 2
+
 Garantie coque · 5 ans
 
 Garantie électrique · 2 ans
@@ -66,9 +80,9 @@ Garantie électrique · 2 ans
 
 26 buses pour un massage puissant malgré un format compact.
 
-### Cascade d’eau
+### Bluetooth & Wi-Fi
 
-Une cascade décorative qui apporte le son apaisant de l’eau.
+Musique en Bluetooth et pilotage connecté depuis votre téléphone.
 
 ### Chromothérapie
 

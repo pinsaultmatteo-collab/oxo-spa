@@ -40,7 +40,9 @@ Longueur · 400 cm
 
 Dimensions · 400 × 220 × 126 cm
 
-Buses d’hydromassage · 42
+Buses d’hydromassage · 37
+
+Jets de nage · 2
 
 Nage à contre-courant · Oui
 

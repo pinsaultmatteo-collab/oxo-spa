@@ -80,10 +80,10 @@ Caractéristiques comparées des 5 modèles OXO Spa. Prix TTC hors livraison (ta
 | Modèle | Places | Dimensions | Buses | Prix TTC | Disponibilité |
 | --- | --- | --- | --- | --- | --- |
 | [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | Arrivage en cours |
-| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 28 | 5 743 € | Arrivage en cours |
+| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 27 | 5 743 € | Arrivage en cours |
 | [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | Arrivage en cours |
-| [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | 37 | 7 500 € | Sur commande · ~3 mois |
-| [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 42 | 9 500 € | Sur commande · ~3 mois |
+| [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | — | 7 500 € | Sur commande · ~3 mois |
+| [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 37 + 2 jets de nage | 9 500 € | Sur commande · ~3 mois |
 
 ### Pour 2 à 3 personnes
 

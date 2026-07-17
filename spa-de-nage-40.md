@@ -1,6 +1,6 @@
 # Spa de nage
 
-> Spa de nage : couloir de nage de 5,80 m à contre-courant, double zone nage et détente, 37 buses. Sur commande (~3 mois). OXO Spa, Toulouse.
+> Spa de nage : couloir de nage de 5,80 m à contre-courant, double zone nage et détente, profondeur 140 cm. Sur commande (~3 mois). OXO Spa, Toulouse.
 
 *Source : https://oxo-spa.com/spa-de-nage-40*
 
@@ -20,7 +20,7 @@ Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
 Options & accessoires
 
-37 buses · 580 × 220 × 140 cm · Contre-courant
+Couloir 5,80 m · 580 × 220 × 140 cm · Contre-courant
 
 [Être rappelé](https://oxo-spa.com/contact?sujet=produit)
 
@@ -40,7 +40,7 @@ Longueur · 580 cm
 
 Dimensions · 580 × 220 × 140 cm
 
-Buses d’hydromassage · 37
+Profondeur · 140 cm
 
 Nage à contre-courant · Oui
 
@@ -72,7 +72,7 @@ Pompe puissante générant un courant réglable pour l’entraînement.
 
 ### Zone détente
 
-37 buses dédiées à la récupération après l’effort.
+Une zone balnéo séparée du couloir, dédiée à la récupération après l’effort.
 
 ### Toute l’année
 
