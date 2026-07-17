@@ -1,6 +1,6 @@
 /* Formulaire de contact OXO Spa — source unique.
  *
- * Un seul formulaire, monte a deux endroits : la page /contact.html et la popup
+ * Un seul formulaire, monte a deux endroits : la page /contact et la popup
  * "Etre rappele" de l'accueil. Un seul markup, une seule validation, un seul
  * endpoint (Formspree, ou les commerciaux suivent leurs leads).
  *

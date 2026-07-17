@@ -130,7 +130,7 @@
     var l = lines();
 
     if (!l.length) {
-      items.innerHTML = '<p class="cart-empty">Votre panier est vide.<br><a href="/spas.html" data-cart-close>Découvrir nos spas &rarr;</a></p>';
+      items.innerHTML = '<p class="cart-empty">Votre panier est vide.<br><a href="/spas" data-cart-close>Découvrir nos spas &rarr;</a></p>';
       if (foot) foot.style.display = "none";
       bindClose();
       return;
@@ -154,7 +154,7 @@
     if (recall) {
       var recap = l.map(function (it) { return it.name + " (" + fmt(it.total) + " €)"; }).join(", ") +
         ". Total panier : " + fmt(t.subtotal) + " €. Merci de me recontacter pour finaliser.";
-      recall.href = "/contact.html?sujet=devis&message=" + encodeURIComponent(recap);
+      recall.href = "/contact?sujet=devis&message=" + encodeURIComponent(recap);
     }
 
     if (foot) foot.style.display = "block";

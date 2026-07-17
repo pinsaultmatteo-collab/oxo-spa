@@ -15,7 +15,7 @@
       "price": 4695,
       "availability": "stock",
       "depositRate": 1,
-      "url": "/nexus.html",
+      "url": "/nexus",
       "image": "/assets/images/nexus-blanc.webp"
     },
     {
@@ -24,7 +24,7 @@
       "price": 5743,
       "availability": "stock",
       "depositRate": 1,
-      "url": "/breeze.html",
+      "url": "/breeze",
       "image": "/assets/images/breeze-blanc.webp"
     },
     {
@@ -33,7 +33,7 @@
       "price": 5753,
       "availability": "stock",
       "depositRate": 1,
-      "url": "/ease.html",
+      "url": "/ease",
       "image": "/assets/images/produit-ease.webp"
     },
     {
@@ -42,7 +42,7 @@
       "price": 7500,
       "availability": "order",
       "depositRate": 0.5,
-      "url": "/spa-de-nage-40.html",
+      "url": "/spa-de-nage-40",
       "image": "/assets/images/produit-spa-nage.webp"
     },
     {
@@ -51,7 +51,7 @@
       "price": 9500,
       "availability": "order",
       "depositRate": 0.5,
-      "url": "/spa-de-nage-56.html",
+      "url": "/spa-de-nage-56",
       "image": "/assets/images/produit-spa-convivial.webp"
     }
   ],

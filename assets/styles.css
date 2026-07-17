@@ -1185,7 +1185,7 @@ h1,h2,h3{text-wrap:balance}
 }
 
 /* ============================================================
-   Tunnel de commande (commande.html / confirmation.html)
+   Tunnel de commande (/commande / /confirmation)
    ============================================================ */
 .checkout{max-width:1120px;margin:0 auto}
 .co__empty{text-align:center;color:var(--ink-2);padding:60px 0}

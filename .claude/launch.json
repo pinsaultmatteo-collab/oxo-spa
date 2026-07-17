@@ -12,8 +12,8 @@
       "runtimeExecutable": "node",
       "runtimeArgs": ["tools/dev-proxy.mjs"],
       "port": 4321,
+      "autoPort": true,
       "env": {
-        "PORT": "4321",
         "UPSTREAM": "https://oxo-spa-git-feature-tunn-464584-pinsaultmatteo-collabs-projects.vercel.app"
       }
     }

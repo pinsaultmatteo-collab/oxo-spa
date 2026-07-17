@@ -176,7 +176,7 @@
     stripe
       .confirmPayment({
         elements: elements,
-        confirmParams: { return_url: window.location.origin + "/confirmation.html" },
+        confirmParams: { return_url: window.location.origin + "/confirmation" },
       })
       .then(function (result) {
         // On n'arrive ici QUE si la confirmation echoue : sinon Stripe redirige.

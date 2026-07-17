@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "buildCommand": null,
-  "cleanUrls": false,
+  "cleanUrls": true,
   "trailingSlash": false,
   "functions": {
     "api/*.js": {

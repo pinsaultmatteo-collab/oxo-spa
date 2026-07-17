@@ -56,7 +56,17 @@ async function proxy(req, res, url) {
 
 async function serveStatic(req, res, url) {
   let pathname = decodeURIComponent(url.pathname);
+
+  // Reproduit cleanUrls de Vercel : /spas sert spas.html, et /spas.html renvoie
+  // une 308 vers /spas. Sans ca le local divergerait de la prod.
+  if (pathname.endsWith(".html")) {
+    const base = pathname.slice(0, -5);
+    const clean = (base.endsWith("/index") ? base.slice(0, -5) : base) || "/";
+    res.writeHead(308, { Location: clean + url.search });
+    return res.end();
+  }
   if (pathname.endsWith("/")) pathname += "index.html";
+  else if (!extname(pathname)) pathname += ".html"; // /spas -> spas.html
 
   // pas de remontee hors du dossier du site
   const filePath = join(ROOT, normalize(pathname).replace(/^(\.\.[/\\])+/, ""));
