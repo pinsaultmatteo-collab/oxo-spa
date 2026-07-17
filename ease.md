@@ -6,9 +6,9 @@
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Ease
 
-Arrivage en cours
+En stock
 
-Arrivage en cours · Livraison 7 jours
+En stock · Livraison 7 jours
 
 5 places · l’équilibre parfait
 

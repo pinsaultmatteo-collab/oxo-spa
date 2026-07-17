@@ -6,9 +6,9 @@
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Nexus
 
-Arrivage en cours
+En stock
 
-Arrivage en cours · Livraison 7 jours
+En stock · Livraison 7 jours
 
 3 places · compact, idéal petits espaces
 

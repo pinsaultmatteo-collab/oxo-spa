@@ -6,13 +6,13 @@
 
 [Accueil](https://oxo-spa.com/) · Nos spas
 
-Découvrez la gamme OXO Spa : trois spas en arrivage, livrables sous 7 jours, un spa de nage et un spa convivial sur commande. Tous nos modèles sont visibles et essayables dans notre showroom de Toulouse, et livrés partout en France.
+Découvrez la gamme OXO Spa : trois spas en stock, livrables sous 7 jours, un spa de nage et un spa convivial sur commande. Tous nos modèles sont visibles et essayables dans notre showroom de Toulouse, et livrés partout en France.
 
-## Arrivage en cours
+## En stock
 
 Livraison sous 7 jours · paiement à la commande
 
-Arrivage en cours
+En stock
 
 Breeze
 
@@ -23,7 +23,7 @@ Breeze
 
 Découvrir
 
-Arrivage en cours
+En stock
 
 Nexus
 
@@ -34,7 +34,7 @@ Nexus
 
 Découvrir
 
-Arrivage en cours
+En stock
 
 Ease
 
@@ -79,9 +79,9 @@ Caractéristiques comparées des 5 modèles OXO Spa. Prix TTC hors livraison (ta
 
 | Modèle | Places | Dimensions | Buses | Prix TTC | Disponibilité |
 | --- | --- | --- | --- | --- | --- |
-| [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | Arrivage en cours |
-| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 27 | 5 743 € | Arrivage en cours |
-| [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | Arrivage en cours |
+| [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | En stock |
+| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 27 | 5 743 € | En stock |
+| [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | En stock |
 | [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | — | 7 500 € | Sur commande · ~3 mois |
 | [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 37 + 2 jets de nage | 9 500 € | Sur commande · ~3 mois |
 
