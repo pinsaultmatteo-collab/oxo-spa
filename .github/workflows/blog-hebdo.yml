@@ -79,9 +79,8 @@ jobs:
           git config user.name  "OXO Spa Blog Bot"
           git config user.email "blog-bot@users.noreply.github.com"
           git add -A
-          git commit -m "Blog : ${{ steps.gen.outputs.title }}
-
-Article hebdomadaire genere automatiquement (${{ steps.gen.outputs.slug }}).
-
-Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
+          git commit \
+            -m "Blog : ${{ steps.gen.outputs.title }}" \
+            -m "Article hebdomadaire genere automatiquement (${{ steps.gen.outputs.slug }})." \
+            -m "Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
           git push
