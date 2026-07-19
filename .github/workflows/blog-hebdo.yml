@@ -1,0 +1,86 @@
+name: Article de blog hebdomadaire
+
+# Publie automatiquement un article de blog optimise SEO chaque mardi a 9h00 (Paris).
+# GitHub cron est en UTC et ne gere pas l'heure d'ete : on planifie a 07h et 08h UTC
+# (= 9h Paris en ete / en hiver) et l'etape "garde-heure" ne laisse passer que 9h Paris.
+on:
+  schedule:
+    - cron: "0 7 * * 2"
+    - cron: "0 8 * * 2"
+  workflow_dispatch: {}   # permet un declenchement manuel pour tester
+
+concurrency:
+  group: blog-hebdo
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # necessaire pour committer/pousser l'article
+    steps:
+      - name: Garde-heure (9h Paris uniquement, sauf declenchement manuel)
+        id: garde
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          H=$(TZ=Europe/Paris date +%H)
+          if [ "$H" = "09" ]; then echo "ok=true" >> "$GITHUB_OUTPUT";
+          else echo "Pas 9h a Paris (il est ${H}h) — on arrete."; echo "ok=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Checkout
+        if: steps.garde.outputs.ok == 'true'
+        uses: actions/checkout@v4
+
+      - name: Node
+        if: steps.garde.outputs.ok == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Python
+        if: steps.garde.outputs.ok == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dependances
+        if: steps.garde.outputs.ok == 'true'
+        run: |
+          npm install                       # deps du projet (dont les tests)
+          npm install @anthropic-ai/sdk     # SDK Anthropic pour le generateur
+
+      - name: Rediger l'article
+        if: steps.garde.outputs.ok == 'true'
+        id: gen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # ANTHROPIC_MODEL: claude-sonnet-5   # decommenter pour changer de modele
+        run: node tools/blog/generate.mjs
+
+      - name: Regenerer les .md / llms.txt
+        if: steps.garde.outputs.ok == 'true'
+        run: python3 tools/build-llms.py
+
+      - name: Garde-fous (prix + tests + coherence)
+        if: steps.garde.outputs.ok == 'true'
+        run: |
+          python3 tools/check-prices.py
+          npm test
+
+      - name: Committer et pousser
+        if: steps.garde.outputs.ok == 'true'
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "Aucun changement — rien a publier."; exit 0
+          fi
+          git config user.name  "OXO Spa Blog Bot"
+          git config user.email "blog-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "Blog : ${{ steps.gen.outputs.title }}
+
+Article hebdomadaire genere automatiquement (${{ steps.gen.outputs.slug }}).
+
+Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
+          git push
