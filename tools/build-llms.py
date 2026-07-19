@@ -40,6 +40,18 @@ SECTIONS = [
     ]),
 ]
 
+# Auto-decouverte des articles de blog : tout blog-*.html present est ajoute a la
+# section "Guides et conseils" (apres les articles curates, ordre alphabetique),
+# pour que les articles generes automatiquement rejoignent llms.txt / llms-full.txt
+# et aient leur .md — sans avoir a editer ce fichier a chaque nouvel article.
+for _title, _slugs in SECTIONS:
+    if _title == "Guides et conseils":
+        _known = set(_slugs)
+        for _p in sorted(ROOT.glob("blog-*.html")):
+            if _p.stem not in _known:
+                _slugs.append(_p.stem)
+        break
+
 # Pages du tunnel d'achat : sans contenu editorial, aucun interet pour un LLM.
 EXCLUDE = {"panier", "commande", "confirmation", "index"}
 
