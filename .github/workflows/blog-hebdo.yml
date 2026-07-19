@@ -1,5 +1,6 @@
 name: Article de blog hebdomadaire
 
+# (Re-enregistrement du workflow apres un etat "deleted" cote GitHub — 2026-07-19.)
 # Publie automatiquement un article de blog optimise SEO chaque mardi a 9h00 (Paris).
 # GitHub cron est en UTC et ne gere pas l'heure d'ete : on planifie a 07h et 08h UTC
 # (= 9h Paris en ete / en hiver) et l'etape "garde-heure" ne laisse passer que 9h Paris.
