@@ -9,6 +9,7 @@
     "build:llms": "python3 tools/build-llms.py"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.112.3",
     "stripe": "^18.5.0"
   }
 }
