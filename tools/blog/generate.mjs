@@ -81,6 +81,20 @@ function sanitizeInline(text, allow) {
   return t;
 }
 
+/* Choisit l'image d'apercu en evitant la repetition : l'image la moins utilisee
+   par les articles existants. Le choix du modele n'est conserve que s'il fait
+   deja partie des moins utilisees. Sur ~7 images et un rythme hebdo, toute la
+   banque defile avant qu'une image ne revienne. */
+function rotateHeroImage(modelPick, existing) {
+  const pool = Object.keys(IMAGES);
+  const count = Object.fromEntries(pool.map((k) => [k, 0]));
+  for (const a of existing) if (a.img in count) count[a.img]++;
+  const min = Math.min(...pool.map((k) => count[k]));
+  const leastUsed = pool.filter((k) => count[k] === min);
+  if (modelPick && leastUsed.includes(modelPick)) return modelPick;
+  return leastUsed[0];
+}
+
 /* ------------------------------------------------------------------ */
 /* registre des articles existants (dedup, cartes, "a lire aussi")     */
 /* ------------------------------------------------------------------ */
@@ -352,6 +366,11 @@ async function main() {
 
   const allow = new Set([...INTERNAL_PAGES, ...existing.map((a) => "/" + a.slug), "/" + slug]);
   const words = validate(article, existing, allow);
+
+  // Rotation des images : on evite de reprendre toujours la meme. On retient
+  // l'image la MOINS utilisee par les articles existants ; si le choix du modele
+  // fait deja partie des moins utilisees, on le respecte.
+  article.heroImage = rotateHeroImage(article.heroImage, existing);
 
   // "a lire aussi" : 3 articles existants, categories variees si possible
   const pool = existing.slice();
