@@ -56,7 +56,7 @@ Spa de nage
 Nage à contre-courant · 5,80 m
 37 buses · 580 × 220 × 140 cm · Contre-courant
 
-7 500 €TTC · ou ≈ **152 €**/mois
+9 500 €TTC · ou ≈ **192 €**/mois
 
 Découvrir
 
@@ -67,7 +67,7 @@ Spa convivial
 Nage à contre-courant · 4,00 m
 37 buses · 400 × 220 × 126 cm · Contre-courant
 
-9 500 €TTC · ou ≈ **192 €**/mois
+7 500 €TTC · ou ≈ **152 €**/mois
 
 Découvrir
 
@@ -82,8 +82,8 @@ Caractéristiques comparées des 5 modèles OXO Spa. Prix TTC hors livraison (ta
 | [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | En stock |
 | [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 27 | 5 743 € | En stock |
 | [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | En stock |
-| [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | — | 7 500 € | Sur commande · ~3 mois |
-| [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 37 + 2 jets de nage | 9 500 € | Sur commande · ~3 mois |
+| [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | — | 9 500 € | Sur commande · ~3 mois |
+| [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 37 + 2 jets de nage | 7 500 € | Sur commande · ~3 mois |
 
 ### Pour 2 à 3 personnes
 

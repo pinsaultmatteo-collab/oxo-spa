@@ -108,7 +108,7 @@ test("paiement reussi : commande enregistree, PI marque comme traite", async () 
   assert.equal(res.body.invoiceId, 42);
   assert.equal(calls.length, 1);
   assert.equal(calls[0].reference, "pi_test_123");
-  assert.equal(calls[0].amountPaid, 5395); // (9500 + 1290) * 50 %
+  assert.equal(calls[0].amountPaid, 4395); // (7500 + 1290) * 50 %
   assert.equal(calls[0].customer.email, "Jean.Dupont@Example.com");
 
   assert.equal(s.updates.length, 1);
@@ -231,13 +231,13 @@ test("mode journal : rien n'est ecrit, le PI n'est pas marque", async () => {
 /* ---------- facture d'acompte ---------- */
 
 test("facture : ligne d'acompte a 50 %, prix converti en HT", () => {
-  const order = computeOrder([{ id: "spa-convivial", qty: 1 }]); // 9500 TTC -> 4750 du
+  const order = computeOrder([{ id: "spa-convivial", qty: 1 }]); // 7500 TTC -> 3750 du
   const [line] = buildInvoiceLines(order);
   assert.match(line.name, /acompte 50 %/);
-  assert.match(line.description, /solde de 4750 € TTC/);
+  assert.match(line.description, /solde de 3750 € TTC/);
   assert.equal(line.tax_rate, 20);
   assert.equal(line.quantity, 1);
-  assert.equal(Math.round(line.price * 1.2 * 100) / 100, 4750);
+  assert.equal(Math.round(line.price * 1.2 * 100) / 100, 3750);
 });
 
 test("facture : produit en stock facture en totalite, quantite dans le libelle", () => {

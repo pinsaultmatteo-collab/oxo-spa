@@ -192,9 +192,9 @@ La coque et la structure sont garanties 5 ans, et la partie électrique (pompes,
 
 [Ease — À partir de 5 753 €](https://oxo-spa.com/ease)
 
-[Spa de nage — À partir de 7 500 €](https://oxo-spa.com/spa-de-nage-40)
+[Spa de nage — À partir de 9 500 €](https://oxo-spa.com/spa-de-nage-40)
 
-[Spa convivial — À partir de 9 500 €](https://oxo-spa.com/spa-de-nage-56)
+[Spa convivial — À partir de 7 500 €](https://oxo-spa.com/spa-de-nage-56)
 
 ## Envie de le voir en vrai ?
 

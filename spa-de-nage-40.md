@@ -14,7 +14,7 @@ Nage à contre-courant · 5,80 m
 
 Coloris
 
-Prix · 7 500 € · TTC · ou ≈ **152 €**/mois
+Prix · 9 500 € · TTC · ou ≈ **192 €**/mois
 
 Financement **jusqu'à 120 mois** avec Sofinco · sous réserve d'acceptation
 
@@ -180,7 +180,7 @@ La coque et la structure sont garanties 5 ans, et la partie électrique (pompes,
 
 [Ease — À partir de 5 753 €](https://oxo-spa.com/ease)
 
-[Spa convivial — À partir de 9 500 €](https://oxo-spa.com/spa-de-nage-56)
+[Spa convivial — À partir de 7 500 €](https://oxo-spa.com/spa-de-nage-56)
 
 ## Envie de le voir en vrai ?
 

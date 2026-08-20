@@ -45,16 +45,16 @@ test("commande valide : PaymentIntent cree avec le montant recalcule", async () 
   assert.equal(res.body.publishableKey, "pk_test_abc");
 
   assert.equal(stripe.calls.length, 1);
-  assert.equal(stripe.calls[0].amount, 475000); // 9500 * 50% d'acompte
+  assert.equal(stripe.calls[0].amount, 375000); // 7500 * 50% d'acompte
   assert.equal(stripe.calls[0].currency, "eur");
   assert.equal(stripe.calls[0].receipt_email, "jean@example.com");
 });
 
 test("le recapitulatif renvoye fait autorite", async () => {
   const { res } = await run({ items: [{ id: "spa-de-nage", qty: 1 }], customer: CUSTOMER });
-  assert.deepEqual(res.body.summary.subtotal, 7500);
-  assert.deepEqual(res.body.summary.dueNow, 3750);
-  assert.deepEqual(res.body.summary.balance, 3750);
+  assert.deepEqual(res.body.summary.subtotal, 9500);
+  assert.deepEqual(res.body.summary.dueNow, 4750);
+  assert.deepEqual(res.body.summary.balance, 4750);
   assert.equal(res.body.summary.hasDeposit, true);
 });
 

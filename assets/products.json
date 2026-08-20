@@ -39,7 +39,7 @@
     {
       "id": "spa-de-nage",
       "name": "Spa de nage",
-      "price": 7500,
+      "price": 9500,
       "availability": "order",
       "depositRate": 0.5,
       "url": "/spa-de-nage-40",
@@ -48,7 +48,7 @@
     {
       "id": "spa-convivial",
       "name": "Spa convivial",
-      "price": 9500,
+      "price": 7500,
       "availability": "order",
       "depositRate": 0.5,
       "url": "/spa-de-nage-56",

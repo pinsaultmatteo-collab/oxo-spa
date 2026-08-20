@@ -64,10 +64,10 @@ test("nominal : deux emails, client et OXO, avec cles d'idempotence distinctes",
 test("l'email client contient reference, montant regle et solde", () =>
   withEnv({ RESEND_API_KEY: "re_test", ORDER_NOTIFY_EMAIL: "oxo@oxo.fr" }, async () => {
     const f = fakeFetch();
-    await sendOrderEmails(params([{ id: "spa-convivial", qty: 1 }]), f); // 9500, acompte 50%
+    await sendOrderEmails(params([{ id: "spa-convivial", qty: 1 }]), f); // 7500, acompte 50%
     const html = f.calls[0].body.html;
     assert.match(html, /pi_test_1/);
-    assert.match(html, /4\s?750\s?€/); // regle aujourd'hui
+    assert.match(html, /3\s?750\s?€/); // regle aujourd'hui (7500 * 50%)
     assert.match(html, /Solde à la livraison/);
   }));
 
