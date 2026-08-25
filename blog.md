@@ -8,6 +8,8 @@
 
 Guides d'achat, conseils bien-être et entretien : retrouvez tout ce qu'il faut savoir sur les spas et spas de nage, par l'équipe OXO Spa à Toulouse.
 
+[Guide d'achat · 25 août 2026 — Spa gonflable ou spa rigide : lequel choisir vraiment ? — Prix, confort, durabilité, entretien : le comparatif honnête entre spa gonflable et spa rigide, sans mauvaise surprise. — Lire l'article](https://oxo-spa.com/blog-spa-gonflable-ou-rigide)
+
 [Conseils · 18 août 2026 — Combien coûte un spa en électricité, vraiment ? — Combien coûte un spa en électricité par mois et par an ? Les vrais facteurs qui font varier la facture, et comment la maîtriser. — Lire l'article](https://oxo-spa.com/blog-cout-electricite-spa)
 
 [Guide d'achat · 19 juillet 2026 — Spa 4 places : pourquoi ce modèle n'existe pas (et ce qu'il faut choisir à la place) — Pas de spa 4 places au catalogue ? On vous explique pourquoi et comment choisir entre Nexus et Ease selon votre usage réel. — Lire l'article](https://oxo-spa.com/blog-spa-4-places)
