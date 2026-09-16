@@ -64,6 +64,10 @@ jobs:
         if: steps.garde.outputs.ok == 'true'
         run: python3 tools/build-llms.py
 
+      - name: Regenerer les balises image du sitemap
+        if: steps.garde.outputs.ok == 'true'
+        run: python3 tools/build-sitemap-images.py
+
       - name: Garde-fous (prix + tests + coherence)
         if: steps.garde.outputs.ok == 'true'
         run: |

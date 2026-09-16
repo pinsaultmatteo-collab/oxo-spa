@@ -19,7 +19,7 @@
  */
 // Le SDK Anthropic est importe dynamiquement dans main() : il n'est installe
 // qu'en CI, et l'auto-test hors ligne (BLOG_SELFTEST) n'en a pas besoin.
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -201,6 +201,11 @@ Reponds UNIQUEMENT avec un objet JSON valide (pas de texte autour, pas de balise
 /* ------------------------------------------------------------------ */
 /* validation                                                          */
 /* ------------------------------------------------------------------ */
+// Chaque hero WebP a un jumeau JPG 1200x630 servi en og:image.
+function ogTwin(heroImage) {
+  return "og-" + heroImage.replace(/\.webp$/, ".jpg");
+}
+
 function validate(a, existing, allow) {
   const need = ["slug", "metaTitle", "h1", "category", "metaDescription", "excerpt", "heroImage", "intro", "sections", "faq"];
   for (const k of need) if (!a[k]) fail("champ manquant : " + k);
@@ -208,6 +213,8 @@ function validate(a, existing, allow) {
   if (existing.some((x) => x.slug === "blog-" + a.slug)) fail("article deja existant : blog-" + a.slug);
   if (!CATEGORIES.includes(a.category)) fail("categorie inconnue : " + a.category);
   if (!IMAGES[a.heroImage]) fail("image inconnue : " + a.heroImage);
+  if (!existsSync(join(ROOT, "assets", "images", ogTwin(a.heroImage))))
+    fail("jumeau og manquant : assets/images/" + ogTwin(a.heroImage));
   if (a.metaDescription.length < 100 || a.metaDescription.length > 170) fail("meta description hors bornes (" + a.metaDescription.length + ")");
   if (!Array.isArray(a.sections) || a.sections.length < 3) fail("pas assez de sections");
   if (!Array.isArray(a.faq) || a.faq.length < 3 || a.faq.length > 5) fail("FAQ : 3 a 5 questions attendues");
@@ -233,7 +240,9 @@ function validate(a, existing, allow) {
 /* ------------------------------------------------------------------ */
 function buildHead(a, url, d) {
   const title = `${a.metaTitle} | Blog OXO Spa`;
-  const img = `${SITE}/assets/images/${a.heroImage}`;
+  // Facebook et LinkedIn n'affichent pas d'apercu depuis un WebP : og:image pointe
+  // sur le jumeau JPG 1200x630 (og-<nom>.jpg), pas sur le hero WebP de la page.
+  const img = `${SITE}/assets/images/${ogTwin(a.heroImage)}`;
   const business = `{"@context": "https://schema.org", "@type": "HotTubStore", "name": "OXO Spa", "image": "${SITE}/assets/images/hero-terrasse.webp", "@id": "${SITE}/#business", "url": "${SITE}/", "telephone": "+33531605161", "priceRange": "€€€", "address": {"@type": "PostalAddress", "streetAddress": "11 impasse Pierre Camo", "addressLocality": "Toulouse", "postalCode": "31200", "addressRegion": "Occitanie", "addressCountry": "FR"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.64207, "longitude": 1.42045}, "areaServed": {"@type": "Country", "name": "France"}, "openingHours": "Mo-Fr 09:00-18:00", "slogan": "Plus qu'un spa, un art de vivre"}`;
   const blogPosting = JSON.stringify({
     "@context": "https://schema.org", "@type": "BlogPosting", headline: a.h1, image: img,
@@ -274,11 +283,15 @@ function buildHead(a, url, d) {
 <meta property="og:description" content="${esc(a.metaDescription)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${img}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="OXO Spa — spas & spas de nage à Toulouse">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(a.metaDescription)}">
 <meta name="twitter:image" content="${img}">
+<meta name="twitter:image:alt" content="OXO Spa — spas & spas de nage à Toulouse">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">

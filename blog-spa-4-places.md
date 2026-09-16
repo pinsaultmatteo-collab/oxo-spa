@@ -24,7 +24,7 @@ Le · [Nexus](https://oxo-spa.com/nexus) est pensé pour un usage quotidien à d
 
 ### Quand le Nexus reste un bon choix pour un foyer de 4
 
-Si vous êtes quatre à la maison mais que vous n'utilisez le spa ensemble qu'occasionnellement (le week-end, en soirée détente), le Nexus peut suffire : on s'organise, on tourne, on profite du bassin par deux ou trois la plupart du temps. C'est aussi le choix logique si l'espace disponible est limité ou si le budget est un critère prioritaire, le Nexus étant le modèle d'entrée de gamme le plus accessible de la sélection en stock.
+Si vous êtes quatre à la maison mais que vous n'utilisez le spa ensemble qu'occasionnellement (le week-end, en soirée détente), le Nexus peut suffire : on s'organise, on tourne, on profite du bassin par deux ou trois la plupart du temps. C'est aussi le choix logique si l'espace disponible est limité ou si le budget est un critère prioritaire, le Nexus étant le modèle d'entrée de gamme le plus accessible de la sélection courante.
 
 En revanche, si votre objectif est de profiter du spa tous ensemble et régulièrement, à quatre, dans de bonnes conditions, il vaut mieux regarder du côté d'un modèle plus large.
 
@@ -46,7 +46,7 @@ Si le doute persiste entre les deux tailles, mieux vaut se rendre au · [showroo
 
 ## Budget, garanties et livraison : ce qui ne change pas entre Nexus et Ease
 
-Quel que soit le modèle choisi, vous bénéficiez chez OXO Spa des mêmes fondamentaux : une isolation pleine mousse, une couverture isotherme fournie de série, une · [garantie de 5 ans sur la coque et 2 ans sur la partie électrique](https://oxo-spa.com/garanties). Ces deux modèles étant en stock, la · [livraison](https://oxo-spa.com/livraison) se fait sous 7 jours partout en France, un vrai plus si vous voulez profiter de votre spa rapidement.
+Quel que soit le modèle choisi, vous bénéficiez chez OXO Spa des mêmes fondamentaux : une isolation pleine mousse, une couverture isotherme fournie de série, une · [garantie de 5 ans sur la coque et 2 ans sur la partie électrique](https://oxo-spa.com/garanties). Ces deux modèles sont actuellement en rupture — prochain arrivage fin novembre — et la · [livraison](https://oxo-spa.com/livraison) se fait ensuite sous 7 jours partout en France, un vrai plus si vous voulez profiter de votre spa rapidement.
 
 Côté budget, l'écart entre les deux modèles reste raisonnable : cela permet d'arbitrer davantage sur l'usage réel et l'espace disponible que sur le prix seul. Un financement jusqu'à 120 mois via Sofinco (sous réserve d'acceptation) peut aussi faciliter le passage à l'un ou l'autre modèle sans attendre.
 
@@ -72,7 +72,7 @@ Le Nexus reste l'option la plus accessible et peut convenir si l'usage à quatre
 
 **Combien de temps faut-il attendre pour recevoir son spa ?**
 
-Le Nexus et l'Ease étant en stock, la livraison se fait sous 7 jours partout en France. Les modèles sur commande, comme les spas de nage, demandent environ 3 mois.
+Le Nexus et l'Ease sont actuellement en rupture, prochain arrivage fin novembre ; la livraison se fait ensuite sous 7 jours partout en France. Les modèles sur commande, comme les spas de nage, demandent environ 3 mois.
 
 [Découvrir nos spas](https://oxo-spa.com/spas) · [Poser une question](https://oxo-spa.com/contact?sujet=Renseignement)
 

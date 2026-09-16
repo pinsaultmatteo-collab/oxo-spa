@@ -1,14 +1,14 @@
 # Spa Ease
 
-> Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
+> Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. Arrivage fin novembre, livraison 7 jours. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/ease*
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Ease
 
-En stock
+Rupture de stock · Nouvel arrivage dans **…**
 
-En stock · Livraison 7 jours
+Rupture de stock · Arrivage fin novembre
 
 5 places · l’équilibre parfait
 

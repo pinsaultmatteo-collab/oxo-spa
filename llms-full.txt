@@ -1,6 +1,6 @@
 # OXO Spa — contenu complet
 
-> OXO Spa, spécialiste du spa et du spa de nage à Toulouse. Trois spas en stock, deux spas de nage sur commande, hydromassage de précision, garantie coque 5 ans, financement Sofinco. Livraison France entière.
+> OXO Spa, spécialiste du spa et du spa de nage à Toulouse. Trois spas de la gamme courante, deux spas de nage sur commande, hydromassage de précision, garantie coque 5 ans, financement Sofinco. Livraison France entière.
 
 Ce fichier regroupe le contenu de toutes les pages de https://oxo-spa.com.
 Généré automatiquement à partir du site.
@@ -9,19 +9,19 @@ Généré automatiquement à partir du site.
 
 # Nos spas
 
-> Catalogue OXO Spa à Toulouse : spas Breeze, Nexus, Ease en stock et spa de nage et spa convivial sur commande. Prix, caractéristiques, livraison France entière.
+> Catalogue OXO Spa à Toulouse : spas Breeze, Nexus, Ease et spa de nage et spa convivial sur commande. Prix, caractéristiques, livraison France entière.
 
 *Source : https://oxo-spa.com/spas*
 
 [Accueil](https://oxo-spa.com/) · Nos spas
 
-Découvrez la gamme OXO Spa : trois spas en stock, livrables sous 7 jours, un spa de nage et un spa convivial sur commande. Tous nos modèles sont visibles et essayables dans notre showroom de Toulouse, et livrés partout en France.
+Découvrez la gamme OXO Spa : trois spas de la gamme courante, livrables sous 7 jours, un spa de nage et un spa convivial sur commande. Tous nos modèles sont visibles et essayables dans notre showroom de Toulouse, et livrés partout en France.
 
-## En stock
+## Arrivage fin novembre
 
 Livraison sous 7 jours · paiement à la commande
 
-En stock
+Rupture de stock
 
 Breeze
 
@@ -32,7 +32,7 @@ Breeze
 
 Découvrir
 
-En stock
+Rupture de stock
 
 Nexus
 
@@ -43,7 +43,7 @@ Nexus
 
 Découvrir
 
-En stock
+Rupture de stock
 
 Ease
 
@@ -88,9 +88,9 @@ Caractéristiques comparées des 5 modèles OXO Spa. Prix TTC hors livraison (ta
 
 | Modèle | Places | Dimensions | Buses | Prix TTC | Disponibilité |
 | --- | --- | --- | --- | --- | --- |
-| [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | En stock |
-| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 27 | 5 743 € | En stock |
-| [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | En stock |
+| [Nexus](https://oxo-spa.com/nexus) | 3 | 210 × 165 × 80 cm | 26 | 4 695 € | Rupture · fin nov. |
+| [Breeze](https://oxo-spa.com/breeze) | 6 | 200 × 200 × 80 cm | 27 | 5 743 € | Rupture · fin nov. |
+| [Ease](https://oxo-spa.com/ease) | 5 | 200 × 200 × 80 cm | 27 | 5 753 € | Rupture · fin nov. |
 | [Spa de nage](https://oxo-spa.com/spa-de-nage-40) | Couloir 5,80 m | 580 × 220 × 140 cm | — | 9 500 € | Sur commande · ~3 mois |
 | [Spa convivial](https://oxo-spa.com/spa-de-nage-56) | Couloir 4,00 m | 400 × 220 × 126 cm | 37 + 2 jets de nage | 7 500 € | Sur commande · ~3 mois |
 
@@ -118,7 +118,7 @@ Payez en plusieurs fois avec Sofinco, sous réserve d'acceptation.
 
 ### Livraison France
 
-Partout en France, sous 7 jours pour les modèles en stock.
+Partout en France, sous 7 jours pour les modèles de la gamme courante.
 
 ### Essai en showroom
 
@@ -162,15 +162,15 @@ Nos conseillers vous aident à trouver le spa adapté à votre espace, votre bud
 
 # Spa Nexus
 
-> Spa Nexus 3 places : format compact, 26 buses d'hydromassage, Bluetooth et Wi-Fi. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
+> Spa Nexus 3 places : format compact, 26 buses d'hydromassage, Bluetooth et Wi-Fi. Arrivage fin novembre, livraison 7 jours. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/nexus*
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Nexus
 
-En stock
+Rupture de stock · Nouvel arrivage dans **…**
 
-En stock · Livraison 7 jours
+Rupture de stock · Arrivage fin novembre
 
 3 places · compact, idéal petits espaces
 
@@ -368,15 +368,15 @@ Venez essayer le Nexus dans notre showroom de Toulouse, ou faites-vous rappeler 
 
 # Spa Breeze
 
-> Spa Breeze 6 places : hydromassage 27 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
+> Spa Breeze 6 places : hydromassage 27 buses, coque acrylique nacrée, chromothérapie. Arrivage fin novembre, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/breeze*
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Breeze
 
-En stock
+Rupture de stock · Nouvel arrivage dans **…**
 
-En stock · Livraison 7 jours
+Rupture de stock · Arrivage fin novembre
 
 6 places · 5 assises + 1 allongé balnéo
 
@@ -574,15 +574,15 @@ Venez essayer le Breeze dans notre showroom de Toulouse, ou faites-vous rappeler
 
 # Spa Ease
 
-> Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
+> Spa Ease 5 places : l'équilibre entre confort et encombrement, 27 buses, coque nacrée. Arrivage fin novembre, livraison 7 jours. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/ease*
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Ease
 
-En stock
+Rupture de stock · Nouvel arrivage dans **…**
 
-En stock · Livraison 7 jours
+Rupture de stock · Arrivage fin novembre
 
 5 places · l’équilibre parfait
 
@@ -1592,7 +1592,7 @@ Le · [Nexus](https://oxo-spa.com/nexus) est pensé pour un usage quotidien à d
 
 ### Quand le Nexus reste un bon choix pour un foyer de 4
 
-Si vous êtes quatre à la maison mais que vous n'utilisez le spa ensemble qu'occasionnellement (le week-end, en soirée détente), le Nexus peut suffire : on s'organise, on tourne, on profite du bassin par deux ou trois la plupart du temps. C'est aussi le choix logique si l'espace disponible est limité ou si le budget est un critère prioritaire, le Nexus étant le modèle d'entrée de gamme le plus accessible de la sélection en stock.
+Si vous êtes quatre à la maison mais que vous n'utilisez le spa ensemble qu'occasionnellement (le week-end, en soirée détente), le Nexus peut suffire : on s'organise, on tourne, on profite du bassin par deux ou trois la plupart du temps. C'est aussi le choix logique si l'espace disponible est limité ou si le budget est un critère prioritaire, le Nexus étant le modèle d'entrée de gamme le plus accessible de la sélection courante.
 
 En revanche, si votre objectif est de profiter du spa tous ensemble et régulièrement, à quatre, dans de bonnes conditions, il vaut mieux regarder du côté d'un modèle plus large.
 
@@ -1614,7 +1614,7 @@ Si le doute persiste entre les deux tailles, mieux vaut se rendre au · [showroo
 
 ## Budget, garanties et livraison : ce qui ne change pas entre Nexus et Ease
 
-Quel que soit le modèle choisi, vous bénéficiez chez OXO Spa des mêmes fondamentaux : une isolation pleine mousse, une couverture isotherme fournie de série, une · [garantie de 5 ans sur la coque et 2 ans sur la partie électrique](https://oxo-spa.com/garanties). Ces deux modèles étant en stock, la · [livraison](https://oxo-spa.com/livraison) se fait sous 7 jours partout en France, un vrai plus si vous voulez profiter de votre spa rapidement.
+Quel que soit le modèle choisi, vous bénéficiez chez OXO Spa des mêmes fondamentaux : une isolation pleine mousse, une couverture isotherme fournie de série, une · [garantie de 5 ans sur la coque et 2 ans sur la partie électrique](https://oxo-spa.com/garanties). Ces deux modèles sont actuellement en rupture — prochain arrivage fin novembre — et la · [livraison](https://oxo-spa.com/livraison) se fait ensuite sous 7 jours partout en France, un vrai plus si vous voulez profiter de votre spa rapidement.
 
 Côté budget, l'écart entre les deux modèles reste raisonnable : cela permet d'arbitrer davantage sur l'usage réel et l'espace disponible que sur le prix seul. Un financement jusqu'à 120 mois via Sofinco (sous réserve d'acceptation) peut aussi faciliter le passage à l'un ou l'autre modèle sans attendre.
 
@@ -1640,7 +1640,7 @@ Le Nexus reste l'option la plus accessible et peut convenir si l'usage à quatre
 
 **Combien de temps faut-il attendre pour recevoir son spa ?**
 
-Le Nexus et l'Ease étant en stock, la livraison se fait sous 7 jours partout en France. Les modèles sur commande, comme les spas de nage, demandent environ 3 mois.
+Le Nexus et l'Ease sont actuellement en rupture, prochain arrivage fin novembre ; la livraison se fait ensuite sous 7 jours partout en France. Les modèles sur commande, comme les spas de nage, demandent environ 3 mois.
 
 [Découvrir nos spas](https://oxo-spa.com/spas) · [Poser une question](https://oxo-spa.com/contact?sujet=Renseignement)
 
@@ -1706,7 +1706,7 @@ Le gonflable demande une vigilance particulière sur l'étanchéité et le netto
 
 Le spa gonflable peut avoir du sens pour un test ponctuel, un usage très occasionnel ou un budget de départ très limité. Mais si vous cherchez un vrai moment de détente régulier, avec un hydromassage confortable et un équipement qui tient dans la durée, le spa rigide reste le choix le plus cohérent sur le long terme.
 
-Toute notre gamme est disponible en stock pour une livraison sous 7 jours, ou sur commande pour les modèles plus grands comme le · [spa de nage 5,80 m](https://oxo-spa.com/spa-de-nage-56). Vous pouvez découvrir l'ensemble des modèles sur la page · [nos spas](https://oxo-spa.com/spas), ou approfondir les aspects techniques sur notre page · [technologie](https://oxo-spa.com/technologie).
+Toute notre gamme est actuellement en rupture, prochain arrivage fin novembre, pour une livraison sous 7 jours, ou sur commande pour les modèles plus grands comme le · [spa de nage 5,80 m](https://oxo-spa.com/spa-de-nage-56). Vous pouvez découvrir l'ensemble des modèles sur la page · [nos spas](https://oxo-spa.com/spas), ou approfondir les aspects techniques sur notre page · [technologie](https://oxo-spa.com/technologie).
 
 ## Questions fréquentes
 
@@ -1856,13 +1856,13 @@ Notre équipe vous répond et vous accompagne, avant comme après l'achat.
 
 # Livraison & installation
 
-> Livraison de spas OXO partout en France : tarifs par zone (500 à 960 €HT), +180 €HT en montagne, livraison sous 7 jours pour les modèles en stock. Mise en service incluse.
+> Livraison de spas OXO partout en France : tarifs par zone (500 à 960 €HT), +180 €HT en montagne, livraison sous 7 jours pour les modèles de la gamme courante. Mise en service incluse.
 
 *Source : https://oxo-spa.com/livraison*
 
 [Accueil](https://oxo-spa.com/) · Livraison
 
-Nous livrons nos spas partout en France. Le tarif de livraison dépend de votre zone géographique ; comptez +180 €HT pour les zones de montagne. Livraison sous 7 jours pour les modèles en stock.
+Nous livrons nos spas partout en France. Le tarif de livraison dépend de votre zone géographique ; comptez +180 €HT pour les zones de montagne. Livraison sous 7 jours pour les modèles de la gamme courante.
 
 — Tarifs par zone
 
@@ -1892,7 +1892,7 @@ On valide ensemble l’accès, l’emplacement et l’alimentation électrique d
 
 ### 2 · Livraison
 
-Livraison à l’adresse indiquée, sous 7 jours pour les modèles en stock, ~3 mois pour les spas de nage.
+Livraison à l’adresse indiquée, sous 7 jours pour les modèles de la gamme courante, ~3 mois pour les spas de nage.
 
 ### 3 · Mise en service
 
@@ -1902,7 +1902,7 @@ Remplissage, contrôle des jets et du chauffage, conseils d’entretien : vous n
 
 **Quel est le délai de livraison ?**
 
-Les spas en stock (Breeze, Nexus, Ease) sont livrés sous environ 7 jours. Les spas de nage, fabriqués sur commande, sont livrés en environ 3 mois.
+Les spas de la gamme courante (Breeze, Nexus, Ease) sont livrés sous environ 7 jours. Les spas de nage, fabriqués sur commande, sont livrés en environ 3 mois.
 
 **Livrez-vous toute la France ?**
 

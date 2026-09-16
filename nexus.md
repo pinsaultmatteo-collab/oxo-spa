@@ -1,14 +1,14 @@
 # Spa Nexus
 
-> Spa Nexus 3 places : format compact, 26 buses d'hydromassage, Bluetooth et Wi-Fi. En stock, livraison 7 jours. Showroom OXO Spa à Toulouse.
+> Spa Nexus 3 places : format compact, 26 buses d'hydromassage, Bluetooth et Wi-Fi. Arrivage fin novembre, livraison 7 jours. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/nexus*
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Nexus
 
-En stock
+Rupture de stock · Nouvel arrivage dans **…**
 
-En stock · Livraison 7 jours
+Rupture de stock · Arrivage fin novembre
 
 3 places · compact, idéal petits espaces
 

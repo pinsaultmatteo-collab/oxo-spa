@@ -50,7 +50,7 @@ Le gonflable demande une vigilance particulière sur l'étanchéité et le netto
 
 Le spa gonflable peut avoir du sens pour un test ponctuel, un usage très occasionnel ou un budget de départ très limité. Mais si vous cherchez un vrai moment de détente régulier, avec un hydromassage confortable et un équipement qui tient dans la durée, le spa rigide reste le choix le plus cohérent sur le long terme.
 
-Toute notre gamme est disponible en stock pour une livraison sous 7 jours, ou sur commande pour les modèles plus grands comme le · [spa de nage 5,80 m](https://oxo-spa.com/spa-de-nage-56). Vous pouvez découvrir l'ensemble des modèles sur la page · [nos spas](https://oxo-spa.com/spas), ou approfondir les aspects techniques sur notre page · [technologie](https://oxo-spa.com/technologie).
+Toute notre gamme est actuellement en rupture, prochain arrivage fin novembre, pour une livraison sous 7 jours, ou sur commande pour les modèles plus grands comme le · [spa de nage 5,80 m](https://oxo-spa.com/spa-de-nage-56). Vous pouvez découvrir l'ensemble des modèles sur la page · [nos spas](https://oxo-spa.com/spas), ou approfondir les aspects techniques sur notre page · [technologie](https://oxo-spa.com/technologie).
 
 ## Questions fréquentes
 

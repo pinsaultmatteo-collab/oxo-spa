@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node --test api/_lib/*.test.js",
     "check:prices": "python3 tools/check-prices.py",
-    "build:llms": "python3 tools/build-llms.py"
+    "build:llms": "python3 tools/build-llms.py",
+    "build:sitemap-images": "python3 tools/build-sitemap-images.py"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.112.5",

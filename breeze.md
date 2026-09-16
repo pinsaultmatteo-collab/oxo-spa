@@ -1,14 +1,14 @@
 # Spa Breeze
 
-> Spa Breeze 6 places : hydromassage 27 buses, coque acrylique nacrée, chromothérapie. En stock, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
+> Spa Breeze 6 places : hydromassage 27 buses, coque acrylique nacrée, chromothérapie. Arrivage fin novembre, livraison 7 jours en France. Showroom OXO Spa à Toulouse.
 
 *Source : https://oxo-spa.com/breeze*
 
 [Accueil](https://oxo-spa.com/) · [Nos spas](https://oxo-spa.com/spas) · Breeze
 
-En stock
+Rupture de stock · Nouvel arrivage dans **…**
 
-En stock · Livraison 7 jours
+Rupture de stock · Arrivage fin novembre
 
 6 places · 5 assises + 1 allongé balnéo
 
