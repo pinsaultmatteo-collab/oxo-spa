@@ -1,0 +1,99 @@
+name: Fin de rupture de stock
+
+# Le 30 novembre 2026, remet le site comme avant : plus de bandeau, pastille
+# verte "En stock", schema InStock.
+#
+# Le resultat est propose en PULL REQUEST, pas pousse directement sur main.
+# Raison : la date est une prevision d'arrivage. Si le conteneur a du retard,
+# publier "En stock" automatiquement ferait mentir le site dans le sens ou il
+# encaisse de l'argent — pire que de laisser le bandeau un peu trop longtemps.
+# Il suffit d'ouvrir la PR et de cliquer "Merge" une fois l'arrivage confirme.
+#
+# Pour le faire plus tot ou plus tard : onglet Actions > ce workflow > "Run workflow".
+# Pour passer en publication directe : remplacer l'etape "Ouvrir la pull request"
+# par un commit sur main suivi de "git push".
+
+on:
+  schedule:
+    # 08:00 UTC le 30 novembre = 9h a Paris (la France est a UTC+1 a cette date).
+    - cron: "0 8 30 11 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  restaurer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dependances
+        run: npm install
+
+      - name: Restaurer l'etat "en stock"
+        id: restaurer
+        run: |
+          set -e
+          if ! python3 tools/restore-stock.py --check; then
+            echo "Le site n'est pas en rupture — rien a faire."
+            echo "fait=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 tools/restore-stock.py
+          echo "fait=true" >> "$GITHUB_OUTPUT"
+
+      - name: Regenerer les fichiers derives
+        if: steps.restaurer.outputs.fait == 'true'
+        run: |
+          python3 tools/build-llms.py
+          python3 tools/build-sitemap-images.py
+
+      - name: Garde-fous (prix + tests)
+        if: steps.restaurer.outputs.fait == 'true'
+        run: |
+          python3 tools/check-prices.py
+          npm test
+
+      - name: Ouvrir la pull request
+        if: steps.restaurer.outputs.fait == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          BR="fin-rupture-$(date +%Y%m%d)"
+          git config user.name  "OXO Spa Bot"
+          git config user.email "blog-bot@users.noreply.github.com"
+          git checkout -b "$BR"
+          git add -A
+          git commit -m "Fin de rupture : retour a l'affichage 'En stock'" -m "Retire le bandeau de toutes les pages, remet la pastille verte sur Nexus, Breeze et Ease, repasse le schema Product en InStock et restaure les titres et textes de disponibilite." -m "Genere par tools/restore-stock.py. A fusionner une fois l'arrivage effectivement receptionne."
+          git push origin "$BR"
+          printf '%s\n' \
+            "L'arrivage etait annonce pour le **30 novembre 2026**." \
+            "" \
+            "Cette PR remet le site exactement comme avant la rupture : bandeau retire," \
+            "pastille verte **En stock** sur Nexus, Breeze et Ease, schema Product en" \
+            '`InStock`, titres et textes de disponibilite restaures.' \
+            "" \
+            "**A fusionner seulement quand les spas sont effectivement arrives.**" \
+            "Si le conteneur a du retard, laisser la PR ouverte : le site continue" \
+            "d'afficher la rupture, ce qui reste vrai." \
+            "" \
+            'Si la date a glisse de beaucoup, penser aussi a mettre a jour `ARRIVAGE`' \
+            'dans `assets/stock.js` pour que le compte a rebours reste juste.' \
+            > /tmp/pr-body.md
+          gh pr create --base main --head "$BR" \
+            --title "Fin de rupture de stock — retour a l'affichage normal" \
+            --body-file /tmp/pr-body.md
